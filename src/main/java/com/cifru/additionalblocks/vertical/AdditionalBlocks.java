@@ -1,6 +1,5 @@
 package com.cifru.additionalblocks.vertical;
 
-import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
@@ -8,6 +7,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.material.Material;
 import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
@@ -24,8 +24,8 @@ import java.util.function.Supplier;
 @Mod("abverticaledition")
 public class AdditionalBlocks {
 
-    @ObjectHolder(value = "test_slab", registryName = "minecraft:block")
-    public static VerticalSlabBlock test_slab;
+    @ObjectHolder(value = "test_stair", registryName = "minecraft:block")
+    public static VerticalStairBlock test_stair;
 
     public AdditionalBlocks() {
         FMLJavaModLoadingContext.get().getModEventBus().addListener(AdditionalBlocks::onRegisterEvent);
@@ -56,12 +56,14 @@ public class AdditionalBlocks {
         for (VerticalSlabType value : VerticalSlabType.ALL.values()) {
             registry.register(value.registryName, new VerticalSlabBlock(BlockBehaviour.Properties.copy(value.parentBlock.get())));
         }
+        registry.register("test_stair", new VerticalStairBlock(BlockBehaviour.Properties.of(Material.STONE)));
     }
 
     private static void registerItems(IForgeRegistry<Item> registry) {
         for (VerticalSlabType value : VerticalSlabType.ALL.values()) {
             registry.register(value.registryName, new BlockItem(ForgeRegistries.BLOCKS.getValue(value.registryName), new Item.Properties().tab(CreativeModeTab.TAB_BUILDING_BLOCKS)));
         }
+        registry.register("test_stair", new BlockItem(test_stair, new Item.Properties()));
     }
 
     private static void onGatherDataEvent(GatherDataEvent e) {

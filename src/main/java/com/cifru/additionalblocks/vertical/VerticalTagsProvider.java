@@ -45,7 +45,6 @@ public class VerticalTagsProvider extends BlockTagsProvider {
 
         for (VerticalSlabType value : VerticalSlabType.ALL.values()) {
             for (TagKey<Block> tag : tags) {
-                System.out.println(tag.location() + ": " + loadVanillaTag(tag.location()).stream().collect(Collectors.toList()));
                 if (loadVanillaTag(tag.location()).contains(value.parentBlock.get()))
                     this.tag(tag).replace(false).add(ForgeRegistries.BLOCKS.getValue(value.registryName));
             }
