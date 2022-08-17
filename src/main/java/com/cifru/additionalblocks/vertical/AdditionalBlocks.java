@@ -1,5 +1,6 @@
 package com.cifru.additionalblocks.vertical;
 
+import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
@@ -33,15 +34,15 @@ public class AdditionalBlocks {
     }
 
     private void registerSlabs() {
-        this.createSlab("stone_vertical_slab", "Vertical Stone Slab", () -> Blocks.STONE_SLAB, () -> Blocks.STONE, new ResourceLocation("minecraft", "block/stone"));
+        this.createSlab("stone_vertical_slab", "Vertical Stone Slab", () -> Blocks.STONE_SLAB, () -> Blocks.STONE, true, new ResourceLocation("minecraft", "block/stone"));
     }
 
-    private void createSlab(String registryName, String translation, Supplier<Block> parentBlock, Supplier<Block> recipeBlock, ResourceLocation texture) {
+    private void createSlab(String registryName, String translation, Supplier<Block> parentBlock, Supplier<Block> recipeBlock, boolean hasStoneCutterRecipe, ResourceLocation texture) {
         ResourceLocation resourceLocation = new ResourceLocation("abverticaledition", registryName);
-        if (SlabType.ALL.containsKey(resourceLocation))
+        if (VerticalSlabType.ALL.containsKey(resourceLocation))
             throw new RuntimeException("Tried to register two slab types with registry name '" + registryName + "'!");
 
-        SlabType.ALL.put(resourceLocation, new SlabType(resourceLocation, translation, parentBlock, recipeBlock, texture));
+        VerticalSlabType.ALL.put(resourceLocation, new VerticalSlabType(resourceLocation, translation, parentBlock, recipeBlock, hasStoneCutterRecipe, texture));
     }
 
     private static void onRegisterEvent(RegisterEvent e) {
@@ -52,21 +53,23 @@ public class AdditionalBlocks {
     }
 
     private static void registerBlocks(IForgeRegistry<Block> registry) {
-        for (SlabType value : SlabType.ALL.values()) {
+        for (VerticalSlabType value : VerticalSlabType.ALL.values()) {
             registry.register(value.registryName, new VerticalSlabBlock(BlockBehaviour.Properties.copy(value.parentBlock.get())));
         }
     }
 
     private static void registerItems(IForgeRegistry<Item> registry) {
-        for (SlabType value : SlabType.ALL.values()) {
+        for (VerticalSlabType value : VerticalSlabType.ALL.values()) {
             registry.register(value.registryName, new BlockItem(ForgeRegistries.BLOCKS.getValue(value.registryName), new Item.Properties().tab(CreativeModeTab.TAB_BUILDING_BLOCKS)));
         }
     }
 
     private static void onGatherDataEvent(GatherDataEvent e) {
-        e.getGenerator().addProvider(e.includeClient(), new SlabLanguageProvider(e.getGenerator(), "abverticaledition", "en_us"));
-        e.getGenerator().addProvider(e.includeClient(), new SlabBlockModelProvider(e.getGenerator(), "abverticaledition", e.getExistingFileHelper()));
-        e.getGenerator().addProvider(e.includeClient(), new SlabItemModelProvider(e.getGenerator(), "abverticaledition", e.getExistingFileHelper()));
-        e.getGenerator().addProvider(e.includeClient(), new SlabBlockStateProvider(e.getGenerator(), "abverticaledition", e.getExistingFileHelper()));
+        e.getGenerator().addProvider(e.includeClient(), new VerticalLanguageProvider(e.getGenerator(), "abverticaledition", "en_us"));
+        e.getGenerator().addProvider(e.includeClient(), new VerticalBlockModelProvider(e.getGenerator(), "abverticaledition", e.getExistingFileHelper()));
+        e.getGenerator().addProvider(e.includeClient(), new VerticalItemModelProvider(e.getGenerator(), "abverticaledition", e.getExistingFileHelper()));
+        e.getGenerator().addProvider(e.includeClient(), new VerticalBlockStateProvider(e.getGenerator(), "abverticaledition", e.getExistingFileHelper()));
+        e.getGenerator().addProvider(e.includeServer(), new VerticalRecipeProvider(e.getGenerator()));
+        e.getGenerator().addProvider(e.includeServer(), new VerticalTagsProvider(e.getGenerator(), "abverticaledition", e.getExistingFileHelper()));
     }
 }
