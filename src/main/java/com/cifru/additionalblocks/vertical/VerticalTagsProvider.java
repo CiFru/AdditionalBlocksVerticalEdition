@@ -5,7 +5,10 @@ import com.google.gson.*;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.tags.BlockTagsProvider;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.packs.PackResources;
 import net.minecraft.server.packs.PackType;
+import net.minecraft.server.packs.VanillaPackResources;
+import net.minecraft.server.packs.repository.ServerPacksSource;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.level.block.Block;
@@ -50,12 +53,13 @@ public class VerticalTagsProvider extends BlockTagsProvider {
     }
 
     private final Map<ResourceLocation, List<Block>> loadedTags = Maps.newHashMap();
+    private final PackResources vanillaResources = new VanillaPackResources(ServerPacksSource.BUILT_IN_METADATA, "minecraft");
 
     private List<Block> loadVanillaTag(ResourceLocation location) {
         if (this.loadedTags.containsKey(location))
             return this.loadedTags.get(location);
 
-        try (InputStream resource = this.existingFileHelper.getResource(location, PackType.SERVER_DATA, ".json", "tags/blocks").open()) {
+        try (InputStream resource = this.vanillaResources.getResource(PackType.SERVER_DATA, new ResourceLocation(location.getNamespace(), "tags/blocks/" + location.getPath() + ".json"))) {
             JsonObject json = GSON.fromJson(new InputStreamReader(resource), JsonObject.class);
             JsonArray array = json.getAsJsonArray("values");
             List<Block> blocks = new ArrayList<>();
