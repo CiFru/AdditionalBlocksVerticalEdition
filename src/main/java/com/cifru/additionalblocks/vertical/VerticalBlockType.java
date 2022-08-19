@@ -3,6 +3,7 @@ package com.cifru.additionalblocks.vertical;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraftforge.fml.ModList;
 import net.minecraftforge.registries.ForgeRegistries;
 
 import java.util.HashMap;
@@ -11,7 +12,7 @@ import java.util.function.Supplier;
 
 public class VerticalBlockType {
 
-    public static final Map<ResourceLocation, VerticalBlockType> ALL = new HashMap<>();
+    public static final Map<ResourceLocation,VerticalBlockType> ALL = new HashMap<>();
 
     //cut copper
     public static final VerticalBlockType CUT_COPPER = createBlockType("cut_copper", "Cut Copper", () -> Blocks.CUT_COPPER_SLAB, () -> Blocks.CUT_COPPER_STAIRS, () -> Blocks.CUT_COPPER, true, new ResourceLocation("minecraft", "block/cut_copper"));
@@ -84,14 +85,35 @@ public class VerticalBlockType {
     public static final VerticalBlockType DEEPSLATE_BRICK = createBlockType("deepslate_brick", "Deepslate Brick", () -> Blocks.DEEPSLATE_BRICK_SLAB, () -> Blocks.DEEPSLATE_BRICK_STAIRS, () -> Blocks.DEEPSLATE_BRICKS, true, new ResourceLocation("minecraft", "block/deepslate_bricks"));
     public static final VerticalBlockType DEEPSLATE_TILE = createBlockType("deepslate_tile", "Deepslate Tile", () -> Blocks.DEEPSLATE_TILE_SLAB, () -> Blocks.DEEPSLATE_TILE_STAIRS, () -> Blocks.DEEPSLATE_TILES, true, new ResourceLocation("minecraft", "block/deepslate_tiles"));
 
-    private static VerticalBlockType createBlockType(String registryName, String translation, Supplier<Block> parentSlabBlock, Supplier<Block> parentStairBlock, Supplier<Block> recipeBlock, boolean hasStoneCutterRecipe, ResourceLocation texture) {
+    //additional blocks: stone edition
+    public static final VerticalBlockType MARBLE = createBlockTypeForOtherMod("abstoneedition", "marble", "Marble", "marble_slab", "marble_stairs", "marble", true, new ResourceLocation("abstoneedition", "marble"));
+
+    private static VerticalBlockType createBlockType(String registryName, String translation, Supplier<Block> parentSlabBlock, Supplier<Block> parentStairBlock, Supplier<Block> recipeBlock, boolean hasStoneCutterRecipe, ResourceLocation texture){
         ResourceLocation resourceLocation = new ResourceLocation("abverticaledition", registryName);
-        if (VerticalBlockType.ALL.containsKey(resourceLocation))
+        if(VerticalBlockType.ALL.containsKey(resourceLocation))
             throw new RuntimeException("Tried to register two block types with registry name '" + registryName + "'!");
 
         VerticalBlockType type = new VerticalBlockType(resourceLocation, translation, parentSlabBlock, parentStairBlock, recipeBlock, hasStoneCutterRecipe, texture);
         VerticalBlockType.ALL.put(resourceLocation, type);
         return type;
+    }
+
+    private static VerticalBlockType createBlockTypeForOtherMod(String modid, String registryName, String translation, String parentSlabBlock, String parentStairBlock, String recipeBlock, boolean hasStoneCutterRecipe, ResourceLocation texture){
+        // Check if the other mod is loaded
+        if(!ModList.get().isLoaded(modid))
+            return null;
+
+        ResourceLocation parentSlabBlockLocation = parentSlabBlock.contains(":") ? new ResourceLocation(parentSlabBlock) : new ResourceLocation(modid, parentSlabBlock);
+        ResourceLocation parentStairBlockLocation = parentStairBlock.contains(":") ? new ResourceLocation(parentStairBlock) : new ResourceLocation(modid, parentStairBlock);
+        ResourceLocation recipeBlockLocation = recipeBlock.contains(":") ? new ResourceLocation(recipeBlock) : new ResourceLocation(modid, recipeBlock);
+        return createBlockType(registryName, translation, () -> getBlockFromOtherMod(parentSlabBlockLocation), () -> getBlockFromOtherMod(parentStairBlockLocation), () -> getBlockFromOtherMod(recipeBlockLocation), hasStoneCutterRecipe, texture);
+    }
+
+    private static Block getBlockFromOtherMod(ResourceLocation location){
+        Block block = ForgeRegistries.BLOCKS.getValue(location);
+        if(block == null || block == Blocks.AIR)
+            throw new RuntimeException("Could not find any block registered under '" + location + "'!");
+        return block;
     }
 
     public final ResourceLocation registryName;
@@ -105,10 +127,10 @@ public class VerticalBlockType {
     public final boolean hasStoneCutterRecipe;
     public final ResourceLocation texture;
 
-    public VerticalBlockType(ResourceLocation registryName, String translation, Supplier<Block> parentSlabBlock, Supplier<Block> parentStairBlock, Supplier<Block> recipeBlock, boolean hasStoneCutterRecipe, ResourceLocation texture) {
+    public VerticalBlockType(ResourceLocation registryName, String translation, Supplier<Block> parentSlabBlock, Supplier<Block> parentStairBlock, Supplier<Block> recipeBlock, boolean hasStoneCutterRecipe, ResourceLocation texture){
         this.registryName = registryName;
-        this.slabRegistryName = new ResourceLocation(registryName.getNamespace(),registryName.getPath() + "_vertical_slab");
-        this.stairRegistryName = new ResourceLocation(registryName.getNamespace(),registryName.getPath() + "_vertical_stair");
+        this.slabRegistryName = new ResourceLocation(registryName.getNamespace(), registryName.getPath() + "_vertical_slab");
+        this.stairRegistryName = new ResourceLocation(registryName.getNamespace(), registryName.getPath() + "_vertical_stair");
         this.slabTranslation = "Vertical " + translation + " Slab";
         this.stairTranslation = "Vertical " + translation + " Stair";
         this.parentSlabBlock = parentSlabBlock;

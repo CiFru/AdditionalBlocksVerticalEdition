@@ -45,6 +45,13 @@ description='''${mod_description}'''
     versionRange="${minecraft_dependency}"
     ordering="NONE"
     side="BOTH"
+# Add a dependency on Additional Blocks: Stone Edition
+[[dependencies.${mod_id}]]
+    modId="abstoneedition"
+    mandatory=false
+    versionRange="${stone_edition_dependency}"
+    ordering="AFTER"
+    side="BOTH"
 # Add a dependency on SuperMartijn642's Config Lib
 [[dependencies.${mod_id}]]
     modId="supermartijn642configlib"

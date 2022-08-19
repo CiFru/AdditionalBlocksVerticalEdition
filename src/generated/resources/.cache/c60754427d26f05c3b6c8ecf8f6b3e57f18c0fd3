@@ -1,4 +1,4 @@
-// 1.19.2	2022-08-19T22:54:48.8383207	Item Models: abverticaledition
+// 1.19.2	2022-08-19T23:50:59.7878421	Item Models: abverticaledition
 2ab5ca84cd1db04d14c08308f7767619a0331400 assets/abverticaledition/models/item/acacia_vertical_slab.json
 122636c1558f1c36a8bdaa2ac6e00a762298e945 assets/abverticaledition/models/item/acacia_vertical_stair.json
 281b1c0ea4b058875e0704307d79e64243ca7689 assets/abverticaledition/models/item/andesite_vertical_slab.json
@@ -37,6 +37,8 @@ d70414e43801ffce36306a9158ea2a7630328519 assets/abverticaledition/models/item/ju
 66908a17e043f746c7fbb754bb47e8eee2498b1c assets/abverticaledition/models/item/jungle_vertical_stair.json
 d4b4a46b1771eef10ebde762409ef6e42f07d6cf assets/abverticaledition/models/item/mangrove_vertical_slab.json
 452dff9f01b2726f5670a73ae9a29f9aa84b12bc assets/abverticaledition/models/item/mangrove_vertical_stair.json
+434e261f186f7b3e9950d429ea32a9b9732444c5 assets/abverticaledition/models/item/marble_vertical_slab.json
+de5d392290bca5baf74a7c3df60f17ca9e408262 assets/abverticaledition/models/item/marble_vertical_stair.json
 a340a24c19608b1309e2e19fc5b43fd5d90d5ba5 assets/abverticaledition/models/item/mossy_cobblestone_vertical_slab.json
 4de810e120c416e92c04c1f44ca63303a55a30a4 assets/abverticaledition/models/item/mossy_cobblestone_vertical_stair.json
 909d2cd84b1fbe27fd741c831abfd0f14f786428 assets/abverticaledition/models/item/mossy_stone_brick_vertical_slab.json

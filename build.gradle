@@ -31,6 +31,9 @@ dependencies {
     // Forge
     minecraft "net.minecraftforge:forge:${project.minecraft_version}-${project.forge_version}"
 
+    // Additional Blocks: Stone Edition
+    runtimeOnly fg.deobf("curse.maven:additional-blocks-stone-edition-436715:${project.stone_edition_file}")
+
     // Config library
     implementation fg.deobf("curse.maven:supermartijn642s-config-lib-438332:${project.config_library_file}")
 
@@ -83,7 +86,7 @@ minecraft {
 
             property "forge.logging.markers", "REGISTRIES"
 
-            args "--mod", project.mod_id, "--all", "--output", file("src/generated/resources/"), "--existing", file("build/resources/main/")
+            args "--mod", project.mod_id, "--all", "--output", file("src/generated/resources/"), "--existing", file("build/resources/main/"), "--existing-mod", "abstoneedition"
 
             mods {
                 source sourceSets.main
