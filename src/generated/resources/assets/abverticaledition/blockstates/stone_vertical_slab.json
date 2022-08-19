@@ -1,26 +1,70 @@
 {
   "variants": {
-    "state=east": {
+    "connection=left,state=east": {
+      "model": "abverticaledition:block/stone_vertical_slab_post",
+      "uvlock": true,
+      "y": 90
+    },
+    "connection=left,state=full": {
+      "model": "abverticaledition:block/stone_vertical_slab_full"
+    },
+    "connection=left,state=north": {
+      "model": "abverticaledition:block/stone_vertical_slab_post",
+      "uvlock": true
+    },
+    "connection=left,state=south": {
+      "model": "abverticaledition:block/stone_vertical_slab_post",
+      "uvlock": true,
+      "y": -180
+    },
+    "connection=left,state=west": {
+      "model": "abverticaledition:block/stone_vertical_slab_post",
+      "uvlock": true,
+      "y": -90
+    },
+    "connection=none,state=east": {
       "model": "abverticaledition:block/stone_vertical_slab",
       "uvlock": true,
       "y": 90
     },
-    "state=full": {
+    "connection=none,state=full": {
       "model": "abverticaledition:block/stone_vertical_slab_full"
     },
-    "state=north": {
+    "connection=none,state=north": {
       "model": "abverticaledition:block/stone_vertical_slab",
       "uvlock": true
     },
-    "state=south": {
+    "connection=none,state=south": {
       "model": "abverticaledition:block/stone_vertical_slab",
       "uvlock": true,
       "y": -180
     },
-    "state=west": {
+    "connection=none,state=west": {
       "model": "abverticaledition:block/stone_vertical_slab",
       "uvlock": true,
       "y": -90
+    },
+    "connection=right,state=east": {
+      "model": "abverticaledition:block/stone_vertical_slab_post",
+      "uvlock": true,
+      "y": -180
+    },
+    "connection=right,state=full": {
+      "model": "abverticaledition:block/stone_vertical_slab_full"
+    },
+    "connection=right,state=north": {
+      "model": "abverticaledition:block/stone_vertical_slab_post",
+      "uvlock": true,
+      "y": 90
+    },
+    "connection=right,state=south": {
+      "model": "abverticaledition:block/stone_vertical_slab_post",
+      "uvlock": true,
+      "y": -90
+    },
+    "connection=right,state=west": {
+      "model": "abverticaledition:block/stone_vertical_slab_post",
+      "uvlock": true
     }
   }
 }

@@ -1,2 +1,4 @@
-// 1.19.2	2022-08-18T21:36:52.5209561	Tags for minecraft:block
-6206008ed4a6e9175856f94ef9fe2ce1d50307e8 data/minecraft/tags/blocks/mineable/pickaxe.json
+// 1.19.2	2022-08-19T22:54:48.8373206	Tags for minecraft:block
+35c5dcb55b3423d88dfa4df4d06a94e2a1fc3719 data/minecraft/tags/blocks/mineable/axe.json
+65d28bf3d4c6bf4485da5ba4c1b68216899a0411 data/minecraft/tags/blocks/mineable/pickaxe.json
+6b5dc8a895fc61131164e21ed5712ef8f2cae905 data/minecraft/tags/blocks/needs_stone_tool.json
