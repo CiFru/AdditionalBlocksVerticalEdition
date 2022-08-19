@@ -26,33 +26,43 @@ import java.util.Locale;
 
 public class VerticalSlabBlock extends Block implements SimpleWaterloggedBlock {
 
-    public static final EnumProperty<SlabShape> STATE_PROPERTY = EnumProperty.create("state", SlabShape.class);
+    public static final EnumProperty<SlabShape> SHAPE_PROPERTY = EnumProperty.create("state", SlabShape.class);
+    public static final EnumProperty<SlabConnection> CONNECTION_PROPERTY = EnumProperty.create("connection", SlabConnection.class);
     public static final VoxelShape[] COLLISION_BOXES = {
-        Shapes.create(0, 0, 0, 1, 1, 0.5),
-        Shapes.create(0.5, 0, 0, 1, 1, 1),
-        Shapes.create(0, 0, 0.5, 1, 1, 1),
-        Shapes.create(0, 0, 0, 0.5, 1, 1),
-        Shapes.block()
+        Shapes.create(0, 0, 0, 1, 1, 0.5), // NORTH
+        Shapes.create(0.5, 0, 0, 1, 1, 1), // EAST
+        Shapes.create(0, 0, 0.5, 1, 1, 1), // SOUTH
+        Shapes.create(0, 0, 0, 0.5, 1, 1), // WEST
+        Shapes.block() // FULL
+    };
+    public static final VoxelShape[] CONNECTED_COLLISION_BOXES = {
+        Shapes.create(0.5, 0, 0.5, 1, 1, 1), // SOUTH
+        Shapes.create(0, 0, 0.5, 0.5, 1, 1), // WEST
+        Shapes.create(0, 0, 0, 0.5, 1, 0.5), // NORTH
+        Shapes.create(0.5, 0, 0, 1, 1, 0.5) // EAST
     };
 
     public VerticalSlabBlock(Properties properties){
         super(properties);
-        this.registerDefaultState(this.defaultBlockState().setValue(STATE_PROPERTY, SlabShape.NORTH).setValue(BlockStateProperties.WATERLOGGED, false));
+        this.registerDefaultState(this.defaultBlockState().setValue(SHAPE_PROPERTY, SlabShape.NORTH).setValue(CONNECTION_PROPERTY, SlabConnection.NONE).setValue(BlockStateProperties.WATERLOGGED, false));
     }
 
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block,BlockState> builder){
-        builder.add(STATE_PROPERTY, BlockStateProperties.WATERLOGGED);
+        builder.add(SHAPE_PROPERTY, CONNECTION_PROPERTY, BlockStateProperties.WATERLOGGED);
     }
 
     @Override
     public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos position, CollisionContext context){
-        return COLLISION_BOXES[state.getValue(STATE_PROPERTY).ordinal()];
+        SlabShape shape = state.getValue(SHAPE_PROPERTY);
+        SlabConnection connection = state.getValue(CONNECTION_PROPERTY);
+        return shape == SlabShape.FULL || connection == SlabConnection.NONE ? COLLISION_BOXES[state.getValue(SHAPE_PROPERTY).ordinal()]
+            : CONNECTED_COLLISION_BOXES[(connection == SlabConnection.LEFT ? shape.direction : shape.direction.getClockWise()).get2DDataValue()];
     }
 
     @Override
     public boolean canBeReplaced(BlockState state, BlockPlaceContext context){
-        SlabShape shape = state.getValue(STATE_PROPERTY);
+        SlabShape shape = state.getValue(SHAPE_PROPERTY);
         if(shape != SlabShape.FULL && context.getItemInHand().is(this.asItem())){
             if(!context.replacingClickedOnBlock() || shape.direction.getOpposite() == context.getClickedFace())
                 return true;
@@ -69,12 +79,28 @@ public class VerticalSlabBlock extends Block implements SimpleWaterloggedBlock {
     @Override
     public BlockState getStateForPlacement(BlockPlaceContext context){
         BlockState oldState = context.getLevel().getBlockState(context.getClickedPos());
-        if(oldState.is(this) && oldState.getValue(STATE_PROPERTY) != SlabShape.FULL){
-            return this.defaultBlockState().setValue(STATE_PROPERTY, SlabShape.FULL).setValue(BlockStateProperties.WATERLOGGED, false);
+        if(oldState.is(this) && oldState.getValue(SHAPE_PROPERTY) != SlabShape.FULL){
+            return this.defaultBlockState().setValue(SHAPE_PROPERTY, SlabShape.FULL).setValue(BlockStateProperties.WATERLOGGED, false);
         }else{
             FluidState fluidState = context.getLevel().getFluidState(context.getClickedPos());
-            return this.defaultBlockState().setValue(STATE_PROPERTY, SlabShape.fromDirection(context.getHorizontalDirection())).setValue(BlockStateProperties.WATERLOGGED, fluidState.getType() == Fluids.WATER);
+            Direction facing = context.getHorizontalDirection();
+            return this.defaultBlockState().setValue(SHAPE_PROPERTY, SlabShape.fromDirection(facing)).setValue(CONNECTION_PROPERTY, getProperConnectionType(context.getLevel(), context.getClickedPos(), facing)).setValue(BlockStateProperties.WATERLOGGED, fluidState.getType() == Fluids.WATER);
         }
+    }
+
+    private static SlabConnection getProperConnectionType(BlockGetter level, BlockPos pos, Direction facing){
+        BlockState backState = level.getBlockState(pos.relative(facing));
+        if(backState.getBlock() instanceof VerticalSlabBlock && backState.getValue(SHAPE_PROPERTY) != SlabShape.FULL){
+            Direction backStateFacing = backState.getValue(SHAPE_PROPERTY).direction;
+            SlabConnection backStateConnection = backState.getValue(CONNECTION_PROPERTY);
+            BlockState leftState = level.getBlockState(pos.relative(facing.getCounterClockWise()));
+            if((!(leftState.getBlock() instanceof VerticalSlabBlock) || !facing.equals(leftState.getValue(SHAPE_PROPERTY).direction)) && backStateFacing.equals(facing.getClockWise()) && (backStateConnection == SlabConnection.NONE || backStateConnection == SlabConnection.RIGHT))
+                return SlabConnection.RIGHT;
+            BlockState rightState = level.getBlockState(pos.relative(facing.getClockWise()));
+            if((!(rightState.getBlock() instanceof VerticalSlabBlock) || !facing.equals(rightState.getValue(SHAPE_PROPERTY).direction)) && backStateFacing.equals(facing.getCounterClockWise()) && (backStateConnection == SlabConnection.NONE || backStateConnection == SlabConnection.LEFT))
+                return SlabConnection.LEFT;
+        }
+        return SlabConnection.NONE;
     }
 
     @Override
@@ -84,12 +110,12 @@ public class VerticalSlabBlock extends Block implements SimpleWaterloggedBlock {
 
     @Override
     public boolean placeLiquid(LevelAccessor level, BlockPos position, BlockState state, FluidState fluidState){
-        return state.getValue(STATE_PROPERTY) != SlabShape.FULL && SimpleWaterloggedBlock.super.placeLiquid(level, position, state, fluidState);
+        return state.getValue(SHAPE_PROPERTY) != SlabShape.FULL && SimpleWaterloggedBlock.super.placeLiquid(level, position, state, fluidState);
     }
 
     @Override
     public boolean canPlaceLiquid(BlockGetter level, BlockPos position, BlockState state, Fluid fluid){
-        return state.getValue(STATE_PROPERTY) != SlabShape.FULL && SimpleWaterloggedBlock.super.canPlaceLiquid(level, position, state, fluid);
+        return state.getValue(SHAPE_PROPERTY) != SlabShape.FULL && SimpleWaterloggedBlock.super.canPlaceLiquid(level, position, state, fluid);
     }
 
     @Override
@@ -97,7 +123,8 @@ public class VerticalSlabBlock extends Block implements SimpleWaterloggedBlock {
         if(state.getValue(BlockStateProperties.WATERLOGGED)){
             level.scheduleTick(position, Fluids.WATER, Fluids.WATER.getTickDelay(level));
         }
-        return super.updateShape(state, direction, state2, level, position, position2);
+        SlabShape shape = state.getValue(SHAPE_PROPERTY);
+        return shape == SlabShape.FULL ? super.updateShape(state, direction, state2, level, position, position2) : state.setValue(CONNECTION_PROPERTY, getProperConnectionType(level, position, shape.direction));
     }
 
     @Override
@@ -134,6 +161,15 @@ public class VerticalSlabBlock extends Block implements SimpleWaterloggedBlock {
                     return value;
             }
             return null;
+        }
+    }
+
+    public enum SlabConnection implements StringRepresentable {
+        LEFT, RIGHT, NONE;
+
+        @Override
+        public String getSerializedName(){
+            return this.name().toLowerCase(Locale.ROOT);
         }
     }
 }

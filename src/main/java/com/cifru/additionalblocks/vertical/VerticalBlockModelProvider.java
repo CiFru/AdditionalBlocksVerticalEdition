@@ -15,6 +15,7 @@ public class VerticalBlockModelProvider extends BlockModelProvider {
         for (VerticalBlockType value : VerticalBlockType.ALL.values()) {
             this.withExistingParent(value.slabRegistryName.getPath(), new ResourceLocation("abverticaledition", "block/vertical_slab")).texture("all", value.texture);
             this.withExistingParent(value.slabRegistryName.getPath() + "_full", new ResourceLocation("minecraft", "block/cube_all")).texture("all", value.texture);
+            this.withExistingParent(value.slabRegistryName.getPath() + "_post", new ResourceLocation("abverticaledition", "block/vertical_slab_post")).texture("all", value.texture);
             this.withExistingParent(value.stairRegistryName.getPath(), new ResourceLocation("abverticaledition", "block/vertical_stair")).texture("all", value.texture);
         }
     }
