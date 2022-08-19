@@ -19,18 +19,29 @@ public class VerticalRecipeProvider extends RecipeProvider {
 
     @Override
     protected void buildCraftingRecipes(Consumer<FinishedRecipe> recipeConsumer) {
-        for (VerticalSlabType value : VerticalSlabType.ALL.values()) {
-            ShapedRecipeBuilder.shaped(ForgeRegistries.BLOCKS.getValue(value.registryName), 6)
+        for (VerticalBlockType value : VerticalBlockType.ALL.values()) {
+            ShapedRecipeBuilder.shaped(value.getSlab(), 6)
                     .pattern("X")
                     .pattern("X")
                     .pattern("X")
                     .define('X', value.recipeBlock.get())
                     .unlockedBy("has_item", has(value.recipeBlock.get()))
                     .save(recipeConsumer);
-            if(value.hasStoneCutterRecipe)
-                SingleItemRecipeBuilder.stonecutting(Ingredient.of(value.recipeBlock.get()),ForgeRegistries.BLOCKS.getValue(value.registryName),2)
+            ShapedRecipeBuilder.shaped(value.getStair(), 4)
+                    .pattern("XXX")
+                    .pattern(" XX")
+                    .pattern("  X")
+                    .define('X', value.recipeBlock.get())
+                    .unlockedBy("has_item", has(value.recipeBlock.get()))
+                    .save(recipeConsumer);
+            if(value.hasStoneCutterRecipe) {
+                SingleItemRecipeBuilder.stonecutting(Ingredient.of(value.recipeBlock.get()), value.getSlab(), 2)
                         .unlockedBy("has_item", has(value.recipeBlock.get()))
-                        .save(recipeConsumer, new ResourceLocation("abverticaledition", value.registryName.getPath() + "_stonecutting"));
+                        .save(recipeConsumer, new ResourceLocation("abverticaledition", value.slabRegistryName.getPath() + "_stonecutting"));
+                SingleItemRecipeBuilder.stonecutting(Ingredient.of(value.recipeBlock.get()), value.getStair(), 1)
+                        .unlockedBy("has_item", has(value.recipeBlock.get()))
+                        .save(recipeConsumer, new ResourceLocation("abverticaledition", value.stairRegistryName.getPath() + "_stonecutting"));
+            }
         }
     }
 }

@@ -12,8 +12,9 @@ public class VerticalItemModelProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
-        for (VerticalSlabType value : VerticalSlabType.ALL.values()) {
-            this.withExistingParent(value.registryName.getPath(), new ResourceLocation("abverticaledition", "block/" + value.registryName.getPath()));
+        for (VerticalBlockType value : VerticalBlockType.ALL.values()) {
+            this.withExistingParent(value.slabRegistryName.getPath(), new ResourceLocation("abverticaledition", "block/" + value.slabRegistryName.getPath()));
+            this.withExistingParent(value.stairRegistryName.getPath(), new ResourceLocation("abverticaledition", "block/" + value.stairRegistryName.getPath()));
         }
     }
 }

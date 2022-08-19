@@ -1,2 +1,5 @@
-// 1.19.2	2022-08-17T16:58:39.7057533	Block States: abverticaledition
-39fa96f5cc0bcdf5e710ca2b6efe42b49d36e3bf assets/abverticaledition/blockstates/stone_vertical_slab.json
+// 1.19.2	2022-08-18T21:36:52.5139755	Block States: abverticaledition
+ac19ac1884aa89d07045db34550d27c969551d03 assets/abverticaledition/blockstates/stone_brick_vertical_slab.json
+f99328272e0407ffd157d05be50ac08425dd92ef assets/abverticaledition/blockstates/stone_brick_vertical_stair.json
+cc88d8374e8f02c9f67cee0a13a47d09edae6e93 assets/abverticaledition/blockstates/stone_vertical_slab.json
+0c16332ff58b600224b386544381eb4436d761a7 assets/abverticaledition/blockstates/stone_vertical_stair.json

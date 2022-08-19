@@ -12,8 +12,11 @@ public class VerticalLanguageProvider extends LanguageProvider {
 
     @Override
     protected void addTranslations() {
-        for (VerticalSlabType value : VerticalSlabType.ALL.values()) {
-            this.add(ForgeRegistries.BLOCKS.getValue(value.registryName), value.translation);
+        this.add("itemGroup.abverticaledition", "Additional Blocks: Vertical Edition");
+
+        for (VerticalBlockType value : VerticalBlockType.ALL.values()) {
+            this.add(value.getSlab(), value.slabTranslation);
+            this.add(value.getStair(), value.stairTranslation);
         }
     }
 }

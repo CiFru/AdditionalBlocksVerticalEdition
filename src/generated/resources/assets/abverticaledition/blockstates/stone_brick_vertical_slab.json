@@ -1,0 +1,26 @@
+{
+  "variants": {
+    "state=east": {
+      "model": "abverticaledition:block/stone_brick_vertical_slab",
+      "uvlock": true,
+      "y": 90
+    },
+    "state=full": {
+      "model": "abverticaledition:block/stone_brick_vertical_slab_full"
+    },
+    "state=north": {
+      "model": "abverticaledition:block/stone_brick_vertical_slab",
+      "uvlock": true
+    },
+    "state=south": {
+      "model": "abverticaledition:block/stone_brick_vertical_slab",
+      "uvlock": true,
+      "y": -180
+    },
+    "state=west": {
+      "model": "abverticaledition:block/stone_brick_vertical_slab",
+      "uvlock": true,
+      "y": -90
+    }
+  }
+}

@@ -25,10 +25,10 @@ import org.jetbrains.annotations.Nullable;
 public class VerticalStairBlock extends Block implements SimpleWaterloggedBlock {
     public static final EnumProperty<Direction> DIRECTION_PROPERTY = EnumProperty.create("state", Direction.class, Direction.NORTH, Direction.EAST, Direction.SOUTH, Direction.WEST);
     public static final VoxelShape[] COLLISION_BOXES = {
-            Shapes.or(Shapes.create(0, 0, 0, 1, 1, 0.5), Shapes.create(0.5, 0, 0, 1, 1, 1)),
-            Shapes.or(Shapes.create(0.5, 0, 0, 1, 1, 1), Shapes.create(0, 0, 0.5, 1, 1, 1)),
             Shapes.or(Shapes.create(0, 0, 0.5, 1, 1, 1), Shapes.create(0, 0, 0, 0.5, 1, 1)),
             Shapes.or(Shapes.create(0, 0, 0, 0.5, 1, 1), Shapes.create(0, 0, 0, 1, 1, 0.5)),
+            Shapes.or(Shapes.create(0, 0, 0, 1, 1, 0.5), Shapes.create(0.5, 0, 0, 1, 1, 1)),
+            Shapes.or(Shapes.create(0.5, 0, 0, 1, 1, 1), Shapes.create(0, 0, 0.5, 1, 1, 1)),
     };
 
     public VerticalStairBlock(BlockBehaviour.Properties properties) {
@@ -43,14 +43,14 @@ public class VerticalStairBlock extends Block implements SimpleWaterloggedBlock 
 
     @Override
     public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos position, CollisionContext context) {
-        return COLLISION_BOXES[state.getValue(DIRECTION_PROPERTY).ordinal()];
+        return COLLISION_BOXES[state.getValue(DIRECTION_PROPERTY).get2DDataValue()];
     }
 
     @Nullable
     @Override
     public BlockState getStateForPlacement(BlockPlaceContext context) {
         FluidState fluidstate = context.getLevel().getFluidState(context.getClickedPos());
-        return this.defaultBlockState().setValue(DIRECTION_PROPERTY, Direction.fromYRot(context.getRotation())).setValue(BlockStateProperties.WATERLOGGED, fluidstate.getType() == Fluids.WATER);
+        return this.defaultBlockState().setValue(DIRECTION_PROPERTY, Direction.fromYRot(context.getRotation()-45)).setValue(BlockStateProperties.WATERLOGGED, fluidstate.getType() == Fluids.WATER);
     }
 
     @Override

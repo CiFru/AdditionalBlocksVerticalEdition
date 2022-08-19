@@ -1,45 +1,23 @@
 {
   "variants": {
-    "state=east,waterlogged=false": {
+    "state=east": {
       "model": "abverticaledition:block/stone_vertical_slab",
       "uvlock": true,
       "y": 90
     },
-    "state=east,waterlogged=true": {
-      "model": "abverticaledition:block/stone_vertical_slab",
-      "uvlock": true,
-      "y": 90
-    },
-    "state=full,waterlogged=false": {
+    "state=full": {
       "model": "abverticaledition:block/stone_vertical_slab_full"
     },
-    "state=full,waterlogged=true": {
-      "model": "abverticaledition:block/stone_vertical_slab_full"
-    },
-    "state=north,waterlogged=false": {
+    "state=north": {
       "model": "abverticaledition:block/stone_vertical_slab",
       "uvlock": true
     },
-    "state=north,waterlogged=true": {
-      "model": "abverticaledition:block/stone_vertical_slab",
-      "uvlock": true
-    },
-    "state=south,waterlogged=false": {
+    "state=south": {
       "model": "abverticaledition:block/stone_vertical_slab",
       "uvlock": true,
       "y": -180
     },
-    "state=south,waterlogged=true": {
-      "model": "abverticaledition:block/stone_vertical_slab",
-      "uvlock": true,
-      "y": -180
-    },
-    "state=west,waterlogged=false": {
-      "model": "abverticaledition:block/stone_vertical_slab",
-      "uvlock": true,
-      "y": -90
-    },
-    "state=west,waterlogged=true": {
+    "state=west": {
       "model": "abverticaledition:block/stone_vertical_slab",
       "uvlock": true,
       "y": -90

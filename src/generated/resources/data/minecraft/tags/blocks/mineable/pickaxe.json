@@ -1,5 +1,8 @@
 {
   "values": [
-    "abverticaledition:stone_vertical_slab"
+    "abverticaledition:stone_vertical_slab",
+    "abverticaledition:stone_vertical_stair",
+    "abverticaledition:stone_brick_vertical_slab",
+    "abverticaledition:stone_brick_vertical_stair"
   ]
 }

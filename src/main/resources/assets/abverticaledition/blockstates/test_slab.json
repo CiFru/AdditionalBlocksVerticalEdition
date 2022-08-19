@@ -1,9 +1,0 @@
-{
-  "variants": {
-    "state=north": { "model": "abverticaledition:block/test_slab", "uvlock": true },
-    "state=east": { "model": "abverticaledition:block/test_slab", "uvlock": true, "y": 90 },
-    "state=south": { "model": "abverticaledition:block/test_slab", "uvlock": true, "y": 180 },
-    "state=west": { "model": "abverticaledition:block/test_slab", "uvlock": true, "y": 270 },
-    "state=full": { "model": "abverticaledition:block/test_slab_full", "uvlock": true }
-  }
-}

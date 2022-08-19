@@ -12,9 +12,10 @@ public class VerticalBlockModelProvider extends BlockModelProvider {
 
     @Override
     protected void registerModels() {
-        for (VerticalSlabType value : VerticalSlabType.ALL.values()) {
-            this.withExistingParent(value.registryName.getPath(), new ResourceLocation("abverticaledition", "block/vertical_slab")).texture("all", new ResourceLocation("minecraft", "block/stone"));
-            this.withExistingParent(value.registryName.getPath() + "_full", new ResourceLocation("minecraft", "block/cube_all")).texture("all", new ResourceLocation("minecraft", "block/stone"));
+        for (VerticalBlockType value : VerticalBlockType.ALL.values()) {
+            this.withExistingParent(value.slabRegistryName.getPath(), new ResourceLocation("abverticaledition", "block/vertical_slab")).texture("all", value.texture);
+            this.withExistingParent(value.slabRegistryName.getPath() + "_full", new ResourceLocation("minecraft", "block/cube_all")).texture("all", value.texture);
+            this.withExistingParent(value.stairRegistryName.getPath(), new ResourceLocation("abverticaledition", "block/vertical_stair")).texture("all", value.texture);
         }
     }
 }

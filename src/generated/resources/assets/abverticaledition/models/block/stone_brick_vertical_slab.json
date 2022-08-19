@@ -1,6 +1,6 @@
 {
   "parent": "abverticaledition:block/vertical_slab",
   "textures": {
-    "all": "minecraft:block/stone"
+    "all": "minecraft:block/stone_bricks"
   }
 }

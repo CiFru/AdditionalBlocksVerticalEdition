@@ -22,7 +22,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 public class VerticalTagsProvider extends BlockTagsProvider {
     private static final Gson GSON = new GsonBuilder().create();
@@ -43,10 +42,12 @@ public class VerticalTagsProvider extends BlockTagsProvider {
                 BlockTags.NEEDS_STONE_TOOL
         );
 
-        for (VerticalSlabType value : VerticalSlabType.ALL.values()) {
+        for (VerticalBlockType value : VerticalBlockType.ALL.values()) {
             for (TagKey<Block> tag : tags) {
-                if (loadVanillaTag(tag.location()).contains(value.parentBlock.get()))
-                    this.tag(tag).replace(false).add(ForgeRegistries.BLOCKS.getValue(value.registryName));
+                if (loadVanillaTag(tag.location()).contains(value.parentSlabBlock.get()))
+                    this.tag(tag).replace(false).add(value.getSlab());
+                if (loadVanillaTag(tag.location()).contains(value.parentStairBlock.get()))
+                    this.tag(tag).replace(false).add(value.getStair());
             }
         }
     }

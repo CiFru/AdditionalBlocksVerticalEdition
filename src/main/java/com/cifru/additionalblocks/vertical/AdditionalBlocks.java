@@ -4,10 +4,10 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.material.Material;
 import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
@@ -24,25 +24,19 @@ import java.util.function.Supplier;
 @Mod("abverticaledition")
 public class AdditionalBlocks {
 
-    @ObjectHolder(value = "test_stair", registryName = "minecraft:block")
-    public static VerticalStairBlock test_stair;
+    public static final CreativeModeTab GROUP = new CreativeModeTab("abverticaledition") {
+        @Override
+        public ItemStack makeIcon() {
+            return new ItemStack(stone_brick_vertical_slab);
+        }
+    };
+
+    @ObjectHolder(value = "stone_brick_vertical_slab", registryName = "minecraft:block")
+    public static Block stone_brick_vertical_slab;
 
     public AdditionalBlocks() {
         FMLJavaModLoadingContext.get().getModEventBus().addListener(AdditionalBlocks::onRegisterEvent);
         FMLJavaModLoadingContext.get().getModEventBus().addListener(AdditionalBlocks::onGatherDataEvent);
-        this.registerSlabs();
-    }
-
-    private void registerSlabs() {
-        this.createSlab("stone_vertical_slab", "Vertical Stone Slab", () -> Blocks.STONE_SLAB, () -> Blocks.STONE, true, new ResourceLocation("minecraft", "block/stone"));
-    }
-
-    private void createSlab(String registryName, String translation, Supplier<Block> parentBlock, Supplier<Block> recipeBlock, boolean hasStoneCutterRecipe, ResourceLocation texture) {
-        ResourceLocation resourceLocation = new ResourceLocation("abverticaledition", registryName);
-        if (VerticalSlabType.ALL.containsKey(resourceLocation))
-            throw new RuntimeException("Tried to register two slab types with registry name '" + registryName + "'!");
-
-        VerticalSlabType.ALL.put(resourceLocation, new VerticalSlabType(resourceLocation, translation, parentBlock, recipeBlock, hasStoneCutterRecipe, texture));
     }
 
     private static void onRegisterEvent(RegisterEvent e) {
@@ -53,17 +47,17 @@ public class AdditionalBlocks {
     }
 
     private static void registerBlocks(IForgeRegistry<Block> registry) {
-        for (VerticalSlabType value : VerticalSlabType.ALL.values()) {
-            registry.register(value.registryName, new VerticalSlabBlock(BlockBehaviour.Properties.copy(value.parentBlock.get())));
+        for (VerticalBlockType value : VerticalBlockType.ALL.values()) {
+            registry.register(value.slabRegistryName, new VerticalSlabBlock(BlockBehaviour.Properties.copy(value.parentSlabBlock.get())));
+            registry.register(value.stairRegistryName, new VerticalStairBlock(BlockBehaviour.Properties.copy(value.parentStairBlock.get())));
         }
-        registry.register("test_stair", new VerticalStairBlock(BlockBehaviour.Properties.of(Material.STONE)));
     }
 
     private static void registerItems(IForgeRegistry<Item> registry) {
-        for (VerticalSlabType value : VerticalSlabType.ALL.values()) {
-            registry.register(value.registryName, new BlockItem(ForgeRegistries.BLOCKS.getValue(value.registryName), new Item.Properties().tab(CreativeModeTab.TAB_BUILDING_BLOCKS)));
+        for (VerticalBlockType value : VerticalBlockType.ALL.values()) {
+            registry.register(value.slabRegistryName, new BlockItem(value.getSlab(), new Item.Properties().tab(GROUP)));
+            registry.register(value.stairRegistryName, new BlockItem(value.getStair(), new Item.Properties().tab(GROUP)));
         }
-        registry.register("test_stair", new BlockItem(test_stair, new Item.Properties()));
     }
 
     private static void onGatherDataEvent(GatherDataEvent e) {
