@@ -6,13 +6,16 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.fml.ModList;
 import net.minecraftforge.registries.ForgeRegistries;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.function.Supplier;
 
 public class VerticalBlockType {
 
     public static final Map<ResourceLocation,VerticalBlockType> ALL = new HashMap<>();
+    public static final List<VerticalBlockType> ALL_ORDERED = new ArrayList<>();
 
     //cut copper
     public static final VerticalBlockType CUT_COPPER = createBlockType("cut_copper", "Cut Copper", () -> Blocks.CUT_COPPER_SLAB, () -> Blocks.CUT_COPPER_STAIRS, () -> Blocks.CUT_COPPER, true, new ResourceLocation("minecraft", "block/cut_copper"));
@@ -90,11 +93,12 @@ public class VerticalBlockType {
 
     private static VerticalBlockType createBlockType(String registryName, String translation, Supplier<Block> parentSlabBlock, Supplier<Block> parentStairBlock, Supplier<Block> recipeBlock, boolean hasStoneCutterRecipe, ResourceLocation texture){
         ResourceLocation resourceLocation = new ResourceLocation("abverticaledition", registryName);
-        if(VerticalBlockType.ALL.containsKey(resourceLocation))
+        if(ALL.containsKey(resourceLocation))
             throw new RuntimeException("Tried to register two block types with registry name '" + registryName + "'!");
 
         VerticalBlockType type = new VerticalBlockType(resourceLocation, translation, parentSlabBlock, parentStairBlock, recipeBlock, hasStoneCutterRecipe, texture);
-        VerticalBlockType.ALL.put(resourceLocation, type);
+        ALL.put(resourceLocation, type);
+        ALL_ORDERED.add(type);
         return type;
     }
 
