@@ -1,12 +1,11 @@
 package com.cifru.additionalblocks.vertical;
 
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.core.NonNullList;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -15,8 +14,6 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.IForgeRegistry;
 import net.minecraftforge.registries.ObjectHolder;
 import net.minecraftforge.registries.RegisterEvent;
-
-import java.util.function.Supplier;
 
 /**
  * Created 18/03/2022 by SuperMartijn642
@@ -28,6 +25,12 @@ public class AdditionalBlocks {
         @Override
         public ItemStack makeIcon() {
             return new ItemStack(stone_brick_vertical_slab);
+        }
+
+        @Override
+        public void fillItemList(NonNullList<ItemStack> items){
+            super.fillItemList(items);
+            items.sort((stack1, stack2) -> Boolean.compare(stack1.getItem() instanceof BlockItem && ((BlockItem)stack1.getItem()).getBlock() instanceof VerticalSlabBlock, stack2.getItem() instanceof BlockItem && ((BlockItem)stack2.getItem()).getBlock() instanceof VerticalSlabBlock));
         }
     };
 
