@@ -40,9 +40,9 @@ public class VerticalBlockType {
     public static final VerticalBlockType STONE = createBlockType("stone", "Stone", () -> Blocks.STONE_SLAB, () -> Blocks.STONE_STAIRS, () -> Blocks.STONE, true, new ResourceLocation("minecraft", "block/stone"));
 
     public static final VerticalBlockType SANDSTONE = createBlockType("sandstone", "Sandstone", () -> Blocks.SANDSTONE_SLAB, () -> Blocks.SANDSTONE_STAIRS, () -> Blocks.SANDSTONE, true, new ResourceLocation("minecraft", "block/sandstone"));
-    public static final VerticalBlockType SMOOTH_SANDSTONE = createBlockType("smooth_sandstone", "Smooth Sandstone", () -> Blocks.SMOOTH_SANDSTONE_SLAB, () -> Blocks.SMOOTH_SANDSTONE_STAIRS, () -> Blocks.SMOOTH_SANDSTONE, true, new ResourceLocation("minecraft", "block/smooth_sandstone"));
+    public static final VerticalBlockType SMOOTH_SANDSTONE = createBlockType("smooth_sandstone", "Smooth Sandstone", () -> Blocks.SMOOTH_SANDSTONE_SLAB, () -> Blocks.SMOOTH_SANDSTONE_STAIRS, () -> Blocks.SMOOTH_SANDSTONE, true, new ResourceLocation("minecraft", "block/sandstone_top"));
     public static final VerticalBlockType RED_SANDSTONE = createBlockType("red_sandstone", "Red Sandstone", () -> Blocks.RED_SANDSTONE_SLAB, () -> Blocks.RED_SANDSTONE_STAIRS, () -> Blocks.RED_SANDSTONE, true, new ResourceLocation("minecraft", "block/red_sandstone"));
-    public static final VerticalBlockType SMOOTH_RED_SANDSTONE = createBlockType("smooth_red_sandstone", "Smooth Red Sandstone", () -> Blocks.SMOOTH_RED_SANDSTONE_SLAB, () -> Blocks.SMOOTH_RED_SANDSTONE_STAIRS, () -> Blocks.SMOOTH_RED_SANDSTONE, true, new ResourceLocation("minecraft", "block/smooth_red_sandstone"));
+    public static final VerticalBlockType SMOOTH_RED_SANDSTONE = createBlockType("smooth_red_sandstone", "Smooth Red Sandstone", () -> Blocks.SMOOTH_RED_SANDSTONE_SLAB, () -> Blocks.SMOOTH_RED_SANDSTONE_STAIRS, () -> Blocks.SMOOTH_RED_SANDSTONE, true, new ResourceLocation("minecraft", "block/red_sandstone_top"));
 
     public static final VerticalBlockType STONE_BRICKS = createBlockType("stone_brick", "Stone Brick", () -> Blocks.STONE_BRICK_SLAB, () -> Blocks.STONE_BRICK_STAIRS, () -> Blocks.STONE_BRICKS, true, new ResourceLocation("minecraft", "block/stone_bricks"));
     public static final VerticalBlockType MOSSY_STONE_BRICKS = createBlockType("mossy_stone_brick", "Mossy Stone Brick", () -> Blocks.MOSSY_STONE_BRICK_SLAB, () -> Blocks.MOSSY_STONE_BRICK_STAIRS, () -> Blocks.MOSSY_STONE_BRICKS, true, new ResourceLocation("minecraft", "block/mossy_stone_bricks"));
@@ -54,7 +54,7 @@ public class VerticalBlockType {
     public static final VerticalBlockType MUD_BRICK = createBlockType("mud_brick", "Mud Brick", () -> Blocks.MUD_BRICK_SLAB, () -> Blocks.MUD_BRICK_STAIRS, () -> Blocks.MUD_BRICKS, true, new ResourceLocation("minecraft", "block/mud_bricks"));
 
     public static final VerticalBlockType QUARTZ = createBlockType("quartz", "Quartz", () -> Blocks.QUARTZ_SLAB, () -> Blocks.QUARTZ_STAIRS, () -> Blocks.QUARTZ_BLOCK, true, new ResourceLocation("minecraft", "block/quartz_block_side"));
-    public static final VerticalBlockType SMOOTH_QUARTZ = createBlockType("smooth_quartz", "Smooth Quartz", () -> Blocks.SMOOTH_QUARTZ_SLAB, () -> Blocks.SMOOTH_QUARTZ_STAIRS, () -> Blocks.SMOOTH_QUARTZ, true, new ResourceLocation("minecraft", "block/smooth_quartz"));
+    public static final VerticalBlockType SMOOTH_QUARTZ = createBlockType("smooth_quartz", "Smooth Quartz", () -> Blocks.SMOOTH_QUARTZ_SLAB, () -> Blocks.SMOOTH_QUARTZ_STAIRS, () -> Blocks.SMOOTH_QUARTZ, true, new ResourceLocation("minecraft", "block/quartz_block_bottom"));
 
     //ADG types
     public static final VerticalBlockType ANDESITE = createBlockType("andesite", "Andesite", () -> Blocks.ANDESITE_SLAB, () -> Blocks.ANDESITE_STAIRS, () -> Blocks.ANDESITE, true, new ResourceLocation("minecraft", "block/andesite"));
