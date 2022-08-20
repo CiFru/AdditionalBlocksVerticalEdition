@@ -18,6 +18,7 @@ import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.ForgeRegistries;
 import org.jetbrains.annotations.Nullable;
 
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.lang.reflect.Field;
@@ -85,25 +86,29 @@ public class VerticalTagsProvider extends BlockTagsProvider {
         List<Block> blocks = new ArrayList<>();
 
         MultiPackResourceManager resourceManager = SERVER_DATA_FIELD.apply(this.existingFileHelper);
-        for (Resource resource : resourceManager.getResourceStack(new ResourceLocation(location.getNamespace(), "tags/blocks/" + location.getPath() + ".json"))) {
-            try (InputStream stream = resource.open()) {
-                JsonObject json = GSON.fromJson(new InputStreamReader(stream), JsonObject.class);
-                JsonArray array = json.getAsJsonArray("values");
-                for (JsonElement element : array) {
-                    String name = element.getAsString();
-                    if (name.charAt(0) == '#') {
-                        blocks.addAll(this.loadVanillaTag(new ResourceLocation(name.substring(1))));
-                        continue;
+        try {
+            for (Resource resource : resourceManager.getResources(new ResourceLocation(location.getNamespace(), "tags/blocks/" + location.getPath() + ".json"))) {
+                try (InputStream stream = resource.getInputStream()) {
+                    JsonObject json = GSON.fromJson(new InputStreamReader(stream), JsonObject.class);
+                    JsonArray array = json.getAsJsonArray("values");
+                    for (JsonElement element : array) {
+                        String name = element.getAsString();
+                        if (name.charAt(0) == '#') {
+                            blocks.addAll(this.loadVanillaTag(new ResourceLocation(name.substring(1))));
+                            continue;
+                        }
+                        ResourceLocation registryName = new ResourceLocation(name);
+                        Block block = ForgeRegistries.BLOCKS.getValue(registryName);
+                        if (block == null)
+                            throw new JsonParseException("Unknown block '" + registryName + "' in '" + location + "'");
+                        blocks.add(block);
                     }
-                    ResourceLocation registryName = new ResourceLocation(name);
-                    Block block = ForgeRegistries.BLOCKS.getValue(registryName);
-                    if (block == null)
-                        throw new JsonParseException("Unknown block '" + registryName + "' in '" + location + "'");
-                    blocks.add(block);
+                } catch (Exception e) {
+                    e.printStackTrace();
                 }
-            } catch (Exception e) {
-                e.printStackTrace();
             }
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
 
         this.loadedTags.put(location, blocks);
