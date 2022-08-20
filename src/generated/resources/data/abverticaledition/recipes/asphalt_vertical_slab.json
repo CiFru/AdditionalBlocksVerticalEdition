@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "X": {
+      "item": "abstoneedition:asphalt"
+    }
+  },
+  "pattern": [
+    "X",
+    "X",
+    "X"
+  ],
+  "result": {
+    "count": 6,
+    "item": "abverticaledition:asphalt_vertical_slab"
+  }
+}

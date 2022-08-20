@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "X": {
+      "item": "abstoneedition:old_stone_pattern"
+    }
+  },
+  "pattern": [
+    "XXX",
+    " XX",
+    "  X"
+  ],
+  "result": {
+    "count": 4,
+    "item": "abverticaledition:old_stone_pattern_vertical_stair"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "abstoneedition:volcanic_stone_bricks"
+  },
+  "result": "abverticaledition:volcanic_stone_bricks_vertical_stair"
+}

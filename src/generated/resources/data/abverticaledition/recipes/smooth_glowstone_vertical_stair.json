@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "X": {
+      "item": "abstoneedition:smooth_glowstone"
+    }
+  },
+  "pattern": [
+    "XXX",
+    " XX",
+    "  X"
+  ],
+  "result": {
+    "count": 4,
+    "item": "abverticaledition:smooth_glowstone_vertical_stair"
+  }
+}

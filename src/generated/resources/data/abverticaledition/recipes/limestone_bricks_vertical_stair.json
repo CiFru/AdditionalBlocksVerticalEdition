@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "X": {
+      "item": "abstoneedition:limestone_bricks"
+    }
+  },
+  "pattern": [
+    "XXX",
+    " XX",
+    "  X"
+  ],
+  "result": {
+    "count": 4,
+    "item": "abverticaledition:limestone_bricks_vertical_stair"
+  }
+}

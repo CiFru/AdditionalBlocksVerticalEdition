@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "X": {
+      "item": "abstoneedition:brown_stone_path_straight"
+    }
+  },
+  "pattern": [
+    "XXX",
+    " XX",
+    "  X"
+  ],
+  "result": {
+    "count": 4,
+    "item": "abverticaledition:brown_stone_path_straight_vertical_stair"
+  }
+}

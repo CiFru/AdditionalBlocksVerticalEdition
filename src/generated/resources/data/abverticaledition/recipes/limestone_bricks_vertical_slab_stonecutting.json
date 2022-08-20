@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 2,
+  "ingredient": {
+    "item": "abstoneedition:limestone_bricks"
+  },
+  "result": "abverticaledition:limestone_bricks_vertical_slab"
+}

@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 2,
+  "ingredient": {
+    "item": "abstoneedition:brown_stone_pattern"
+  },
+  "result": "abverticaledition:brown_stone_pattern_vertical_slab"
+}

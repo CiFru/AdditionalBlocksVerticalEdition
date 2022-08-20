@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "abstoneedition:smooth_limestone"
+  },
+  "result": "abverticaledition:smooth_limestone_vertical_stair"
+}

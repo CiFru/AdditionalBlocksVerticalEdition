@@ -117,7 +117,7 @@ public class VerticalBlockType {
     public static final VerticalBlockType GRAY_BRICKS = createBlockTypeForOtherMod("abstoneedition", "gray_bricks", "Gray Brick", "gray_bricks_slab", "gray_bricks_stairs", "gray_bricks", true, new ResourceLocation("abstoneedition", "gray_bricks"));
 
     //Minecraft Variations
-    public static final VerticalBlockType GLOWSTONE = createBlockTypeForOtherMod("abstoneedition", "glowstone", "Glowstone", "glowstone_slab", "glowstone_stairs", "glowstone", true, new ResourceLocation("minecraft", "glowstone"));
+    public static final VerticalBlockType GLOWSTONE = createBlockTypeForOtherMod("abstoneedition", "glowstone", "Glowstone", "glowstone_slab", "glowstone_stairs", "minecraft:glowstone", true, new ResourceLocation("minecraft", "block/glowstone"));
     public static final VerticalBlockType GLOWSTONE_BRICKS = createBlockTypeForOtherMod("abstoneedition", "glowstone_bricks", "Glowstone Brick", "glowstone_bricks_slab", "glowstone_bricks_stairs", "glowstone_bricks", true, new ResourceLocation("abstoneedition", "glowstone_bricks"));
     public static final VerticalBlockType SMOOTH_GLOWSTONE = createBlockTypeForOtherMod("abstoneedition", "smooth_glowstone", "Smooth Glowstone", "smooth_glowstone_slab", "smooth_glowstone_stairs", "smooth_glowstone", true, new ResourceLocation("abstoneedition", "smooth_glowstone"));
     public static final VerticalBlockType STONE_BRICK_BLOCK = createBlockTypeForOtherMod("abstoneedition", "stone_brick_block", "Stone Brick Block", "stone_brick_block_slab", "stone_brick_block_stairs", "stone_brick_block", true, new ResourceLocation("abstoneedition", "stone_brick_block"));

@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 2,
+  "ingredient": {
+    "item": "abstoneedition:charred_planks"
+  },
+  "result": "abverticaledition:charred_vertical_slab"
+}

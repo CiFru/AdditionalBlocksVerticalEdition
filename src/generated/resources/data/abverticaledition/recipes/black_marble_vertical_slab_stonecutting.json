@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 2,
+  "ingredient": {
+    "item": "abstoneedition:black_marble"
+  },
+  "result": "abverticaledition:black_marble_vertical_slab"
+}
