@@ -29,8 +29,8 @@ public class AdditionalBlocks {
 
         @Override
         public void fillItemList(NonNullList<ItemStack> items){
-            super.fillItemList(items);
-            items.sort((stack1, stack2) -> Boolean.compare(stack1.getItem() instanceof BlockItem && ((BlockItem)stack1.getItem()).getBlock() instanceof VerticalSlabBlock, stack2.getItem() instanceof BlockItem && ((BlockItem)stack2.getItem()).getBlock() instanceof VerticalSlabBlock));
+            VerticalBlockType.ALL_ORDERED.stream().map(VerticalBlockType::getStair).map(Block::asItem).map(Item::getDefaultInstance).forEach(items::add);
+            VerticalBlockType.ALL_ORDERED.stream().map(VerticalBlockType::getSlab).map(Block::asItem).map(Item::getDefaultInstance).forEach(items::add);
         }
     };
 
