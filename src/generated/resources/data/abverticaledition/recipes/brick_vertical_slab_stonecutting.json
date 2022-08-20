@@ -1,8 +1,8 @@
 {
   "type": "minecraft:stonecutting",
-  "count": 2,
   "ingredient": {
     "item": "minecraft:bricks"
   },
-  "result": "abverticaledition:brick_vertical_slab"
+  "result": "abverticaledition:brick_vertical_slab",
+  "count": 2
 }

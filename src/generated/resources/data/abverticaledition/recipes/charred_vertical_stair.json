@@ -1,17 +1,17 @@
 {
   "type": "minecraft:crafting_shaped",
-  "key": {
-    "X": {
-      "item": "abstoneedition:charred_planks"
-    }
-  },
   "pattern": [
     "XXX",
     " XX",
     "  X"
   ],
+  "key": {
+    "X": {
+      "item": "abstoneedition:charred_planks"
+    }
+  },
   "result": {
-    "count": 4,
-    "item": "abverticaledition:charred_vertical_stair"
+    "item": "abverticaledition:charred_vertical_stair",
+    "count": 4
   }
 }

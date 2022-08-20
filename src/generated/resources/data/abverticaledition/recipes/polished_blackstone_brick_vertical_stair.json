@@ -1,17 +1,17 @@
 {
   "type": "minecraft:crafting_shaped",
-  "key": {
-    "X": {
-      "item": "minecraft:polished_blackstone_bricks"
-    }
-  },
   "pattern": [
     "XXX",
     " XX",
     "  X"
   ],
+  "key": {
+    "X": {
+      "item": "minecraft:polished_blackstone_bricks"
+    }
+  },
   "result": {
-    "count": 4,
-    "item": "abverticaledition:polished_blackstone_brick_vertical_stair"
+    "item": "abverticaledition:polished_blackstone_brick_vertical_stair",
+    "count": 4
   }
 }

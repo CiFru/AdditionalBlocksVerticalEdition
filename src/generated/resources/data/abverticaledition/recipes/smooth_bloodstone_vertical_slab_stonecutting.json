@@ -1,8 +1,8 @@
 {
   "type": "minecraft:stonecutting",
-  "count": 2,
   "ingredient": {
     "item": "abstoneedition:smooth_bloodstone"
   },
-  "result": "abverticaledition:smooth_bloodstone_vertical_slab"
+  "result": "abverticaledition:smooth_bloodstone_vertical_slab",
+  "count": 2
 }

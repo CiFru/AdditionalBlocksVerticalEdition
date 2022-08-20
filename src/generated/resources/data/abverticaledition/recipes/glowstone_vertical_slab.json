@@ -1,17 +1,17 @@
 {
   "type": "minecraft:crafting_shaped",
-  "key": {
-    "X": {
-      "item": "minecraft:glowstone"
-    }
-  },
   "pattern": [
     "X",
     "X",
     "X"
   ],
+  "key": {
+    "X": {
+      "item": "minecraft:glowstone"
+    }
+  },
   "result": {
-    "count": 6,
-    "item": "abverticaledition:glowstone_vertical_slab"
+    "item": "abverticaledition:glowstone_vertical_slab",
+    "count": 6
   }
 }

@@ -1,17 +1,17 @@
 {
   "type": "minecraft:crafting_shaped",
-  "key": {
-    "X": {
-      "item": "abstoneedition:andesite_bricks"
-    }
-  },
   "pattern": [
     "XXX",
     " XX",
     "  X"
   ],
+  "key": {
+    "X": {
+      "item": "abstoneedition:andesite_bricks"
+    }
+  },
   "result": {
-    "count": 4,
-    "item": "abverticaledition:andesite_bricks_vertical_stair"
+    "item": "abverticaledition:andesite_bricks_vertical_stair",
+    "count": 4
   }
 }

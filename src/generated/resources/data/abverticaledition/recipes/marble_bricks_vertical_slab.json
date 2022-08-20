@@ -1,17 +1,17 @@
 {
   "type": "minecraft:crafting_shaped",
-  "key": {
-    "X": {
-      "item": "abstoneedition:marble_bricks"
-    }
-  },
   "pattern": [
     "X",
     "X",
     "X"
   ],
+  "key": {
+    "X": {
+      "item": "abstoneedition:marble_bricks"
+    }
+  },
   "result": {
-    "count": 6,
-    "item": "abverticaledition:marble_bricks_vertical_slab"
+    "item": "abverticaledition:marble_bricks_vertical_slab",
+    "count": 6
   }
 }

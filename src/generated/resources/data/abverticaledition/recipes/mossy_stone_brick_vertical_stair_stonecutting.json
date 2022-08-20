@@ -1,8 +1,8 @@
 {
   "type": "minecraft:stonecutting",
-  "count": 1,
   "ingredient": {
     "item": "minecraft:mossy_stone_bricks"
   },
-  "result": "abverticaledition:mossy_stone_brick_vertical_stair"
+  "result": "abverticaledition:mossy_stone_brick_vertical_stair",
+  "count": 1
 }

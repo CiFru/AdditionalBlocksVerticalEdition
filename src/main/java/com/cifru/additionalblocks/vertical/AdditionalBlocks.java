@@ -37,8 +37,8 @@ public class AdditionalBlocks {
     public static Block stone_brick_vertical_slab;
 
     public AdditionalBlocks(){
-        FMLJavaModLoadingContext.get().getModEventBus().addListener((RegistryEvent.Register<Block> e) -> registerBlocks(e.getRegistry()));
-        FMLJavaModLoadingContext.get().getModEventBus().addListener((RegistryEvent.Register<Item> e) -> registerItems(e.getRegistry()));
+        FMLJavaModLoadingContext.get().getModEventBus().addGenericListener(Block.class, (RegistryEvent.Register<Block> e) -> registerBlocks(e.getRegistry()));
+        FMLJavaModLoadingContext.get().getModEventBus().addGenericListener(Item.class, (RegistryEvent.Register<Item> e) -> registerItems(e.getRegistry()));
         FMLJavaModLoadingContext.get().getModEventBus().addListener(AdditionalBlocks::onGatherDataEvent);
     }
 

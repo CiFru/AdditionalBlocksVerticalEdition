@@ -1,8 +1,8 @@
 {
   "type": "minecraft:stonecutting",
-  "count": 1,
   "ingredient": {
     "item": "minecraft:mossy_cobblestone"
   },
-  "result": "abverticaledition:mossy_cobblestone_vertical_stair"
+  "result": "abverticaledition:mossy_cobblestone_vertical_stair",
+  "count": 1
 }

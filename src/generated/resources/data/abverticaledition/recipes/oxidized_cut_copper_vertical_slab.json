@@ -1,17 +1,17 @@
 {
   "type": "minecraft:crafting_shaped",
-  "key": {
-    "X": {
-      "item": "minecraft:oxidized_cut_copper"
-    }
-  },
   "pattern": [
     "X",
     "X",
     "X"
   ],
+  "key": {
+    "X": {
+      "item": "minecraft:oxidized_cut_copper"
+    }
+  },
   "result": {
-    "count": 6,
-    "item": "abverticaledition:oxidized_cut_copper_vertical_slab"
+    "item": "abverticaledition:oxidized_cut_copper_vertical_slab",
+    "count": 6
   }
 }

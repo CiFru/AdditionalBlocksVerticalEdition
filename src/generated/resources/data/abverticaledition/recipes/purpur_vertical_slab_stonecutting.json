@@ -1,8 +1,8 @@
 {
   "type": "minecraft:stonecutting",
-  "count": 2,
   "ingredient": {
     "item": "minecraft:purpur_block"
   },
-  "result": "abverticaledition:purpur_vertical_slab"
+  "result": "abverticaledition:purpur_vertical_slab",
+  "count": 2
 }

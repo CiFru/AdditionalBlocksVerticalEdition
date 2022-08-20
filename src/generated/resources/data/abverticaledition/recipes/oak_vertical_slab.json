@@ -1,17 +1,17 @@
 {
   "type": "minecraft:crafting_shaped",
-  "key": {
-    "X": {
-      "item": "minecraft:oak_planks"
-    }
-  },
   "pattern": [
     "X",
     "X",
     "X"
   ],
+  "key": {
+    "X": {
+      "item": "minecraft:oak_planks"
+    }
+  },
   "result": {
-    "count": 6,
-    "item": "abverticaledition:oak_vertical_slab"
+    "item": "abverticaledition:oak_vertical_slab",
+    "count": 6
   }
 }

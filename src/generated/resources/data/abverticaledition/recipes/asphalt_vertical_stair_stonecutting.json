@@ -1,8 +1,8 @@
 {
   "type": "minecraft:stonecutting",
-  "count": 1,
   "ingredient": {
     "item": "abstoneedition:asphalt"
   },
-  "result": "abverticaledition:asphalt_vertical_stair"
+  "result": "abverticaledition:asphalt_vertical_stair",
+  "count": 1
 }

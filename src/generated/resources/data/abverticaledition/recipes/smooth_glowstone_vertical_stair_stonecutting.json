@@ -1,8 +1,8 @@
 {
   "type": "minecraft:stonecutting",
-  "count": 1,
   "ingredient": {
     "item": "abstoneedition:smooth_glowstone"
   },
-  "result": "abverticaledition:smooth_glowstone_vertical_stair"
+  "result": "abverticaledition:smooth_glowstone_vertical_stair",
+  "count": 1
 }

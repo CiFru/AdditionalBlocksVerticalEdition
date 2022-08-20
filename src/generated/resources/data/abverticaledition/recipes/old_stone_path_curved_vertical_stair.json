@@ -1,17 +1,17 @@
 {
   "type": "minecraft:crafting_shaped",
-  "key": {
-    "X": {
-      "item": "abstoneedition:old_stone_path_curved"
-    }
-  },
   "pattern": [
     "XXX",
     " XX",
     "  X"
   ],
+  "key": {
+    "X": {
+      "item": "abstoneedition:old_stone_path_curved"
+    }
+  },
   "result": {
-    "count": 4,
-    "item": "abverticaledition:old_stone_path_curved_vertical_stair"
+    "item": "abverticaledition:old_stone_path_curved_vertical_stair",
+    "count": 4
   }
 }

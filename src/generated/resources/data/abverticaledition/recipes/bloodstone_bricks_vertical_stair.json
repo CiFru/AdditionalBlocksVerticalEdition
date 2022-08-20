@@ -1,17 +1,17 @@
 {
   "type": "minecraft:crafting_shaped",
-  "key": {
-    "X": {
-      "item": "abstoneedition:bloodstone_bricks"
-    }
-  },
   "pattern": [
     "XXX",
     " XX",
     "  X"
   ],
+  "key": {
+    "X": {
+      "item": "abstoneedition:bloodstone_bricks"
+    }
+  },
   "result": {
-    "count": 4,
-    "item": "abverticaledition:bloodstone_bricks_vertical_stair"
+    "item": "abverticaledition:bloodstone_bricks_vertical_stair",
+    "count": 4
   }
 }

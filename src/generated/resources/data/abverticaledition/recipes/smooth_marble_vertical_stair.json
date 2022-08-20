@@ -1,17 +1,17 @@
 {
   "type": "minecraft:crafting_shaped",
-  "key": {
-    "X": {
-      "item": "abstoneedition:smooth_marble"
-    }
-  },
   "pattern": [
     "XXX",
     " XX",
     "  X"
   ],
+  "key": {
+    "X": {
+      "item": "abstoneedition:smooth_marble"
+    }
+  },
   "result": {
-    "count": 4,
-    "item": "abverticaledition:smooth_marble_vertical_stair"
+    "item": "abverticaledition:smooth_marble_vertical_stair",
+    "count": 4
   }
 }

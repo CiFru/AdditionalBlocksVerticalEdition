@@ -1,8 +1,8 @@
 {
   "type": "minecraft:stonecutting",
-  "count": 2,
   "ingredient": {
     "item": "abstoneedition:gray_bricks"
   },
-  "result": "abverticaledition:gray_bricks_vertical_slab"
+  "result": "abverticaledition:gray_bricks_vertical_slab",
+  "count": 2
 }

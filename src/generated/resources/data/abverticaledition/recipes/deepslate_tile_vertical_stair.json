@@ -1,17 +1,17 @@
 {
   "type": "minecraft:crafting_shaped",
-  "key": {
-    "X": {
-      "item": "minecraft:deepslate_tiles"
-    }
-  },
   "pattern": [
     "XXX",
     " XX",
     "  X"
   ],
+  "key": {
+    "X": {
+      "item": "minecraft:deepslate_tiles"
+    }
+  },
   "result": {
-    "count": 4,
-    "item": "abverticaledition:deepslate_tile_vertical_stair"
+    "item": "abverticaledition:deepslate_tile_vertical_stair",
+    "count": 4
   }
 }

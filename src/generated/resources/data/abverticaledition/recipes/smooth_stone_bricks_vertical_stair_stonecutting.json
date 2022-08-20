@@ -1,8 +1,8 @@
 {
   "type": "minecraft:stonecutting",
-  "count": 1,
   "ingredient": {
     "item": "abstoneedition:smooth_stone_bricks"
   },
-  "result": "abverticaledition:smooth_stone_bricks_vertical_stair"
+  "result": "abverticaledition:smooth_stone_bricks_vertical_stair",
+  "count": 1
 }
