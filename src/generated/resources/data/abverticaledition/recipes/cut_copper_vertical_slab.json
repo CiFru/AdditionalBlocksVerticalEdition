@@ -1,17 +1,17 @@
 {
   "type": "minecraft:crafting_shaped",
-  "key": {
-    "X": {
-      "item": "minecraft:cut_copper"
-    }
-  },
   "pattern": [
     "X",
     "X",
     "X"
   ],
+  "key": {
+    "X": {
+      "item": "minecraft:cut_copper"
+    }
+  },
   "result": {
-    "count": 6,
-    "item": "abverticaledition:cut_copper_vertical_slab"
+    "item": "abverticaledition:cut_copper_vertical_slab",
+    "count": 6
   }
 }

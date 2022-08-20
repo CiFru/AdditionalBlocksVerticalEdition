@@ -1,17 +1,17 @@
 {
   "type": "minecraft:crafting_shaped",
-  "key": {
-    "X": {
-      "item": "minecraft:smooth_sandstone"
-    }
-  },
   "pattern": [
     "XXX",
     " XX",
     "  X"
   ],
+  "key": {
+    "X": {
+      "item": "minecraft:smooth_sandstone"
+    }
+  },
   "result": {
-    "count": 4,
-    "item": "abverticaledition:smooth_sandstone_vertical_stair"
+    "item": "abverticaledition:smooth_sandstone_vertical_stair",
+    "count": 4
   }
 }

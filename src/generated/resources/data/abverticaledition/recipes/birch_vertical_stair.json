@@ -1,17 +1,17 @@
 {
   "type": "minecraft:crafting_shaped",
-  "key": {
-    "X": {
-      "item": "minecraft:birch_planks"
-    }
-  },
   "pattern": [
     "XXX",
     " XX",
     "  X"
   ],
+  "key": {
+    "X": {
+      "item": "minecraft:birch_planks"
+    }
+  },
   "result": {
-    "count": 4,
-    "item": "abverticaledition:birch_vertical_stair"
+    "item": "abverticaledition:birch_vertical_stair",
+    "count": 4
   }
 }

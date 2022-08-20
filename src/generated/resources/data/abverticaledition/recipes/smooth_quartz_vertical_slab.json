@@ -1,17 +1,17 @@
 {
   "type": "minecraft:crafting_shaped",
-  "key": {
-    "X": {
-      "item": "minecraft:smooth_quartz"
-    }
-  },
   "pattern": [
     "X",
     "X",
     "X"
   ],
+  "key": {
+    "X": {
+      "item": "minecraft:smooth_quartz"
+    }
+  },
   "result": {
-    "count": 6,
-    "item": "abverticaledition:smooth_quartz_vertical_slab"
+    "item": "abverticaledition:smooth_quartz_vertical_slab",
+    "count": 6
   }
 }

@@ -1,17 +1,17 @@
 {
   "type": "minecraft:crafting_shaped",
-  "key": {
-    "X": {
-      "item": "minecraft:polished_deepslate"
-    }
-  },
   "pattern": [
     "X",
     "X",
     "X"
   ],
+  "key": {
+    "X": {
+      "item": "minecraft:polished_deepslate"
+    }
+  },
   "result": {
-    "count": 6,
-    "item": "abverticaledition:polished_deepslate_vertical_slab"
+    "item": "abverticaledition:polished_deepslate_vertical_slab",
+    "count": 6
   }
 }

@@ -1,17 +1,17 @@
 {
   "type": "minecraft:crafting_shaped",
-  "key": {
-    "X": {
-      "item": "abstoneedition:stone_tiles"
-    }
-  },
   "pattern": [
     "X",
     "X",
     "X"
   ],
+  "key": {
+    "X": {
+      "item": "abstoneedition:stone_tiles"
+    }
+  },
   "result": {
-    "count": 6,
-    "item": "abverticaledition:stone_tiles_vertical_slab"
+    "item": "abverticaledition:stone_tiles_vertical_slab",
+    "count": 6
   }
 }

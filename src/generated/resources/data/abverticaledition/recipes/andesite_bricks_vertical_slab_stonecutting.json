@@ -1,8 +1,8 @@
 {
   "type": "minecraft:stonecutting",
-  "count": 2,
   "ingredient": {
     "item": "abstoneedition:andesite_bricks"
   },
-  "result": "abverticaledition:andesite_bricks_vertical_slab"
+  "result": "abverticaledition:andesite_bricks_vertical_slab",
+  "count": 2
 }

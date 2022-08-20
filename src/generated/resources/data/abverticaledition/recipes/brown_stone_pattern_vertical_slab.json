@@ -1,17 +1,17 @@
 {
   "type": "minecraft:crafting_shaped",
-  "key": {
-    "X": {
-      "item": "abstoneedition:brown_stone_pattern"
-    }
-  },
   "pattern": [
     "X",
     "X",
     "X"
   ],
+  "key": {
+    "X": {
+      "item": "abstoneedition:brown_stone_pattern"
+    }
+  },
   "result": {
-    "count": 6,
-    "item": "abverticaledition:brown_stone_pattern_vertical_slab"
+    "item": "abverticaledition:brown_stone_pattern_vertical_slab",
+    "count": 6
   }
 }

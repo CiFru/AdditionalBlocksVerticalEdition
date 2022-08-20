@@ -1,4 +1,5 @@
 {
+  "replace": false,
   "values": [
     "abverticaledition:birch_vertical_slab",
     "abverticaledition:birch_vertical_stair",
@@ -15,8 +16,6 @@
     "abverticaledition:spruce_vertical_slab",
     "abverticaledition:spruce_vertical_stair",
     "abverticaledition:dark_oak_vertical_slab",
-    "abverticaledition:dark_oak_vertical_stair",
-    "abverticaledition:mangrove_vertical_slab",
-    "abverticaledition:mangrove_vertical_stair"
+    "abverticaledition:dark_oak_vertical_stair"
   ]
 }

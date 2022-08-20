@@ -1,8 +1,8 @@
 {
   "type": "minecraft:stonecutting",
-  "count": 1,
   "ingredient": {
     "item": "abstoneedition:brown_stone_path_curved"
   },
-  "result": "abverticaledition:brown_stone_path_curved_vertical_stair"
+  "result": "abverticaledition:brown_stone_path_curved_vertical_stair",
+  "count": 1
 }

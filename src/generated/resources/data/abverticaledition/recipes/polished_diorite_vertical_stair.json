@@ -1,17 +1,17 @@
 {
   "type": "minecraft:crafting_shaped",
-  "key": {
-    "X": {
-      "item": "minecraft:polished_diorite"
-    }
-  },
   "pattern": [
     "XXX",
     " XX",
     "  X"
   ],
+  "key": {
+    "X": {
+      "item": "minecraft:polished_diorite"
+    }
+  },
   "result": {
-    "count": 4,
-    "item": "abverticaledition:polished_diorite_vertical_stair"
+    "item": "abverticaledition:polished_diorite_vertical_stair",
+    "count": 4
   }
 }

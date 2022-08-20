@@ -2,7 +2,6 @@ package com.cifru.additionalblocks.vertical;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.tags.FluidTags;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.LevelAccessor;
@@ -13,14 +12,14 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
-import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.level.pathfinder.PathComputationType;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import org.jetbrains.annotations.Nullable;
+
+import javax.annotation.Nullable;
 
 public class VerticalStairBlock extends Block implements SimpleWaterloggedBlock {
     public static final EnumProperty<Direction> DIRECTION_PROPERTY = EnumProperty.create("state", Direction.class, Direction.NORTH, Direction.EAST, Direction.SOUTH, Direction.WEST);
@@ -50,7 +49,7 @@ public class VerticalStairBlock extends Block implements SimpleWaterloggedBlock 
     @Override
     public BlockState getStateForPlacement(BlockPlaceContext context) {
         FluidState fluidstate = context.getLevel().getFluidState(context.getClickedPos());
-        return this.defaultBlockState().setValue(DIRECTION_PROPERTY, Direction.fromYRot(context.getRotation()-45)).setValue(BlockStateProperties.WATERLOGGED, fluidstate.getType() == Fluids.WATER);
+        return this.defaultBlockState().setValue(DIRECTION_PROPERTY, Direction.fromYRot(context.getRotation() - 45)).setValue(BlockStateProperties.WATERLOGGED, fluidstate.getType() == Fluids.WATER);
     }
 
     @Override
@@ -61,7 +60,7 @@ public class VerticalStairBlock extends Block implements SimpleWaterloggedBlock 
     @Override
     public BlockState updateShape(BlockState state, Direction direction, BlockState state2, LevelAccessor level, BlockPos position, BlockPos position2) {
         if (state.getValue(BlockStateProperties.WATERLOGGED)) {
-            level.scheduleTick(position, Fluids.WATER, Fluids.WATER.getTickDelay(level));
+            level.getLiquidTicks().scheduleTick(position, Fluids.WATER, Fluids.WATER.getTickDelay(level));
         }
         return super.updateShape(state, direction, state2, level, position, position2);
     }

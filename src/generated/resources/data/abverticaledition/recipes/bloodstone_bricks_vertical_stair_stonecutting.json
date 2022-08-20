@@ -1,8 +1,8 @@
 {
   "type": "minecraft:stonecutting",
-  "count": 1,
   "ingredient": {
     "item": "abstoneedition:bloodstone_bricks"
   },
-  "result": "abverticaledition:bloodstone_bricks_vertical_stair"
+  "result": "abverticaledition:bloodstone_bricks_vertical_stair",
+  "count": 1
 }

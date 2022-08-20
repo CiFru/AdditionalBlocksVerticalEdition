@@ -1,17 +1,17 @@
 {
   "type": "minecraft:crafting_shaped",
-  "key": {
-    "X": {
-      "item": "minecraft:mossy_cobblestone"
-    }
-  },
   "pattern": [
     "XXX",
     " XX",
     "  X"
   ],
+  "key": {
+    "X": {
+      "item": "minecraft:mossy_cobblestone"
+    }
+  },
   "result": {
-    "count": 4,
-    "item": "abverticaledition:mossy_cobblestone_vertical_stair"
+    "item": "abverticaledition:mossy_cobblestone_vertical_stair",
+    "count": 4
   }
 }

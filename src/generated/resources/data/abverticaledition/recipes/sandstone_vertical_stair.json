@@ -1,17 +1,17 @@
 {
   "type": "minecraft:crafting_shaped",
-  "key": {
-    "X": {
-      "item": "minecraft:sandstone"
-    }
-  },
   "pattern": [
     "XXX",
     " XX",
     "  X"
   ],
+  "key": {
+    "X": {
+      "item": "minecraft:sandstone"
+    }
+  },
   "result": {
-    "count": 4,
-    "item": "abverticaledition:sandstone_vertical_stair"
+    "item": "abverticaledition:sandstone_vertical_stair",
+    "count": 4
   }
 }

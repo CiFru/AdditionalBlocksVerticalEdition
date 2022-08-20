@@ -1,5 +1,0 @@
-// 1.19.2	2022-08-20T11:47:23.8793784	Tags for minecraft:block
-35c5dcb55b3423d88dfa4df4d06a94e2a1fc3719 data/minecraft/tags/blocks/mineable/axe.json
-d4cdaf4f9012a5a6860024874e0b2eeefa5dfaa1 data/minecraft/tags/blocks/mineable/pickaxe.json
-235f0d23eac5c59845829cee028e6b12ac2cfe0b data/minecraft/tags/blocks/needs_iron_tool.json
-40705b204e46a8e34b78f216a60384001955e24c data/minecraft/tags/blocks/needs_stone_tool.json

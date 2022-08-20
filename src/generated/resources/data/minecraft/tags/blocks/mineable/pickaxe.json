@@ -1,4 +1,5 @@
 {
+  "replace": false,
   "values": [
     "abverticaledition:cobblestone_vertical_slab",
     "abverticaledition:cobblestone_vertical_stair",
@@ -122,8 +123,6 @@
     "abverticaledition:deepslate_brick_vertical_stair",
     "abverticaledition:smooth_black_marble_vertical_slab",
     "abverticaledition:smooth_black_marble_vertical_stair",
-    "abverticaledition:mud_brick_vertical_slab",
-    "abverticaledition:mud_brick_vertical_stair",
     "abverticaledition:blackstone_vertical_slab",
     "abverticaledition:blackstone_vertical_stair",
     "abverticaledition:polished_andesite_vertical_slab",

@@ -1,17 +1,17 @@
 {
   "type": "minecraft:crafting_shaped",
-  "key": {
-    "X": {
-      "item": "minecraft:diorite"
-    }
-  },
   "pattern": [
     "XXX",
     " XX",
     "  X"
   ],
+  "key": {
+    "X": {
+      "item": "minecraft:diorite"
+    }
+  },
   "result": {
-    "count": 4,
-    "item": "abverticaledition:diorite_vertical_stair"
+    "item": "abverticaledition:diorite_vertical_stair",
+    "count": 4
   }
 }

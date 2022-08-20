@@ -1,8 +1,8 @@
 {
   "type": "minecraft:stonecutting",
-  "count": 2,
   "ingredient": {
     "item": "minecraft:smooth_quartz"
   },
-  "result": "abverticaledition:smooth_quartz_vertical_slab"
+  "result": "abverticaledition:smooth_quartz_vertical_slab",
+  "count": 2
 }

@@ -1,8 +1,8 @@
 {
   "type": "minecraft:stonecutting",
-  "count": 1,
   "ingredient": {
     "item": "minecraft:quartz_block"
   },
-  "result": "abverticaledition:quartz_vertical_stair"
+  "result": "abverticaledition:quartz_vertical_stair",
+  "count": 1
 }

@@ -1,23 +1,23 @@
 {
   "variants": {
-    "state=east": {
-      "model": "abverticaledition:block/blackstone_vertical_stair",
-      "uvlock": true,
-      "y": 90
-    },
     "state=north": {
       "model": "abverticaledition:block/blackstone_vertical_stair",
       "uvlock": true
     },
     "state=south": {
       "model": "abverticaledition:block/blackstone_vertical_stair",
-      "uvlock": true,
-      "y": -180
+      "y": -180,
+      "uvlock": true
     },
     "state=west": {
       "model": "abverticaledition:block/blackstone_vertical_stair",
-      "uvlock": true,
-      "y": -90
+      "y": -90,
+      "uvlock": true
+    },
+    "state=east": {
+      "model": "abverticaledition:block/blackstone_vertical_stair",
+      "y": 90,
+      "uvlock": true
     }
   }
 }

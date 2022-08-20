@@ -1,17 +1,17 @@
 {
   "type": "minecraft:crafting_shaped",
-  "key": {
-    "X": {
-      "item": "minecraft:diorite"
-    }
-  },
   "pattern": [
     "X",
     "X",
     "X"
   ],
+  "key": {
+    "X": {
+      "item": "minecraft:diorite"
+    }
+  },
   "result": {
-    "count": 6,
-    "item": "abverticaledition:diorite_vertical_slab"
+    "item": "abverticaledition:diorite_vertical_slab",
+    "count": 6
   }
 }

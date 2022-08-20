@@ -1,17 +1,17 @@
 {
   "type": "minecraft:crafting_shaped",
-  "key": {
-    "X": {
-      "item": "minecraft:polished_granite"
-    }
-  },
   "pattern": [
     "X",
     "X",
     "X"
   ],
+  "key": {
+    "X": {
+      "item": "minecraft:polished_granite"
+    }
+  },
   "result": {
-    "count": 6,
-    "item": "abverticaledition:polished_granite_vertical_slab"
+    "item": "abverticaledition:polished_granite_vertical_slab",
+    "count": 6
   }
 }

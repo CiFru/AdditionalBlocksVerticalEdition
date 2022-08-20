@@ -1,17 +1,17 @@
 {
   "type": "minecraft:crafting_shaped",
-  "key": {
-    "X": {
-      "item": "abstoneedition:volcanic_stone"
-    }
-  },
   "pattern": [
     "XXX",
     " XX",
     "  X"
   ],
+  "key": {
+    "X": {
+      "item": "abstoneedition:volcanic_stone"
+    }
+  },
   "result": {
-    "count": 4,
-    "item": "abverticaledition:volcanic_stone_vertical_stair"
+    "item": "abverticaledition:volcanic_stone_vertical_stair",
+    "count": 4
   }
 }

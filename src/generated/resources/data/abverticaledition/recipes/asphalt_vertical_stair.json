@@ -1,17 +1,17 @@
 {
   "type": "minecraft:crafting_shaped",
-  "key": {
-    "X": {
-      "item": "abstoneedition:asphalt"
-    }
-  },
   "pattern": [
     "XXX",
     " XX",
     "  X"
   ],
+  "key": {
+    "X": {
+      "item": "abstoneedition:asphalt"
+    }
+  },
   "result": {
-    "count": 4,
-    "item": "abverticaledition:asphalt_vertical_stair"
+    "item": "abverticaledition:asphalt_vertical_stair",
+    "count": 4
   }
 }

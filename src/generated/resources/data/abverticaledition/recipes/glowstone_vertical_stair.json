@@ -1,17 +1,17 @@
 {
   "type": "minecraft:crafting_shaped",
-  "key": {
-    "X": {
-      "item": "minecraft:glowstone"
-    }
-  },
   "pattern": [
     "XXX",
     " XX",
     "  X"
   ],
+  "key": {
+    "X": {
+      "item": "minecraft:glowstone"
+    }
+  },
   "result": {
-    "count": 4,
-    "item": "abverticaledition:glowstone_vertical_stair"
+    "item": "abverticaledition:glowstone_vertical_stair",
+    "count": 4
   }
 }

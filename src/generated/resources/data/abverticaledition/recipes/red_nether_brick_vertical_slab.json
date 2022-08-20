@@ -1,17 +1,17 @@
 {
   "type": "minecraft:crafting_shaped",
-  "key": {
-    "X": {
-      "item": "minecraft:red_nether_bricks"
-    }
-  },
   "pattern": [
     "X",
     "X",
     "X"
   ],
+  "key": {
+    "X": {
+      "item": "minecraft:red_nether_bricks"
+    }
+  },
   "result": {
-    "count": 6,
-    "item": "abverticaledition:red_nether_brick_vertical_slab"
+    "item": "abverticaledition:red_nether_brick_vertical_slab",
+    "count": 6
   }
 }

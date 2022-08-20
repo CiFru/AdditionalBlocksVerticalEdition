@@ -1,17 +1,17 @@
 {
   "type": "minecraft:crafting_shaped",
-  "key": {
-    "X": {
-      "item": "minecraft:dark_prismarine"
-    }
-  },
   "pattern": [
     "XXX",
     " XX",
     "  X"
   ],
+  "key": {
+    "X": {
+      "item": "minecraft:dark_prismarine"
+    }
+  },
   "result": {
-    "count": 4,
-    "item": "abverticaledition:dark_prismarine_vertical_stair"
+    "item": "abverticaledition:dark_prismarine_vertical_stair",
+    "count": 4
   }
 }

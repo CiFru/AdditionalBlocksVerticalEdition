@@ -1,8 +1,8 @@
 {
   "type": "minecraft:stonecutting",
-  "count": 2,
   "ingredient": {
     "item": "abstoneedition:old_stone_path_straight"
   },
-  "result": "abverticaledition:old_stone_path_straight_vertical_slab"
+  "result": "abverticaledition:old_stone_path_straight_vertical_slab",
+  "count": 2
 }

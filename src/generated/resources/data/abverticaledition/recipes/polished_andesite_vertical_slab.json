@@ -1,17 +1,17 @@
 {
   "type": "minecraft:crafting_shaped",
-  "key": {
-    "X": {
-      "item": "minecraft:polished_andesite"
-    }
-  },
   "pattern": [
     "X",
     "X",
     "X"
   ],
+  "key": {
+    "X": {
+      "item": "minecraft:polished_andesite"
+    }
+  },
   "result": {
-    "count": 6,
-    "item": "abverticaledition:polished_andesite_vertical_slab"
+    "item": "abverticaledition:polished_andesite_vertical_slab",
+    "count": 6
   }
 }
