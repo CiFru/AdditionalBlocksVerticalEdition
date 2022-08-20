@@ -19,7 +19,7 @@ apply plugin: "net.minecraftforge.gradle"
 apply plugin: "eclipse"
 apply plugin: "org.spongepowered.mixin"
 
-version = project.mod_version + "-forge-" + project.minecraft_suffix
+version = project.mod_version + "-" + project.minecraft_suffix
 group = project.maven_group
 archivesBaseName = project.mod_id
 
