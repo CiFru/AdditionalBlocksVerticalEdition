@@ -1,8 +1,21 @@
 {
-  "type": "minecraft:stonecutting",
-  "count": 1,
-  "ingredient": {
-    "item": "abstoneedition:brown_stone_tiles"
-  },
-  "result": "abverticaledition:brown_stone_tiles_vertical_stair"
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "abstoneedition"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:stonecutting",
+        "count": 1,
+        "ingredient": {
+          "item": "abstoneedition:brown_stone_tiles"
+        },
+        "result": "abverticaledition:brown_stone_tiles_vertical_stair"
+      }
+    }
+  ]
 }

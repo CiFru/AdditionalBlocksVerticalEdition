@@ -1,17 +1,30 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "key": {
-    "X": {
-      "item": "abstoneedition:marble"
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "abstoneedition"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "key": {
+          "X": {
+            "item": "abstoneedition:marble"
+          }
+        },
+        "pattern": [
+          "X",
+          "X",
+          "X"
+        ],
+        "result": {
+          "count": 6,
+          "item": "abverticaledition:marble_vertical_slab"
+        }
+      }
     }
-  },
-  "pattern": [
-    "X",
-    "X",
-    "X"
-  ],
-  "result": {
-    "count": 6,
-    "item": "abverticaledition:marble_vertical_slab"
-  }
+  ]
 }

@@ -1,12 +1,36 @@
 {
   "values": [
-    "abverticaledition:bloodstone_bricks_vertical_slab",
-    "abverticaledition:bloodstone_bricks_vertical_stair",
-    "abverticaledition:bloodstone_vertical_slab",
-    "abverticaledition:bloodstone_vertical_stair",
-    "abverticaledition:asphalt_vertical_slab",
-    "abverticaledition:asphalt_vertical_stair",
-    "abverticaledition:smooth_bloodstone_vertical_slab",
-    "abverticaledition:smooth_bloodstone_vertical_stair"
+    {
+      "id": "abverticaledition:bloodstone_bricks_vertical_slab",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:bloodstone_bricks_vertical_stair",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:bloodstone_vertical_slab",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:bloodstone_vertical_stair",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:asphalt_vertical_slab",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:asphalt_vertical_stair",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:smooth_bloodstone_vertical_slab",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:smooth_bloodstone_vertical_stair",
+      "required": false
+    }
   ]
 }

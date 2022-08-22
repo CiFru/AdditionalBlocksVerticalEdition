@@ -139,12 +139,12 @@ public class VerticalBlockType {
     public static final VerticalBlockType STONE_PATTERN = createBlockTypeForOtherMod("abstoneedition", "stone_pattern", "Stone Pattern", "stone_pattern_slab", "stone_pattern_stairs", "stone_pattern", true, new ResourceLocation("abstoneedition", "stone_pattern"));
     public static final VerticalBlockType STONE_TILES = createBlockTypeForOtherMod("abstoneedition", "stone_tiles", "Stone Tile", "stone_tiles_slab", "stone_tiles_stairs", "stone_tiles", true, new ResourceLocation("abstoneedition", "stone_tiles"));
 
-    private static VerticalBlockType createBlockType(String registryName, String translation, Supplier<Block> parentSlabBlock, Supplier<Block> parentStairBlock, Supplier<Block> recipeBlock, boolean hasStoneCutterRecipe, ResourceLocation texture){
+    private static VerticalBlockType createBlockType(String registryName, String translation, Supplier<Block> parentSlabBlock, Supplier<Block> parentStairBlock, Supplier<Block> recipeBlock, boolean hasStoneCutterRecipe, ResourceLocation texture, String... dependentMods){
         ResourceLocation resourceLocation = new ResourceLocation("abverticaledition", registryName);
         if(ALL.containsKey(resourceLocation))
             throw new RuntimeException("Tried to register two block types with registry name '" + registryName + "'!");
 
-        VerticalBlockType type = new VerticalBlockType(resourceLocation, translation, parentSlabBlock, parentStairBlock, recipeBlock, hasStoneCutterRecipe, texture);
+        VerticalBlockType type = new VerticalBlockType(resourceLocation, translation, parentSlabBlock, parentStairBlock, recipeBlock, hasStoneCutterRecipe, texture, dependentMods);
         ALL.put(resourceLocation, type);
         ALL_ORDERED.add(type);
         return type;
@@ -158,7 +158,7 @@ public class VerticalBlockType {
         ResourceLocation parentSlabBlockLocation = parentSlabBlock.contains(":") ? new ResourceLocation(parentSlabBlock) : new ResourceLocation(modid, parentSlabBlock);
         ResourceLocation parentStairBlockLocation = parentStairBlock.contains(":") ? new ResourceLocation(parentStairBlock) : new ResourceLocation(modid, parentStairBlock);
         ResourceLocation recipeBlockLocation = recipeBlock.contains(":") ? new ResourceLocation(recipeBlock) : new ResourceLocation(modid, recipeBlock);
-        return createBlockType(registryName, translation, () -> getBlockFromOtherMod(parentSlabBlockLocation), () -> getBlockFromOtherMod(parentStairBlockLocation), () -> getBlockFromOtherMod(recipeBlockLocation), hasStoneCutterRecipe, texture);
+        return createBlockType(registryName, translation, () -> getBlockFromOtherMod(parentSlabBlockLocation), () -> getBlockFromOtherMod(parentStairBlockLocation), () -> getBlockFromOtherMod(recipeBlockLocation), hasStoneCutterRecipe, texture, modid);
     }
 
     private static Block getBlockFromOtherMod(ResourceLocation location){
@@ -178,8 +178,12 @@ public class VerticalBlockType {
     public final Supplier<Block> recipeBlock;
     public final boolean hasStoneCutterRecipe;
     public final ResourceLocation texture;
+    /**
+     * Mods which need to be present for the block type to be enabled.
+     */
+    public final List<String> dependentMods;
 
-    public VerticalBlockType(ResourceLocation registryName, String translation, Supplier<Block> parentSlabBlock, Supplier<Block> parentStairBlock, Supplier<Block> recipeBlock, boolean hasStoneCutterRecipe, ResourceLocation texture){
+    public VerticalBlockType(ResourceLocation registryName, String translation, Supplier<Block> parentSlabBlock, Supplier<Block> parentStairBlock, Supplier<Block> recipeBlock, boolean hasStoneCutterRecipe, ResourceLocation texture, String... dependentMods){
         this.registryName = registryName;
         this.slabRegistryName = new ResourceLocation(registryName.getNamespace(), registryName.getPath() + "_vertical_slab");
         this.stairRegistryName = new ResourceLocation(registryName.getNamespace(), registryName.getPath() + "_vertical_stair");
@@ -190,6 +194,7 @@ public class VerticalBlockType {
         this.recipeBlock = recipeBlock;
         this.hasStoneCutterRecipe = hasStoneCutterRecipe;
         this.texture = texture;
+        this.dependentMods = List.of(dependentMods);
     }
 
     public Block getSlab(){
