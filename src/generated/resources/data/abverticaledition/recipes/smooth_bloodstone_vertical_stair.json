@@ -1,17 +1,30 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "XXX",
-    " XX",
-    "  X"
-  ],
-  "key": {
-    "X": {
-      "item": "abstoneedition:smooth_bloodstone"
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "modid": "abstoneedition",
+          "type": "forge:mod_loaded"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "pattern": [
+          "XXX",
+          " XX",
+          "  X"
+        ],
+        "key": {
+          "X": {
+            "item": "abstoneedition:smooth_bloodstone"
+          }
+        },
+        "result": {
+          "item": "abverticaledition:smooth_bloodstone_vertical_stair",
+          "count": 4
+        }
+      }
     }
-  },
-  "result": {
-    "item": "abverticaledition:smooth_bloodstone_vertical_stair",
-    "count": 4
-  }
+  ]
 }

@@ -1,17 +1,30 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "XXX",
-    " XX",
-    "  X"
-  ],
-  "key": {
-    "X": {
-      "item": "abstoneedition:stone_brick_block"
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "modid": "abstoneedition",
+          "type": "forge:mod_loaded"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "pattern": [
+          "XXX",
+          " XX",
+          "  X"
+        ],
+        "key": {
+          "X": {
+            "item": "abstoneedition:stone_brick_block"
+          }
+        },
+        "result": {
+          "item": "abverticaledition:stone_brick_block_vertical_stair",
+          "count": 4
+        }
+      }
     }
-  },
-  "result": {
-    "item": "abverticaledition:stone_brick_block_vertical_stair",
-    "count": 4
-  }
+  ]
 }

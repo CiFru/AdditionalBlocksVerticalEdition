@@ -1,17 +1,30 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "X",
-    "X",
-    "X"
-  ],
-  "key": {
-    "X": {
-      "item": "abstoneedition:smooth_black_marble"
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "modid": "abstoneedition",
+          "type": "forge:mod_loaded"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "pattern": [
+          "X",
+          "X",
+          "X"
+        ],
+        "key": {
+          "X": {
+            "item": "abstoneedition:smooth_black_marble"
+          }
+        },
+        "result": {
+          "item": "abverticaledition:smooth_black_marble_vertical_slab",
+          "count": 6
+        }
+      }
     }
-  },
-  "result": {
-    "item": "abverticaledition:smooth_black_marble_vertical_slab",
-    "count": 6
-  }
+  ]
 }

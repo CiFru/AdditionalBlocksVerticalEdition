@@ -66,16 +66,22 @@ public class VerticalTagsProvider extends BlockTagsProvider {
 
         for (VerticalBlockType value : VerticalBlockType.ALL.values()) {
             for (Tag.Named<Block> tag : tags) {
-                if (loadVanillaTag(tag.getName()).contains(value.parentSlabBlock.get()))
-                    this.tag(tag).replace(false).add(value.getSlab());
-                if (loadVanillaTag(tag.getName()).contains(value.parentStairBlock.get()))
-                    this.tag(tag).replace(false).add(value.getStair());
+                if (value.dependentMods.isEmpty()) {
+                    if (this.loadVanillaTag(tag.getName()).contains(value.parentSlabBlock.get()))
+                        this.tag(tag).replace(false).add(value.getSlab());
+                    if (this.loadVanillaTag(tag.getName()).contains(value.parentStairBlock.get()))
+                        this.tag(tag).replace(false).add(value.getStair());
+                } else {
+                    if (this.loadVanillaTag(tag.getName()).contains(value.parentSlabBlock.get()))
+                        this.tag(tag).replace(false).addOptional(value.slabRegistryName);
+                    if (this.loadVanillaTag(tag.getName()).contains(value.parentStairBlock.get()))
+                        this.tag(tag).replace(false).addOptional(value.stairRegistryName);
+                }
             }
         }
     }
 
     private final Map<ResourceLocation, List<Block>> loadedTags = Maps.newHashMap();
-    private final PackResources vanillaResources = new VanillaPackResources(ServerPacksSource.BUILT_IN_METADATA, "minecraft");
 
     private List<Block> loadVanillaTag(ResourceLocation location) {
         if (this.loadedTags.containsKey(location))

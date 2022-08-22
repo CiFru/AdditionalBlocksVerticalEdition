@@ -1,17 +1,30 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "XXX",
-    " XX",
-    "  X"
-  ],
-  "key": {
-    "X": {
-      "item": "abstoneedition:bloodstone_bricks"
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "modid": "abstoneedition",
+          "type": "forge:mod_loaded"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "pattern": [
+          "XXX",
+          " XX",
+          "  X"
+        ],
+        "key": {
+          "X": {
+            "item": "abstoneedition:bloodstone_bricks"
+          }
+        },
+        "result": {
+          "item": "abverticaledition:bloodstone_bricks_vertical_stair",
+          "count": 4
+        }
+      }
     }
-  },
-  "result": {
-    "item": "abverticaledition:bloodstone_bricks_vertical_stair",
-    "count": 4
-  }
+  ]
 }

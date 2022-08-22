@@ -1,17 +1,30 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "X",
-    "X",
-    "X"
-  ],
-  "key": {
-    "X": {
-      "item": "abstoneedition:stone_tiles"
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "modid": "abstoneedition",
+          "type": "forge:mod_loaded"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "pattern": [
+          "X",
+          "X",
+          "X"
+        ],
+        "key": {
+          "X": {
+            "item": "abstoneedition:stone_tiles"
+          }
+        },
+        "result": {
+          "item": "abverticaledition:stone_tiles_vertical_slab",
+          "count": 6
+        }
+      }
     }
-  },
-  "result": {
-    "item": "abverticaledition:stone_tiles_vertical_slab",
-    "count": 6
-  }
+  ]
 }

@@ -1,17 +1,30 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "X",
-    "X",
-    "X"
-  ],
-  "key": {
-    "X": {
-      "item": "abstoneedition:gray_bricks"
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "modid": "abstoneedition",
+          "type": "forge:mod_loaded"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "pattern": [
+          "X",
+          "X",
+          "X"
+        ],
+        "key": {
+          "X": {
+            "item": "abstoneedition:gray_bricks"
+          }
+        },
+        "result": {
+          "item": "abverticaledition:gray_bricks_vertical_slab",
+          "count": 6
+        }
+      }
     }
-  },
-  "result": {
-    "item": "abverticaledition:gray_bricks_vertical_slab",
-    "count": 6
-  }
+  ]
 }
