@@ -1,8 +1,21 @@
 {
-  "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "abstoneedition:limestone"
-  },
-  "result": "abverticaledition:limestone_vertical_stair",
-  "count": 1
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "modid": "abstoneedition",
+          "type": "forge:mod_loaded"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:stonecutting",
+        "ingredient": {
+          "item": "abstoneedition:limestone"
+        },
+        "result": "abverticaledition:limestone_vertical_stair",
+        "count": 1
+      }
+    }
+  ]
 }

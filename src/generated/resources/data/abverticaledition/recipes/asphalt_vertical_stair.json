@@ -1,17 +1,30 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "XXX",
-    " XX",
-    "  X"
-  ],
-  "key": {
-    "X": {
-      "item": "abstoneedition:asphalt"
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "modid": "abstoneedition",
+          "type": "forge:mod_loaded"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "pattern": [
+          "XXX",
+          " XX",
+          "  X"
+        ],
+        "key": {
+          "X": {
+            "item": "abstoneedition:asphalt"
+          }
+        },
+        "result": {
+          "item": "abverticaledition:asphalt_vertical_stair",
+          "count": 4
+        }
+      }
     }
-  },
-  "result": {
-    "item": "abverticaledition:asphalt_vertical_stair",
-    "count": 4
-  }
+  ]
 }

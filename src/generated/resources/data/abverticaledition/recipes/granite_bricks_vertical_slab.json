@@ -1,17 +1,30 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "X",
-    "X",
-    "X"
-  ],
-  "key": {
-    "X": {
-      "item": "abstoneedition:granite_bricks"
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "modid": "abstoneedition",
+          "type": "forge:mod_loaded"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "pattern": [
+          "X",
+          "X",
+          "X"
+        ],
+        "key": {
+          "X": {
+            "item": "abstoneedition:granite_bricks"
+          }
+        },
+        "result": {
+          "item": "abverticaledition:granite_bricks_vertical_slab",
+          "count": 6
+        }
+      }
     }
-  },
-  "result": {
-    "item": "abverticaledition:granite_bricks_vertical_slab",
-    "count": 6
-  }
+  ]
 }

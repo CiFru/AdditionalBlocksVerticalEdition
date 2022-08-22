@@ -5,10 +5,6 @@ import com.google.gson.*;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.tags.BlockTagsProvider;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.server.packs.PackResources;
-import net.minecraft.server.packs.PackType;
-import net.minecraft.server.packs.VanillaPackResources;
-import net.minecraft.server.packs.repository.ServerPacksSource;
 import net.minecraft.server.packs.resources.MultiPackResourceManager;
 import net.minecraft.server.packs.resources.Resource;
 import net.minecraft.tags.BlockTags;
@@ -23,7 +19,6 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.function.Function;
@@ -68,16 +63,22 @@ public class VerticalTagsProvider extends BlockTagsProvider {
 
         for (VerticalBlockType value : VerticalBlockType.ALL.values()) {
             for (TagKey<Block> tag : tags) {
-                if (loadVanillaTag(tag.location()).contains(value.parentSlabBlock.get()))
-                    this.tag(tag).replace(false).add(value.getSlab());
-                if (loadVanillaTag(tag.location()).contains(value.parentStairBlock.get()))
-                    this.tag(tag).replace(false).add(value.getStair());
+                if (value.dependentMods.isEmpty()) {
+                    if (this.loadVanillaTag(tag.location()).contains(value.parentSlabBlock.get()))
+                        this.tag(tag).replace(false).add(value.getSlab());
+                    if (this.loadVanillaTag(tag.location()).contains(value.parentStairBlock.get()))
+                        this.tag(tag).replace(false).add(value.getStair());
+                } else {
+                    if (this.loadVanillaTag(tag.location()).contains(value.parentSlabBlock.get()))
+                        this.tag(tag).replace(false).addOptional(value.slabRegistryName);
+                    if (this.loadVanillaTag(tag.location()).contains(value.parentStairBlock.get()))
+                        this.tag(tag).replace(false).addOptional(value.stairRegistryName);
+                }
             }
         }
     }
 
     private final Map<ResourceLocation, List<Block>> loadedTags = Maps.newHashMap();
-    private final PackResources vanillaResources = new VanillaPackResources(ServerPacksSource.BUILT_IN_METADATA, "minecraft");
 
     private List<Block> loadVanillaTag(ResourceLocation location) {
         if (this.loadedTags.containsKey(location))
