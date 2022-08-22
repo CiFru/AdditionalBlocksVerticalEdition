@@ -1,8 +1,21 @@
 {
-  "type": "minecraft:stonecutting",
-  "count": 1,
-  "ingredient": {
-    "item": "abstoneedition:andesite_bricks"
-  },
-  "result": "abverticaledition:andesite_bricks_vertical_stair"
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "abstoneedition"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:stonecutting",
+        "count": 1,
+        "ingredient": {
+          "item": "abstoneedition:andesite_bricks"
+        },
+        "result": "abverticaledition:andesite_bricks_vertical_stair"
+      }
+    }
+  ]
 }

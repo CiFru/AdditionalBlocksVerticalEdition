@@ -1,17 +1,30 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "key": {
-    "X": {
-      "item": "abstoneedition:brown_stone_tiles"
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "abstoneedition"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "key": {
+          "X": {
+            "item": "abstoneedition:brown_stone_tiles"
+          }
+        },
+        "pattern": [
+          "XXX",
+          " XX",
+          "  X"
+        ],
+        "result": {
+          "count": 4,
+          "item": "abverticaledition:brown_stone_tiles_vertical_stair"
+        }
+      }
     }
-  },
-  "pattern": [
-    "XXX",
-    " XX",
-    "  X"
-  ],
-  "result": {
-    "count": 4,
-    "item": "abverticaledition:brown_stone_tiles_vertical_stair"
-  }
+  ]
 }
