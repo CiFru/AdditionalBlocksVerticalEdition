@@ -1,0 +1,21 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "modid": "abstoneedition",
+          "type": "forge:mod_loaded"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:stonecutting",
+        "ingredient": {
+          "item": "minecraft:obsidian"
+        },
+        "result": "abverticaledition:obsidian_vertical_slab",
+        "count": 2
+      }
+    }
+  ]
+}
