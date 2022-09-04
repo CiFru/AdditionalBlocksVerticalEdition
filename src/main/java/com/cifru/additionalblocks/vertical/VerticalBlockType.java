@@ -124,6 +124,8 @@ public class VerticalBlockType {
     public static final VerticalBlockType SMOOTH_SMOOTH_STONE = createBlockTypeForOtherMod("abstoneedition", "smooth_smooth_stone", "Very Smooth Stone", "smooth_smooth_stone_slab", "smooth_smooth_stone_stairs", "smooth_smooth_stone", true, new ResourceLocation("abstoneedition", "smooth_smooth_stone"));
     public static final VerticalBlockType SMOOTH_STONE_BRICKS = createBlockTypeForOtherMod("abstoneedition", "smooth_stone_bricks", "Smooth Stone Brick", "smooth_stone_bricks_slab", "smooth_stone_bricks_stairs", "smooth_stone_bricks", true, new ResourceLocation("abstoneedition", "smooth_stone_bricks"));
     public static final VerticalBlockType CHARRED = createBlockTypeForOtherMod("abstoneedition", "charred", "Charred", "charred_slab", "charred_stairs", "charred_planks", true, new ResourceLocation("abstoneedition", "charred_planks"));
+    public static final VerticalBlockType OBSIDIAN = createBlockTypeForOtherMod("abstoneedition", "obsidian", "Obsidian", "obsidian_slab", "obsidian_stairs", "minecraft:obsidian", true, new ResourceLocation("minecraft", "block/obsidian"));
+    public static final VerticalBlockType OBSIDIAN_BRICKS = createBlockTypeForOtherMod("abstoneedition", "obsidian_bricks", "Obsidian Brick", "obsidian_bricks_slab", "obsidian_bricks_stairs", "obsidian_bricks", true, new ResourceLocation("abstoneedition", "obsidian_bricks"));
 
     //Stone Path Types
     public static final VerticalBlockType BROWN_STONE_PATH_STRAIGHT = createBlockTypeForOtherMod("abstoneedition", "brown_stone_path_straight", "Brown Straight Stone Path", "brown_stone_path_straight_slab", "brown_stone_path_straight_stairs", "brown_stone_path_straight", true, new ResourceLocation("abstoneedition", "brown_stone_path_straight"));
