@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "abverticaledition:obsidian_bricks_vertical_slab",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:obsidian_bricks_vertical_stair",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:obsidian_vertical_slab",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:obsidian_vertical_stair",
+      "required": false
+    }
+  ]
+}
