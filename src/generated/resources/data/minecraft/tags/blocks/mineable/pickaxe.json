@@ -3,6 +3,14 @@
     "abverticaledition:cobblestone_vertical_slab",
     "abverticaledition:cobblestone_vertical_stair",
     {
+      "id": "abverticaledition:obsidian_bricks_vertical_slab",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:obsidian_bricks_vertical_stair",
+      "required": false
+    },
+    {
       "id": "abverticaledition:granite_bricks_vertical_slab",
       "required": false
     },
@@ -266,6 +274,14 @@
     },
     {
       "id": "abverticaledition:charred_vertical_stair",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:obsidian_vertical_slab",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:obsidian_vertical_stair",
       "required": false
     },
     "abverticaledition:polished_diorite_vertical_slab",

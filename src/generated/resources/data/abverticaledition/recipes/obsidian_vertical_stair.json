@@ -1,0 +1,30 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "abstoneedition"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "key": {
+          "X": {
+            "item": "minecraft:obsidian"
+          }
+        },
+        "pattern": [
+          "XXX",
+          " XX",
+          "  X"
+        ],
+        "result": {
+          "count": 4,
+          "item": "abverticaledition:obsidian_vertical_stair"
+        }
+      }
+    }
+  ]
+}
