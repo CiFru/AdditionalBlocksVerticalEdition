@@ -70,5 +70,6 @@ public class AdditionalBlocks {
         e.getGenerator().addProvider(e.includeClient(), new VerticalBlockStateProvider(e.getGenerator(), "abverticaledition", e.getExistingFileHelper()));
         e.getGenerator().addProvider(e.includeServer(), new VerticalRecipeProvider(e.getGenerator()));
         e.getGenerator().addProvider(e.includeServer(), new VerticalTagsProvider(e.getGenerator(), "abverticaledition", e.getExistingFileHelper()));
+        e.getGenerator().addProvider(e.includeServer(), new VerticalLootTableProvider(e.getGenerator()));
     }
 }
