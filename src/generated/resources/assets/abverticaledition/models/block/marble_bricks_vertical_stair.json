@@ -1,6 +1,0 @@
-{
-  "parent": "abverticaledition:block/vertical_stair",
-  "textures": {
-    "all": "abstoneedition:marble_bricks"
-  }
-}

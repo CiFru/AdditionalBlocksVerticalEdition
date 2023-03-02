@@ -2,14 +2,15 @@ package com.cifru.additionalblocks.vertical;
 
 import com.google.common.collect.Maps;
 import com.google.gson.*;
+import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
-import net.minecraft.data.tags.BlockTagsProvider;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.resources.MultiPackResourceManager;
 import net.minecraft.server.packs.resources.Resource;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.level.block.Block;
+import net.minecraftforge.common.data.BlockTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.ForgeRegistries;
 import org.jetbrains.annotations.Nullable;
@@ -20,6 +21,7 @@ import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.CompletableFuture;
 import java.util.function.Function;
 
 public class VerticalTagsProvider extends BlockTagsProvider {
@@ -44,12 +46,12 @@ public class VerticalTagsProvider extends BlockTagsProvider {
 
     private static final Gson GSON = new GsonBuilder().create();
 
-    public VerticalTagsProvider(DataGenerator dataGenerator, String modId, @Nullable ExistingFileHelper existingFileHelper) {
-        super(dataGenerator, modId, existingFileHelper);
+    public VerticalTagsProvider(DataGenerator dataGenerator, CompletableFuture<HolderLookup.Provider> lookupProvider, String modId, @Nullable ExistingFileHelper existingFileHelper) {
+        super(dataGenerator.getPackOutput(), lookupProvider, modId, existingFileHelper);
     }
 
     @Override
-    protected void addTags() {
+    protected void addTags(HolderLookup.Provider provider){
         List<TagKey<Block>> tags = List.of(
                 BlockTags.MINEABLE_WITH_AXE,
                 BlockTags.MINEABLE_WITH_HOE,
@@ -64,9 +66,9 @@ public class VerticalTagsProvider extends BlockTagsProvider {
             for (TagKey<Block> tag : tags) {
                 if (value.dependentMods.isEmpty()) {
                     if (this.loadVanillaTag(tag.location()).contains(value.parentSlabBlock.get()))
-                        this.tag(tag).replace(false).add(value.getSlab());
+                        this.tag(tag).replace(false).add(ForgeRegistries.BLOCKS.getResourceKey(value.getSlab()).get());
                     if (this.loadVanillaTag(tag.location()).contains(value.parentStairBlock.get()))
-                        this.tag(tag).replace(false).add(value.getStair());
+                        this.tag(tag).replace(false).add(ForgeRegistries.BLOCKS.getResourceKey(value.getStair()).get());
                 } else {
                     if (this.loadVanillaTag(tag.location()).contains(value.parentSlabBlock.get()))
                         this.tag(tag).replace(false).addOptional(value.slabRegistryName);

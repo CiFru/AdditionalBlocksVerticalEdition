@@ -7,7 +7,7 @@ import net.minecraftforge.common.data.ExistingFileHelper;
 
 public class VerticalItemModelProvider extends ItemModelProvider {
     public VerticalItemModelProvider(DataGenerator generator, String modid, ExistingFileHelper existingFileHelper) {
-        super(generator, modid, existingFileHelper);
+        super(generator.getPackOutput(), modid, existingFileHelper);
     }
 
     @Override
