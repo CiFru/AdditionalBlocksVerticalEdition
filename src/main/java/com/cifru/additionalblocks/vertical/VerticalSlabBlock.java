@@ -63,16 +63,7 @@ public class VerticalSlabBlock extends Block implements SimpleWaterloggedBlock {
     @Override
     public boolean canBeReplaced(BlockState state, BlockPlaceContext context) {
         SlabShape shape = state.getValue(SHAPE_PROPERTY);
-        if (shape != SlabShape.FULL && context.getItemInHand().is(this.asItem())) {
-            if (!context.replacingClickedOnBlock() || shape.direction.getOpposite() == context.getClickedFace())
-                return true;
-
-            Direction.Axis axis = shape.direction.getAxis();
-            boolean isOppositeSide = (axis == Direction.Axis.X ? context.getClickLocation().x : context.getClickLocation().z) < 0.5;
-            return context.getClickedFace().getAxis() != axis
-                    && (shape == (axis == Direction.Axis.X ? SlabShape.WEST : SlabShape.NORTH)) == isOppositeSide;
-        }
-        return shape != SlabShape.FULL && context.getItemInHand().is(this.asItem()) && (context.replacingClickedOnBlock() || shape.direction.getOpposite() == context.getClickedFace());
+        return shape != SlabShape.FULL && context.getItemInHand().is(this.asItem()) && shape.direction.getOpposite() == context.getClickedFace();
     }
 
     @Nullable
