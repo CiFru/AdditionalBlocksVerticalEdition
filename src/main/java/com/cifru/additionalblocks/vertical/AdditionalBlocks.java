@@ -62,7 +62,7 @@ public class AdditionalBlocks {
     }
 
     private static void onCreativeModeTabRegistration(CreativeModeTabEvent.Register e){
-        e.registerCreativeModeTab(new ResourceLocation("abverticaledition", "main"), builder -> builder.icon(() -> stone_brick_vertical_slab.asItem().getDefaultInstance()).displayItems((featureFlagSet, output, isOperator) -> {
+        e.registerCreativeModeTab(new ResourceLocation("abverticaledition", "main"), builder -> builder.icon(() -> stone_brick_vertical_slab.asItem().getDefaultInstance()).displayItems((parameters, output) -> {
             VerticalBlockType.ALL_ORDERED.stream().map(VerticalBlockType::getStair).map(Block::asItem).map(Item::getDefaultInstance).forEach(output::accept);
             VerticalBlockType.ALL_ORDERED.stream().map(VerticalBlockType::getSlab).map(Block::asItem).map(Item::getDefaultInstance).forEach(output::accept);
         }).title(Component.translatable("itemGroup.abverticaledition")));
