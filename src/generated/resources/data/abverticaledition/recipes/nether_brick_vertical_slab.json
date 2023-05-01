@@ -1,19 +1,17 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "building",
-  "key": {
-    "X": {
-      "item": "minecraft:nether_bricks"
-    }
-  },
   "pattern": [
     "X",
     "X",
     "X"
   ],
-  "result": {
-    "count": 6,
-    "item": "abverticaledition:nether_brick_vertical_slab"
+  "key": {
+    "X": {
+      "item": "minecraft:nether_bricks"
+    }
   },
-  "show_notification": true
+  "result": {
+    "item": "abverticaledition:nether_brick_vertical_slab",
+    "count": 6
+  }
 }

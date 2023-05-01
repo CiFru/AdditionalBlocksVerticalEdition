@@ -1,19 +1,17 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "building",
-  "key": {
-    "X": {
-      "item": "minecraft:crimson_planks"
-    }
-  },
   "pattern": [
     "XXX",
     " XX",
     "  X"
   ],
-  "result": {
-    "count": 4,
-    "item": "abverticaledition:crimson_vertical_stair"
+  "key": {
+    "X": {
+      "item": "minecraft:crimson_planks"
+    }
   },
-  "show_notification": true
+  "result": {
+    "item": "abverticaledition:crimson_vertical_stair",
+    "count": 4
+  }
 }

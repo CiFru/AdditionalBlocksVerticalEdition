@@ -1,19 +1,17 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "building",
-  "key": {
-    "X": {
-      "item": "minecraft:blackstone"
-    }
-  },
   "pattern": [
     "X",
     "X",
     "X"
   ],
-  "result": {
-    "count": 6,
-    "item": "abverticaledition:blackstone_vertical_slab"
+  "key": {
+    "X": {
+      "item": "minecraft:blackstone"
+    }
   },
-  "show_notification": true
+  "result": {
+    "item": "abverticaledition:blackstone_vertical_slab",
+    "count": 6
+  }
 }

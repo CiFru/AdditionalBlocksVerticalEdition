@@ -1,19 +1,17 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "building",
-  "key": {
-    "X": {
-      "item": "minecraft:bricks"
-    }
-  },
   "pattern": [
     "XXX",
     " XX",
     "  X"
   ],
-  "result": {
-    "count": 4,
-    "item": "abverticaledition:brick_vertical_stair"
+  "key": {
+    "X": {
+      "item": "minecraft:bricks"
+    }
   },
-  "show_notification": true
+  "result": {
+    "item": "abverticaledition:brick_vertical_stair",
+    "count": 4
+  }
 }

@@ -1,19 +1,17 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "building",
-  "key": {
-    "X": {
-      "item": "minecraft:stone"
-    }
-  },
   "pattern": [
     "XXX",
     " XX",
     "  X"
   ],
-  "result": {
-    "count": 4,
-    "item": "abverticaledition:stone_vertical_stair"
+  "key": {
+    "X": {
+      "item": "minecraft:stone"
+    }
   },
-  "show_notification": true
+  "result": {
+    "item": "abverticaledition:stone_vertical_stair",
+    "count": 4
+  }
 }

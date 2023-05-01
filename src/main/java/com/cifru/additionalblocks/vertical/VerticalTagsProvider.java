@@ -2,10 +2,9 @@ package com.cifru.additionalblocks.vertical;
 
 import com.google.common.collect.Maps;
 import com.google.gson.*;
-import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
+import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
-import net.minecraft.core.HolderLookup;
-import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.PackType;
 import net.minecraft.server.packs.VanillaPackResources;
@@ -13,26 +12,23 @@ import net.minecraft.server.packs.repository.ServerPacksSource;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
 
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.CompletableFuture;
 
 public class VerticalTagsProvider extends FabricTagProvider.BlockTagProvider {
 
     private static final Gson GSON = new GsonBuilder().create();
-    private static final VanillaPackResources VANILLA_RESOURCES = ServerPacksSource.createVanillaPackSource();
 
-    public VerticalTagsProvider(FabricDataOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider){
-        super(output, lookupProvider);
+    public VerticalTagsProvider(FabricDataGenerator output){
+        super(output);
     }
 
     @Override
-    protected void addTags(HolderLookup.Provider provider){
+    protected void generateTags(){
         List<TagKey<Block>> tags = List.of(
             BlockTags.MINEABLE_WITH_AXE,
             BlockTags.MINEABLE_WITH_HOE,
@@ -47,9 +43,9 @@ public class VerticalTagsProvider extends FabricTagProvider.BlockTagProvider {
             for(TagKey<Block> tag : tags){
                 if(value.dependentMods.isEmpty()){
                     if(this.loadVanillaTag(tag.location()).contains(value.parentSlabBlock.get()))
-                        this.tag(tag).add(BuiltInRegistries.BLOCK.getResourceKey(value.getSlab()).get());
+                        this.tag(tag).add(Registry.BLOCK.getResourceKey(value.getSlab()).get());
                     if(this.loadVanillaTag(tag.location()).contains(value.parentStairBlock.get()))
-                        this.tag(tag).add(BuiltInRegistries.BLOCK.getResourceKey(value.getStair()).get());
+                        this.tag(tag).add(Registry.BLOCK.getResourceKey(value.getStair()).get());
                 }else{
                     if(this.loadVanillaTag(tag.location()).contains(value.parentSlabBlock.get()))
                         this.tag(tag).addOptional(value.slabRegistryName);
@@ -69,23 +65,25 @@ public class VerticalTagsProvider extends FabricTagProvider.BlockTagProvider {
         List<Block> blocks = new ArrayList<>();
 
         ResourceLocation tagLocation = new ResourceLocation(location.getNamespace(), "tags/blocks/" + location.getPath() + ".json");
-        try(InputStream stream = VANILLA_RESOURCES.getResource(PackType.SERVER_DATA, tagLocation).get()){
-            JsonObject json = GSON.fromJson(new InputStreamReader(stream), JsonObject.class);
-            JsonArray array = json.getAsJsonArray("values");
-            for(JsonElement element : array){
-                String name = element.getAsString();
-                if(name.charAt(0) == '#'){
-                    blocks.addAll(this.loadVanillaTag(new ResourceLocation(name.substring(1))));
-                    continue;
+        try(VanillaPackResources resources = new VanillaPackResources(ServerPacksSource.BUILT_IN_METADATA, ServerPacksSource.VANILLA_ID)){
+            try(InputStream stream = resources.getResource(PackType.SERVER_DATA, tagLocation)){
+                JsonObject json = GSON.fromJson(new InputStreamReader(stream), JsonObject.class);
+                JsonArray array = json.getAsJsonArray("values");
+                for(JsonElement element : array){
+                    String name = element.getAsString();
+                    if(name.charAt(0) == '#'){
+                        blocks.addAll(this.loadVanillaTag(new ResourceLocation(name.substring(1))));
+                        continue;
+                    }
+                    ResourceLocation registryName = new ResourceLocation(name);
+                    Block block = Registry.BLOCK.get(registryName);
+                    if(block == null)
+                        throw new JsonParseException("Unknown block '" + registryName + "' in '" + location + "'");
+                    blocks.add(block);
                 }
-                ResourceLocation registryName = new ResourceLocation(name);
-                Block block = BuiltInRegistries.BLOCK.get(registryName);
-                if(block == null || block == Blocks.AIR)
-                    throw new JsonParseException("Unknown block '" + registryName + "' in '" + location + "'");
-                blocks.add(block);
+            }catch(Exception e){
+                e.printStackTrace();
             }
-        }catch(Exception e){
-            e.printStackTrace();
         }
 
         this.loadedTags.put(location, blocks);

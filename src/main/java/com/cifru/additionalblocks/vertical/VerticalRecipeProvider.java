@@ -2,12 +2,11 @@ package com.cifru.additionalblocks.vertical;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
-import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
+import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.fabricmc.fabric.api.resource.conditions.v1.DefaultResourceConditions;
 import net.fabricmc.fabric.api.resource.conditions.v1.ResourceConditions;
 import net.minecraft.data.recipes.FinishedRecipe;
-import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.data.recipes.SingleItemRecipeBuilder;
 import net.minecraft.resources.ResourceLocation;
@@ -20,21 +19,21 @@ import java.util.function.Consumer;
 
 public class VerticalRecipeProvider extends FabricRecipeProvider {
 
-    public VerticalRecipeProvider(FabricDataOutput output){
+    public VerticalRecipeProvider(FabricDataGenerator output){
         super(output);
     }
 
     @Override
-    public void buildRecipes(Consumer<FinishedRecipe> recipeConsumer){
+    protected void generateRecipes(Consumer<FinishedRecipe> recipeConsumer){
         for(VerticalBlockType value : VerticalBlockType.ALL.values()){
-            ShapedRecipeBuilder slabRecipe = ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, value.getSlab(), 6)
+            ShapedRecipeBuilder slabRecipe = ShapedRecipeBuilder.shaped(value.getSlab(), 6)
                 .pattern("X")
                 .pattern("X")
                 .pattern("X")
                 .define('X', value.recipeBlock.get())
                 .unlockedBy("has_item", has(value.recipeBlock.get()));
             saveRecipe(value, value.slabRegistryName, slabRecipe::save, recipeConsumer);
-            ShapedRecipeBuilder stairRecipe = ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, value.getStair(), 4)
+            ShapedRecipeBuilder stairRecipe = ShapedRecipeBuilder.shaped(value.getStair(), 4)
                 .pattern("XXX")
                 .pattern(" XX")
                 .pattern("  X")
@@ -43,11 +42,11 @@ public class VerticalRecipeProvider extends FabricRecipeProvider {
             saveRecipe(value, value.stairRegistryName, stairRecipe::save, recipeConsumer);
             if(value.hasStoneCutterRecipe){
                 SingleItemRecipeBuilder slabStonecuttingRecipe = SingleItemRecipeBuilder
-                    .stonecutting(Ingredient.of(value.recipeBlock.get()), RecipeCategory.BUILDING_BLOCKS, value.getSlab(), 2)
+                    .stonecutting(Ingredient.of(value.recipeBlock.get()), value.getSlab(), 2)
                     .unlockedBy("has_item", has(value.recipeBlock.get()));
                 saveRecipe(value, new ResourceLocation("abverticaledition", value.slabRegistryName.getPath() + "_stonecutting"), slabStonecuttingRecipe::save, recipeConsumer);
                 SingleItemRecipeBuilder stairStonecuttingRecipe = SingleItemRecipeBuilder
-                    .stonecutting(Ingredient.of(value.recipeBlock.get()), RecipeCategory.BUILDING_BLOCKS, value.getStair(), 1)
+                    .stonecutting(Ingredient.of(value.recipeBlock.get()), value.getStair(), 1)
                     .unlockedBy("has_item", has(value.recipeBlock.get()));
                 saveRecipe(value, new ResourceLocation("abverticaledition", value.stairRegistryName.getPath() + "_stonecutting"), stairStonecuttingRecipe::save, recipeConsumer);
             }

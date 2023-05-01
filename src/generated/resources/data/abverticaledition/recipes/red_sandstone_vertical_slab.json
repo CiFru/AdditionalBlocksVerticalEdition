@@ -1,19 +1,17 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "building",
-  "key": {
-    "X": {
-      "item": "minecraft:red_sandstone"
-    }
-  },
   "pattern": [
     "X",
     "X",
     "X"
   ],
-  "result": {
-    "count": 6,
-    "item": "abverticaledition:red_sandstone_vertical_slab"
+  "key": {
+    "X": {
+      "item": "minecraft:red_sandstone"
+    }
   },
-  "show_notification": true
+  "result": {
+    "item": "abverticaledition:red_sandstone_vertical_slab",
+    "count": 6
+  }
 }

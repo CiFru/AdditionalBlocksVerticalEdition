@@ -2,7 +2,7 @@ package com.cifru.additionalblocks.vertical;
 
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
+import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 import net.minecraft.data.models.BlockModelGenerators;
 import net.minecraft.data.models.ItemModelGenerators;
@@ -17,7 +17,7 @@ import java.util.function.Supplier;
 
 public class VerticalModelProvider extends FabricModelProvider {
 
-    public VerticalModelProvider(FabricDataOutput output){
+    public VerticalModelProvider(FabricDataGenerator output){
         super(output);
     }
 
@@ -48,14 +48,16 @@ public class VerticalModelProvider extends FabricModelProvider {
                     ))
             );
         }
+
+        // Item models
+        for(VerticalBlockType value : VerticalBlockType.ALL.values()){
+            this.itemModel(generators.modelOutput, value.slabRegistryName.getPath());
+            this.itemModel(generators.modelOutput, value.stairRegistryName.getPath());
+        }
     }
 
     @Override
     public void generateItemModels(ItemModelGenerators generators){
-        for(VerticalBlockType value : VerticalBlockType.ALL.values()){
-            this.itemModel(generators.output, value.slabRegistryName.getPath());
-            this.itemModel(generators.output, value.stairRegistryName.getPath());
-        }
     }
 
     private void blockModel(BiConsumer<ResourceLocation,Supplier<JsonElement>> output, String name, ResourceLocation parent, ResourceLocation texture){

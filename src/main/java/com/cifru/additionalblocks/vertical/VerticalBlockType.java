@@ -1,7 +1,7 @@
 package com.cifru.additionalblocks.vertical;
 
 import net.fabricmc.loader.api.FabricLoader;
-import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -36,7 +36,7 @@ public class VerticalBlockType {
     public static final VerticalBlockType JUNGLE = createBlockType("jungle", "Jungle", () -> Blocks.JUNGLE_SLAB, () -> Blocks.JUNGLE_STAIRS, () -> Blocks.JUNGLE_PLANKS, false, new ResourceLocation("minecraft", "block/jungle_planks"));
     public static final VerticalBlockType ACACIA = createBlockType("acacia", "Acacia", () -> Blocks.ACACIA_SLAB, () -> Blocks.ACACIA_STAIRS, () -> Blocks.ACACIA_PLANKS, false, new ResourceLocation("minecraft", "block/acacia_planks"));
     public static final VerticalBlockType DARK_OAK = createBlockType("dark_oak", "Dark Oak", () -> Blocks.DARK_OAK_SLAB, () -> Blocks.DARK_OAK_STAIRS, () -> Blocks.DARK_OAK_PLANKS, false, new ResourceLocation("minecraft", "block/dark_oak_planks"));
-    public static final VerticalBlockType MANGROVE = createBlockType("mangrove", "Mangrove", () -> Blocks.MANGROVE_SLAB, () -> Blocks.MANGROVE_STAIRS, () -> Blocks.MANGROVE_PLANKS, false, new ResourceLocation("minecraft", "block/mangrove_planks"));
+    //    public static final VerticalBlockType MANGROVE = createBlockType("mangrove", "Mangrove", () -> Blocks.MANGROVE_SLAB, () -> Blocks.MANGROVE_STAIRS, () -> Blocks.MANGROVE_PLANKS, false, new ResourceLocation("minecraft", "block/mangrove_planks"));
     public static final VerticalBlockType CRIMSON = createBlockType("crimson", "Crimson", () -> Blocks.CRIMSON_SLAB, () -> Blocks.CRIMSON_STAIRS, () -> Blocks.CRIMSON_PLANKS, false, new ResourceLocation("minecraft", "block/crimson_planks"));
     public static final VerticalBlockType WARPED = createBlockType("warped", "Warped", () -> Blocks.WARPED_SLAB, () -> Blocks.WARPED_STAIRS, () -> Blocks.WARPED_PLANKS, false, new ResourceLocation("minecraft", "block/warped_planks"));
 
@@ -56,7 +56,7 @@ public class VerticalBlockType {
     public static final VerticalBlockType MOSSY_COBBLESTONE = createBlockType("mossy_cobblestone", "Mossy Cobblestone", () -> Blocks.MOSSY_COBBLESTONE_SLAB, () -> Blocks.MOSSY_COBBLESTONE_STAIRS, () -> Blocks.MOSSY_COBBLESTONE, true, new ResourceLocation("minecraft", "block/mossy_cobblestone"));
 
     public static final VerticalBlockType BRICK = createBlockType("brick", "Brick", () -> Blocks.BRICK_SLAB, () -> Blocks.BRICK_STAIRS, () -> Blocks.BRICKS, true, new ResourceLocation("minecraft", "block/bricks"));
-    public static final VerticalBlockType MUD_BRICK = createBlockType("mud_brick", "Mud Brick", () -> Blocks.MUD_BRICK_SLAB, () -> Blocks.MUD_BRICK_STAIRS, () -> Blocks.MUD_BRICKS, true, new ResourceLocation("minecraft", "block/mud_bricks"));
+//    public static final VerticalBlockType MUD_BRICK = createBlockType("mud_brick", "Mud Brick", () -> Blocks.MUD_BRICK_SLAB, () -> Blocks.MUD_BRICK_STAIRS, () -> Blocks.MUD_BRICKS, true, new ResourceLocation("minecraft", "block/mud_bricks"));
 
     public static final VerticalBlockType QUARTZ = createBlockType("quartz", "Quartz", () -> Blocks.QUARTZ_SLAB, () -> Blocks.QUARTZ_STAIRS, () -> Blocks.QUARTZ_BLOCK, true, new ResourceLocation("minecraft", "block/quartz_block_side"));
     public static final VerticalBlockType SMOOTH_QUARTZ = createBlockType("smooth_quartz", "Smooth Quartz", () -> Blocks.SMOOTH_QUARTZ_SLAB, () -> Blocks.SMOOTH_QUARTZ_STAIRS, () -> Blocks.SMOOTH_QUARTZ, true, new ResourceLocation("minecraft", "block/quartz_block_bottom"));
@@ -164,7 +164,7 @@ public class VerticalBlockType {
     }
 
     private static Block getBlockFromOtherMod(ResourceLocation location){
-        Block block = BuiltInRegistries.BLOCK.get(location);
+        Block block = Registry.BLOCK.get(location);
         if(block == null || block == Blocks.AIR)
             throw new RuntimeException("Could not find any block registered under '" + location + "'!");
         return block;
@@ -200,10 +200,10 @@ public class VerticalBlockType {
     }
 
     public Block getSlab(){
-        return BuiltInRegistries.BLOCK.get(this.slabRegistryName);
+        return Registry.BLOCK.get(this.slabRegistryName);
     }
 
     public Block getStair(){
-        return BuiltInRegistries.BLOCK.get(this.stairRegistryName);
+        return Registry.BLOCK.get(this.stairRegistryName);
     }
 }

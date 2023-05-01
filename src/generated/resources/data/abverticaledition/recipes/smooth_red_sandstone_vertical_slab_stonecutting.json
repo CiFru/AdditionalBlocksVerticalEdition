@@ -1,8 +1,8 @@
 {
   "type": "minecraft:stonecutting",
-  "count": 2,
   "ingredient": {
     "item": "minecraft:smooth_red_sandstone"
   },
-  "result": "abverticaledition:smooth_red_sandstone_vertical_slab"
+  "result": "abverticaledition:smooth_red_sandstone_vertical_slab",
+  "count": 2
 }

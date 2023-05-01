@@ -1,11 +1,11 @@
 package com.cifru.additionalblocks.vertical;
 
-import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
+import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
 
 public class VerticalLanguageProvider extends FabricLanguageProvider {
 
-    public VerticalLanguageProvider(FabricDataOutput output){
+    public VerticalLanguageProvider(FabricDataGenerator output){
         super(output);
     }
 

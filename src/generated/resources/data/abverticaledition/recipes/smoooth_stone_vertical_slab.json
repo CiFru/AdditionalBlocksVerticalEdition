@@ -1,19 +1,17 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "building",
-  "key": {
-    "X": {
-      "item": "minecraft:smooth_stone"
-    }
-  },
   "pattern": [
     "X",
     "X",
     "X"
   ],
-  "result": {
-    "count": 6,
-    "item": "abverticaledition:smoooth_stone_vertical_slab"
+  "key": {
+    "X": {
+      "item": "minecraft:smooth_stone"
+    }
   },
-  "show_notification": true
+  "result": {
+    "item": "abverticaledition:smoooth_stone_vertical_slab",
+    "count": 6
+  }
 }

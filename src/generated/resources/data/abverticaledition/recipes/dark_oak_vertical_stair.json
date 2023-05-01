@@ -1,19 +1,17 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "building",
-  "key": {
-    "X": {
-      "item": "minecraft:dark_oak_planks"
-    }
-  },
   "pattern": [
     "XXX",
     " XX",
     "  X"
   ],
-  "result": {
-    "count": 4,
-    "item": "abverticaledition:dark_oak_vertical_stair"
+  "key": {
+    "X": {
+      "item": "minecraft:dark_oak_planks"
+    }
   },
-  "show_notification": true
+  "result": {
+    "item": "abverticaledition:dark_oak_vertical_stair",
+    "count": 4
+  }
 }

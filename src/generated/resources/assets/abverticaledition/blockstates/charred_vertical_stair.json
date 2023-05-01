@@ -2,23 +2,23 @@
   "variants": {
     "state=east": {
       "model": "abverticaledition:block/charred_vertical_stair",
-      "uvlock": true,
-      "y": 90
+      "y": 90,
+      "uvlock": true
     },
     "state=north": {
       "model": "abverticaledition:block/charred_vertical_stair",
-      "uvlock": true,
-      "y": 0
+      "y": 0,
+      "uvlock": true
     },
     "state=south": {
       "model": "abverticaledition:block/charred_vertical_stair",
-      "uvlock": true,
-      "y": 180
+      "y": 180,
+      "uvlock": true
     },
     "state=west": {
       "model": "abverticaledition:block/charred_vertical_stair",
-      "uvlock": true,
-      "y": 270
+      "y": 270,
+      "uvlock": true
     }
   }
 }

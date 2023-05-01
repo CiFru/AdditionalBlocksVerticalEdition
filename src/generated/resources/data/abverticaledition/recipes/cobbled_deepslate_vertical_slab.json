@@ -1,19 +1,17 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "building",
-  "key": {
-    "X": {
-      "item": "minecraft:cobbled_deepslate"
-    }
-  },
   "pattern": [
     "X",
     "X",
     "X"
   ],
-  "result": {
-    "count": 6,
-    "item": "abverticaledition:cobbled_deepslate_vertical_slab"
+  "key": {
+    "X": {
+      "item": "minecraft:cobbled_deepslate"
+    }
   },
-  "show_notification": true
+  "result": {
+    "item": "abverticaledition:cobbled_deepslate_vertical_slab",
+    "count": 6
+  }
 }

@@ -1,8 +1,8 @@
 {
   "type": "minecraft:stonecutting",
-  "count": 1,
   "ingredient": {
     "item": "minecraft:nether_bricks"
   },
-  "result": "abverticaledition:nether_brick_vertical_stair"
+  "result": "abverticaledition:nether_brick_vertical_stair",
+  "count": 1
 }

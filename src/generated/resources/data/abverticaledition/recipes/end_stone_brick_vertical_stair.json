@@ -1,19 +1,17 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "building",
-  "key": {
-    "X": {
-      "item": "minecraft:end_stone_bricks"
-    }
-  },
   "pattern": [
     "XXX",
     " XX",
     "  X"
   ],
-  "result": {
-    "count": 4,
-    "item": "abverticaledition:end_stone_brick_vertical_stair"
+  "key": {
+    "X": {
+      "item": "minecraft:end_stone_bricks"
+    }
   },
-  "show_notification": true
+  "result": {
+    "item": "abverticaledition:end_stone_brick_vertical_stair",
+    "count": 4
+  }
 }
