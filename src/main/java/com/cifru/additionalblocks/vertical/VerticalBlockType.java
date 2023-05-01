@@ -141,6 +141,15 @@ public class VerticalBlockType {
     public static final VerticalBlockType STONE_PATTERN = createBlockTypeForOtherMod("abstoneedition", "stone_pattern", "Stone Pattern", "stone_pattern_slab", "stone_pattern_stairs", "stone_pattern", true, new ResourceLocation("abstoneedition", "stone_pattern"));
     public static final VerticalBlockType STONE_TILES = createBlockTypeForOtherMod("abstoneedition", "stone_tiles", "Stone Tile", "stone_tiles_slab", "stone_tiles_stairs", "stone_tiles", true, new ResourceLocation("abstoneedition", "stone_tiles"));
 
+    // 1.19+
+    public static final VerticalBlockType REINFORCED_DEEPSLATE = createBlockTypeForOtherMod("abstoneedition", "reinforced_deepslate", "Reinforced Deepslate", "reinforced_deepslate_slab", "reinforced_deepslate_stairs", "reinforced_deepslate", true, new ResourceLocation("abstoneedition", "reinforced_deepslate"));
+    public static final VerticalBlockType OCHRE_FROGLIGHT = createBlockTypeForOtherMod("abstoneedition", "ochre_froglight", "Ochre Froglight", "ochre_froglight_slab", "ochre_froglight_stairs", "ochre_froglight", false, new ResourceLocation("abstoneedition", "ochre_froglight"));
+    public static final VerticalBlockType PEARLESCENT_FROGLIGHT = createBlockTypeForOtherMod("abstoneedition", "pearlescent_froglight", "Pearlescent Froglight", "pearlescent_froglight_slab", "pearlescent_froglight_stairs", "pearlescent_froglight", false, new ResourceLocation("abstoneedition", "pearlescent_froglight"));
+    public static final VerticalBlockType VERDANT_FROGLIGHT = createBlockTypeForOtherMod("abstoneedition", "verdant_froglight", "Verdant Froglight", "verdant_froglight_slab", "verdant_froglight_stairs", "verdant_froglight", false, new ResourceLocation("abstoneedition", "verdant_froglight"));
+    public static final VerticalBlockType MUD = createBlockTypeForOtherMod("abstoneedition", "mud", "Mud", "mud_slab", "mud_stairs", "mud", false, new ResourceLocation("abstoneedition", "mud"));
+    public static final VerticalBlockType PACKED_MUD = createBlockTypeForOtherMod("abstoneedition", "packed_mud", "Packed Mud", "packed_mud_slab", "packed_mud_stairs", "packed_mud", false, new ResourceLocation("abstoneedition", "packed_mud"));
+    public static final VerticalBlockType SCULK = createBlockTypeForOtherMod("abstoneedition", "sculk", "Sculk", "sculk_slab", "sculk_stairs", "sculk", false, new ResourceLocation("abstoneedition", "sculk"));
+
     private static VerticalBlockType createBlockType(String registryName, String translation, Supplier<Block> parentSlabBlock, Supplier<Block> parentStairBlock, Supplier<Block> recipeBlock, boolean hasStoneCutterRecipe, ResourceLocation texture, String... dependentMods){
         ResourceLocation resourceLocation = new ResourceLocation("abverticaledition", registryName);
         if(ALL.containsKey(resourceLocation))
