@@ -10,17 +10,18 @@
     },
     "connection=left,state=north": {
       "model": "abverticaledition:block/oak_vertical_slab_post",
-      "uvlock": true
+      "uvlock": true,
+      "y": 0
     },
     "connection=left,state=south": {
       "model": "abverticaledition:block/oak_vertical_slab_post",
       "uvlock": true,
-      "y": -180
+      "y": 180
     },
     "connection=left,state=west": {
       "model": "abverticaledition:block/oak_vertical_slab_post",
       "uvlock": true,
-      "y": -90
+      "y": 270
     },
     "connection=none,state=east": {
       "model": "abverticaledition:block/oak_vertical_slab",
@@ -32,22 +33,23 @@
     },
     "connection=none,state=north": {
       "model": "abverticaledition:block/oak_vertical_slab",
-      "uvlock": true
+      "uvlock": true,
+      "y": 0
     },
     "connection=none,state=south": {
       "model": "abverticaledition:block/oak_vertical_slab",
       "uvlock": true,
-      "y": -180
+      "y": 180
     },
     "connection=none,state=west": {
       "model": "abverticaledition:block/oak_vertical_slab",
       "uvlock": true,
-      "y": -90
+      "y": 270
     },
     "connection=right,state=east": {
       "model": "abverticaledition:block/oak_vertical_slab_post",
       "uvlock": true,
-      "y": -180
+      "y": 180
     },
     "connection=right,state=full": {
       "model": "abverticaledition:block/oak_vertical_slab_full"
@@ -60,11 +62,12 @@
     "connection=right,state=south": {
       "model": "abverticaledition:block/oak_vertical_slab_post",
       "uvlock": true,
-      "y": -90
+      "y": 270
     },
     "connection=right,state=west": {
       "model": "abverticaledition:block/oak_vertical_slab_post",
-      "uvlock": true
+      "uvlock": true,
+      "y": 0
     }
   }
 }

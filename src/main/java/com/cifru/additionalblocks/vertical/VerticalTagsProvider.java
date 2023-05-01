@@ -2,111 +2,90 @@ package com.cifru.additionalblocks.vertical;
 
 import com.google.common.collect.Maps;
 import com.google.gson.*;
+import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
+import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.minecraft.core.HolderLookup;
-import net.minecraft.data.DataGenerator;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.server.packs.resources.MultiPackResourceManager;
-import net.minecraft.server.packs.resources.Resource;
+import net.minecraft.server.packs.PackType;
+import net.minecraft.server.packs.VanillaPackResources;
+import net.minecraft.server.packs.repository.ServerPacksSource;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.level.block.Block;
-import net.minecraftforge.common.data.BlockTagsProvider;
-import net.minecraftforge.common.data.ExistingFileHelper;
-import net.minecraftforge.registries.ForgeRegistries;
-import org.jetbrains.annotations.Nullable;
+import net.minecraft.world.level.block.Blocks;
 
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.CompletableFuture;
-import java.util.function.Function;
 
-public class VerticalTagsProvider extends BlockTagsProvider {
-
-    private static final Function<ExistingFileHelper,MultiPackResourceManager> SERVER_DATA_FIELD;
-
-    static {
-        try {
-            Field field = ExistingFileHelper.class.getDeclaredField("serverData");
-            field.setAccessible(true);
-            SERVER_DATA_FIELD = existingFileHelper -> {
-                try {
-                    return (MultiPackResourceManager)field.get(existingFileHelper);
-                } catch (IllegalAccessException e) {
-                    throw new RuntimeException(e);
-                }
-            };
-        } catch (NoSuchFieldException e) {
-            throw new RuntimeException(e);
-        }
-    }
+public class VerticalTagsProvider extends FabricTagProvider.BlockTagProvider {
 
     private static final Gson GSON = new GsonBuilder().create();
+    private static final VanillaPackResources VANILLA_RESOURCES = ServerPacksSource.createVanillaPackSource();
 
-    public VerticalTagsProvider(DataGenerator dataGenerator, CompletableFuture<HolderLookup.Provider> lookupProvider, String modId, @Nullable ExistingFileHelper existingFileHelper) {
-        super(dataGenerator.getPackOutput(), lookupProvider, modId, existingFileHelper);
+    public VerticalTagsProvider(FabricDataOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider){
+        super(output, lookupProvider);
     }
 
     @Override
     protected void addTags(HolderLookup.Provider provider){
         List<TagKey<Block>> tags = List.of(
-                BlockTags.MINEABLE_WITH_AXE,
-                BlockTags.MINEABLE_WITH_HOE,
-                BlockTags.MINEABLE_WITH_PICKAXE,
-                BlockTags.MINEABLE_WITH_SHOVEL,
-                BlockTags.NEEDS_DIAMOND_TOOL,
-                BlockTags.NEEDS_IRON_TOOL,
-                BlockTags.NEEDS_STONE_TOOL
+            BlockTags.MINEABLE_WITH_AXE,
+            BlockTags.MINEABLE_WITH_HOE,
+            BlockTags.MINEABLE_WITH_PICKAXE,
+            BlockTags.MINEABLE_WITH_SHOVEL,
+            BlockTags.NEEDS_DIAMOND_TOOL,
+            BlockTags.NEEDS_IRON_TOOL,
+            BlockTags.NEEDS_STONE_TOOL
         );
 
-        for (VerticalBlockType value : VerticalBlockType.ALL.values()) {
-            for (TagKey<Block> tag : tags) {
-                if (value.dependentMods.isEmpty()) {
-                    if (this.loadVanillaTag(tag.location()).contains(value.parentSlabBlock.get()))
-                        this.tag(tag).replace(false).add(ForgeRegistries.BLOCKS.getResourceKey(value.getSlab()).get());
-                    if (this.loadVanillaTag(tag.location()).contains(value.parentStairBlock.get()))
-                        this.tag(tag).replace(false).add(ForgeRegistries.BLOCKS.getResourceKey(value.getStair()).get());
-                } else {
-                    if (this.loadVanillaTag(tag.location()).contains(value.parentSlabBlock.get()))
-                        this.tag(tag).replace(false).addOptional(value.slabRegistryName);
-                    if (this.loadVanillaTag(tag.location()).contains(value.parentStairBlock.get()))
-                        this.tag(tag).replace(false).addOptional(value.stairRegistryName);
+        for(VerticalBlockType value : VerticalBlockType.ALL.values()){
+            for(TagKey<Block> tag : tags){
+                if(value.dependentMods.isEmpty()){
+                    if(this.loadVanillaTag(tag.location()).contains(value.parentSlabBlock.get()))
+                        this.tag(tag).add(BuiltInRegistries.BLOCK.getResourceKey(value.getSlab()).get());
+                    if(this.loadVanillaTag(tag.location()).contains(value.parentStairBlock.get()))
+                        this.tag(tag).add(BuiltInRegistries.BLOCK.getResourceKey(value.getStair()).get());
+                }else{
+                    if(this.loadVanillaTag(tag.location()).contains(value.parentSlabBlock.get()))
+                        this.tag(tag).addOptional(value.slabRegistryName);
+                    if(this.loadVanillaTag(tag.location()).contains(value.parentStairBlock.get()))
+                        this.tag(tag).addOptional(value.stairRegistryName);
                 }
             }
         }
     }
 
-    private final Map<ResourceLocation, List<Block>> loadedTags = Maps.newHashMap();
+    private final Map<ResourceLocation,List<Block>> loadedTags = Maps.newHashMap();
 
-    private List<Block> loadVanillaTag(ResourceLocation location) {
-        if (this.loadedTags.containsKey(location))
+    private List<Block> loadVanillaTag(ResourceLocation location){
+        if(this.loadedTags.containsKey(location))
             return this.loadedTags.get(location);
 
         List<Block> blocks = new ArrayList<>();
 
-        MultiPackResourceManager resourceManager = SERVER_DATA_FIELD.apply(this.existingFileHelper);
-        for (Resource resource : resourceManager.getResourceStack(new ResourceLocation(location.getNamespace(), "tags/blocks/" + location.getPath() + ".json"))) {
-            try (InputStream stream = resource.open()) {
-                JsonObject json = GSON.fromJson(new InputStreamReader(stream), JsonObject.class);
-                JsonArray array = json.getAsJsonArray("values");
-                for (JsonElement element : array) {
-                    String name = element.getAsString();
-                    if (name.charAt(0) == '#') {
-                        blocks.addAll(this.loadVanillaTag(new ResourceLocation(name.substring(1))));
-                        continue;
-                    }
-                    ResourceLocation registryName = new ResourceLocation(name);
-                    Block block = ForgeRegistries.BLOCKS.getValue(registryName);
-                    if (block == null)
-                        throw new JsonParseException("Unknown block '" + registryName + "' in '" + location + "'");
-                    blocks.add(block);
+        ResourceLocation tagLocation = new ResourceLocation(location.getNamespace(), "tags/blocks/" + location.getPath() + ".json");
+        try(InputStream stream = VANILLA_RESOURCES.getResource(PackType.SERVER_DATA, tagLocation).get()){
+            JsonObject json = GSON.fromJson(new InputStreamReader(stream), JsonObject.class);
+            JsonArray array = json.getAsJsonArray("values");
+            for(JsonElement element : array){
+                String name = element.getAsString();
+                if(name.charAt(0) == '#'){
+                    blocks.addAll(this.loadVanillaTag(new ResourceLocation(name.substring(1))));
+                    continue;
                 }
-            } catch (Exception e) {
-                e.printStackTrace();
+                ResourceLocation registryName = new ResourceLocation(name);
+                Block block = BuiltInRegistries.BLOCK.get(registryName);
+                if(block == null || block == Blocks.AIR)
+                    throw new JsonParseException("Unknown block '" + registryName + "' in '" + location + "'");
+                blocks.add(block);
             }
+        }catch(Exception e){
+            e.printStackTrace();
         }
 
         this.loadedTags.put(location, blocks);

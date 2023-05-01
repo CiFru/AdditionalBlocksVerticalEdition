@@ -14,5 +14,6 @@
   "result": {
     "count": 6,
     "item": "abverticaledition:blackstone_vertical_slab"
-  }
+  },
+  "show_notification": true
 }

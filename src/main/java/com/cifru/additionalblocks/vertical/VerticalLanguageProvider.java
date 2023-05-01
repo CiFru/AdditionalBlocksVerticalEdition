@@ -1,21 +1,21 @@
 package com.cifru.additionalblocks.vertical;
 
-import net.minecraft.data.PackOutput;
-import net.minecraftforge.common.data.LanguageProvider;
+import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
+import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
 
-public class VerticalLanguageProvider extends LanguageProvider {
+public class VerticalLanguageProvider extends FabricLanguageProvider {
 
-    public VerticalLanguageProvider(PackOutput output, String modid, String locale){
-        super(output, modid, locale);
+    public VerticalLanguageProvider(FabricDataOutput output){
+        super(output);
     }
 
     @Override
-    protected void addTranslations(){
-        this.add("itemGroup.abverticaledition", "Additional Blocks: Vertical Edition");
+    public void generateTranslations(TranslationBuilder translations){
+        translations.add("itemGroup.abverticaledition", "Additional Blocks: Vertical Edition");
 
         for(VerticalBlockType value : VerticalBlockType.ALL.values()){
-            this.add(value.getSlab(), value.slabTranslation);
-            this.add(value.getStair(), value.stairTranslation);
+            translations.add(value.getSlab(), value.slabTranslation);
+            translations.add(value.getStair(), value.stairTranslation);
         }
     }
 }

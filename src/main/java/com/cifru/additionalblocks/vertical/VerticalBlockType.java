@@ -1,10 +1,10 @@
 package com.cifru.additionalblocks.vertical;
 
+import net.fabricmc.loader.api.FabricLoader;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraftforge.fml.ModList;
-import net.minecraftforge.registries.ForgeRegistries;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -154,7 +154,7 @@ public class VerticalBlockType {
 
     private static VerticalBlockType createBlockTypeForOtherMod(String modid, String registryName, String translation, String parentSlabBlock, String parentStairBlock, String recipeBlock, boolean hasStoneCutterRecipe, ResourceLocation texture){
         // Check if the other mod is loaded
-        if(!ModList.get().isLoaded(modid))
+        if(!FabricLoader.getInstance().isModLoaded(modid))
             return null;
 
         ResourceLocation parentSlabBlockLocation = parentSlabBlock.contains(":") ? new ResourceLocation(parentSlabBlock) : new ResourceLocation(modid, parentSlabBlock);
@@ -164,7 +164,7 @@ public class VerticalBlockType {
     }
 
     private static Block getBlockFromOtherMod(ResourceLocation location){
-        Block block = ForgeRegistries.BLOCKS.getValue(location);
+        Block block = BuiltInRegistries.BLOCK.get(location);
         if(block == null || block == Blocks.AIR)
             throw new RuntimeException("Could not find any block registered under '" + location + "'!");
         return block;
@@ -200,10 +200,10 @@ public class VerticalBlockType {
     }
 
     public Block getSlab(){
-        return ForgeRegistries.BLOCKS.getValue(this.slabRegistryName);
+        return BuiltInRegistries.BLOCK.get(this.slabRegistryName);
     }
 
     public Block getStair(){
-        return ForgeRegistries.BLOCKS.getValue(this.stairRegistryName);
+        return BuiltInRegistries.BLOCK.get(this.stairRegistryName);
     }
 }

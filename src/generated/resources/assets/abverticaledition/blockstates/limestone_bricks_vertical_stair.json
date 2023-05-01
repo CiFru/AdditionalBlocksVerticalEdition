@@ -1,0 +1,24 @@
+{
+  "variants": {
+    "state=east": {
+      "model": "abverticaledition:block/limestone_bricks_vertical_stair",
+      "uvlock": true,
+      "y": 90
+    },
+    "state=north": {
+      "model": "abverticaledition:block/limestone_bricks_vertical_stair",
+      "uvlock": true,
+      "y": 0
+    },
+    "state=south": {
+      "model": "abverticaledition:block/limestone_bricks_vertical_stair",
+      "uvlock": true,
+      "y": 180
+    },
+    "state=west": {
+      "model": "abverticaledition:block/limestone_bricks_vertical_stair",
+      "uvlock": true,
+      "y": 270
+    }
+  }
+}

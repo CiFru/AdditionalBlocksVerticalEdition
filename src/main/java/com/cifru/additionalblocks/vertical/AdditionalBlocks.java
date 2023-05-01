@@ -1,70 +1,61 @@
 package com.cifru.additionalblocks.vertical;
 
+import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
+import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
+import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
+import net.minecraft.core.Registry;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraftforge.data.event.GatherDataEvent;
-import net.minecraftforge.event.CreativeModeTabEvent;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.IForgeRegistry;
-import net.minecraftforge.registries.ObjectHolder;
-import net.minecraftforge.registries.RegisterEvent;
 
 /**
  * Created 18/03/2022 by SuperMartijn642
  */
-@Mod("abverticaledition")
-public class AdditionalBlocks {
+public class AdditionalBlocks implements ModInitializer, DataGeneratorEntrypoint {
 
-    @ObjectHolder(value = "stone_brick_vertical_slab", registryName = "minecraft:block")
-    public static Block stone_brick_vertical_slab;
-
-    public AdditionalBlocks(){
-        FMLJavaModLoadingContext.get().getModEventBus().addListener(AdditionalBlocks::onRegisterEvent);
-        FMLJavaModLoadingContext.get().getModEventBus().addListener(AdditionalBlocks::onGatherDataEvent);
-        FMLJavaModLoadingContext.get().getModEventBus().addListener(AdditionalBlocks::onCreativeModeTabRegistration);
+    @Override
+    public void onInitialize(){
+        registerCreativeTab();
     }
 
-    private static void onRegisterEvent(RegisterEvent e){
-        if(e.getRegistryKey() == ForgeRegistries.Keys.BLOCKS)
-            registerBlocks(e.getForgeRegistry());
-        else if(e.getRegistryKey() == ForgeRegistries.Keys.ITEMS)
-            registerItems(e.getForgeRegistry());
+    public static void registerBlocks(){
+        registerBlocks(BuiltInRegistries.BLOCK);
+        registerItems(BuiltInRegistries.ITEM);
     }
 
-    private static void registerBlocks(IForgeRegistry<Block> registry){
+    private static void registerBlocks(Registry<Block> registry){
         for(VerticalBlockType value : VerticalBlockType.ALL.values()){
-            registry.register(value.slabRegistryName, new VerticalSlabBlock(BlockBehaviour.Properties.copy(value.parentSlabBlock.get())));
-            registry.register(value.stairRegistryName, new VerticalStairBlock(BlockBehaviour.Properties.copy(value.parentStairBlock.get())));
+            Registry.register(registry, value.slabRegistryName, new VerticalSlabBlock(BlockBehaviour.Properties.copy(value.parentSlabBlock.get())));
+            Registry.register(registry, value.stairRegistryName, new VerticalStairBlock(BlockBehaviour.Properties.copy(value.parentStairBlock.get())));
         }
     }
 
-    private static void registerItems(IForgeRegistry<Item> registry){
+    private static void registerItems(Registry<Item> registry){
         for(VerticalBlockType value : VerticalBlockType.ALL.values()){
-            registry.register(value.slabRegistryName, new BlockItem(value.getSlab(), new Item.Properties()));
-            registry.register(value.stairRegistryName, new BlockItem(value.getStair(), new Item.Properties()));
+            Registry.register(registry, value.slabRegistryName, new BlockItem(value.getSlab(), new Item.Properties()));
+            Registry.register(registry, value.stairRegistryName, new BlockItem(value.getStair(), new Item.Properties()));
         }
     }
 
-    private static void onGatherDataEvent(GatherDataEvent e){
-        e.getGenerator().addProvider(e.includeClient(), new VerticalLanguageProvider(e.getGenerator().getPackOutput(), "abverticaledition", "en_us"));
-        e.getGenerator().addProvider(e.includeClient(), new VerticalBlockModelProvider(e.getGenerator(), "abverticaledition", e.getExistingFileHelper()));
-        e.getGenerator().addProvider(e.includeClient(), new VerticalItemModelProvider(e.getGenerator(), "abverticaledition", e.getExistingFileHelper()));
-        e.getGenerator().addProvider(e.includeClient(), new VerticalBlockStateProvider(e.getGenerator(), "abverticaledition", e.getExistingFileHelper()));
-        e.getGenerator().addProvider(e.includeServer(), new VerticalRecipeProvider(e.getGenerator()));
-        e.getGenerator().addProvider(e.includeServer(), new VerticalTagsProvider(e.getGenerator(), e.getLookupProvider(), "abverticaledition", e.getExistingFileHelper()));
-        e.getGenerator().addProvider(e.includeServer(), new VerticalLootTableProvider(e.getGenerator()));
+    @Override
+    public void onInitializeDataGenerator(FabricDataGenerator dataGenerator){
+        FabricDataGenerator.Pack pack = dataGenerator.createPack();
+        pack.addProvider((output, registriesFuture) -> new VerticalLanguageProvider(output));
+        pack.addProvider((output, registriesFuture) -> new VerticalModelProvider(output));
+        pack.addProvider((output, registriesFuture) -> new VerticalRecipeProvider(output));
+        pack.addProvider(VerticalTagsProvider::new);
+        pack.addProvider((output, registriesFuture) -> new VerticalLootTableProvider(output));
     }
 
-    private static void onCreativeModeTabRegistration(CreativeModeTabEvent.Register e){
-        e.registerCreativeModeTab(new ResourceLocation("abverticaledition", "main"), builder -> builder.icon(() -> stone_brick_vertical_slab.asItem().getDefaultInstance()).displayItems((parameters, output) -> {
+    private static void registerCreativeTab(){
+        FabricItemGroup.builder(new ResourceLocation("abverticaledition", "main")).icon(() -> VerticalBlockType.STONE_BRICKS.getSlab().asItem().getDefaultInstance()).displayItems((parameters, output) -> {
             VerticalBlockType.ALL_ORDERED.stream().map(VerticalBlockType::getStair).map(Block::asItem).map(Item::getDefaultInstance).forEach(output::accept);
             VerticalBlockType.ALL_ORDERED.stream().map(VerticalBlockType::getSlab).map(Block::asItem).map(Item::getDefaultInstance).forEach(output::accept);
-        }).title(Component.translatable("itemGroup.abverticaledition")));
+        }).title(Component.translatable("itemGroup.abverticaledition")).build();
     }
 }

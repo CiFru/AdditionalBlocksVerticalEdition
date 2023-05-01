@@ -7,17 +7,18 @@
     },
     "state=north": {
       "model": "abverticaledition:block/diorite_vertical_stair",
-      "uvlock": true
+      "uvlock": true,
+      "y": 0
     },
     "state=south": {
       "model": "abverticaledition:block/diorite_vertical_stair",
       "uvlock": true,
-      "y": -180
+      "y": 180
     },
     "state=west": {
       "model": "abverticaledition:block/diorite_vertical_stair",
       "uvlock": true,
-      "y": -90
+      "y": 270
     }
   }
 }

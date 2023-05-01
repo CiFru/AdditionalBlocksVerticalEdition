@@ -14,5 +14,6 @@
   "result": {
     "count": 4,
     "item": "abverticaledition:red_sandstone_vertical_stair"
-  }
+  },
+  "show_notification": true
 }
