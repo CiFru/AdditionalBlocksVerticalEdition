@@ -9,6 +9,7 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -20,12 +21,12 @@ public class AdditionalBlocks implements ModInitializer, DataGeneratorEntrypoint
 
     @Override
     public void onInitialize(){
-        registerCreativeTab();
     }
 
     public static void registerBlocks(){
         registerBlocks(BuiltInRegistries.BLOCK);
         registerItems(BuiltInRegistries.ITEM);
+        registerCreativeTab(BuiltInRegistries.CREATIVE_MODE_TAB);
     }
 
     private static void registerBlocks(Registry<Block> registry){
@@ -52,10 +53,12 @@ public class AdditionalBlocks implements ModInitializer, DataGeneratorEntrypoint
         pack.addProvider((output, registriesFuture) -> new VerticalLootTableProvider(output));
     }
 
-    private static void registerCreativeTab(){
-        FabricItemGroup.builder(new ResourceLocation("abverticaledition", "main")).icon(() -> VerticalBlockType.STONE_BRICKS.getSlab().asItem().getDefaultInstance()).displayItems((parameters, output) -> {
-            VerticalBlockType.ALL_ORDERED.stream().map(VerticalBlockType::getStair).map(Block::asItem).map(Item::getDefaultInstance).forEach(output::accept);
-            VerticalBlockType.ALL_ORDERED.stream().map(VerticalBlockType::getSlab).map(Block::asItem).map(Item::getDefaultInstance).forEach(output::accept);
-        }).title(Component.translatable("itemGroup.abverticaledition")).build();
+    private static void registerCreativeTab(Registry<CreativeModeTab> registry){
+        Registry.register(registry, new ResourceLocation("abverticaledition", "main"),
+            FabricItemGroup.builder().icon(() -> VerticalBlockType.STONE_BRICKS.getSlab().asItem().getDefaultInstance()).displayItems((parameters, output) -> {
+                VerticalBlockType.ALL_ORDERED.stream().map(VerticalBlockType::getStair).map(Block::asItem).map(Item::getDefaultInstance).forEach(output::accept);
+                VerticalBlockType.ALL_ORDERED.stream().map(VerticalBlockType::getSlab).map(Block::asItem).map(Item::getDefaultInstance).forEach(output::accept);
+            }).title(Component.translatable("itemGroup.abverticaledition")).build()
+        );
     }
 }

@@ -4,7 +4,6 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
 import net.minecraft.advancements.critereon.StatePropertiesPredicate;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
@@ -17,7 +16,6 @@ import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePrope
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 
 import java.util.Map;
-import java.util.function.BiConsumer;
 
 /**
  * Created 02/03/2023 by SuperMartijn642
@@ -50,10 +48,5 @@ public class VerticalLootTableProvider extends FabricBlockLootTableProvider {
 
     private static <T extends ConditionUserBuilder<T>> T applyExplosionCondition(ConditionUserBuilder<T> p_248851_){
         return p_248851_.when(ExplosionCondition.survivesExplosion());
-    }
-
-    @Override
-    public void accept(BiConsumer<ResourceLocation,LootTable.Builder> consumer){
-        this.generate(consumer);
     }
 }
