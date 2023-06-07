@@ -30,5 +30,6 @@
     "recipes": [
       "abverticaledition:polished_granite_vertical_slab"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

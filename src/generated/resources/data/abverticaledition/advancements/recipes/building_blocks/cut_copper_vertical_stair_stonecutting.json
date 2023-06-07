@@ -30,5 +30,6 @@
     "recipes": [
       "abverticaledition:cut_copper_vertical_stair_stonecutting"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

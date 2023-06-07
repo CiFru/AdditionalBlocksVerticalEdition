@@ -30,5 +30,6 @@
     "recipes": [
       "abverticaledition:waxed_oxidized_cut_copper_vertical_slab"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

@@ -30,5 +30,6 @@
     "recipes": [
       "abverticaledition:smooth_red_sandstone_vertical_stair"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }
