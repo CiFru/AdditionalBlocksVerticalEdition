@@ -37,11 +37,9 @@ dependencies {
 //    modRuntimeOnly "curse.maven:additional-blocks-stone-edition-436715:${project.stone_edition_file}"
     modRuntimeOnly "com.cifru:abstoneedition:2.1.0a-fabric-mc1.20"
     // Core library
-//    modRuntimeOnly "curse.maven:supermartijn642s-core-lib-454372:${project.core_library_file}"
-    modRuntimeOnly "com.supermartijn642:supermartijn642corelib:1.1.9-fabric-mc1.20"
+    modRuntimeOnly "curse.maven:supermartijn642s-core-lib-454372:${project.core_library_file}"
     // Config library
-//    modRuntimeOnly "curse.maven:supermartijn642s-config-lib-438332:${project.config_library_file}"
-    modRuntimeOnly "com.supermartijn642:supermartijn642configlib:1.1.6-fabric-mc1.20"
+    modRuntimeOnly "curse.maven:supermartijn642s-config-lib-438332:${project.config_library_file}"
 
     // Just Enough Items
 //    modRuntimeOnly "curse.maven:jei-238222:${project.just_enough_items_file}"
