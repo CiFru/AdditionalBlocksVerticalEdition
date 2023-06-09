@@ -29,7 +29,6 @@ public class AdditionalBlocks {
     public AdditionalBlocks(){
         FMLJavaModLoadingContext.get().getModEventBus().addListener(AdditionalBlocks::onRegisterEvent);
         FMLJavaModLoadingContext.get().getModEventBus().addListener(AdditionalBlocks::onGatherDataEvent);
-        FMLJavaModLoadingContext.get().getModEventBus().addListener(AdditionalBlocks::registerCreativeModeTab);
     }
 
     private static void onRegisterEvent(RegisterEvent e){
