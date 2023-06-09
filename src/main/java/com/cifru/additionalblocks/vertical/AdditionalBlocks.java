@@ -1,13 +1,15 @@
 package com.cifru.additionalblocks.vertical;
 
+import net.minecraft.core.Registry;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraftforge.data.event.GatherDataEvent;
-import net.minecraftforge.event.CreativeModeTabEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -27,7 +29,7 @@ public class AdditionalBlocks {
     public AdditionalBlocks(){
         FMLJavaModLoadingContext.get().getModEventBus().addListener(AdditionalBlocks::onRegisterEvent);
         FMLJavaModLoadingContext.get().getModEventBus().addListener(AdditionalBlocks::onGatherDataEvent);
-        FMLJavaModLoadingContext.get().getModEventBus().addListener(AdditionalBlocks::onCreativeModeTabRegistration);
+        FMLJavaModLoadingContext.get().getModEventBus().addListener(AdditionalBlocks::registerCreativeModeTab);
     }
 
     private static void onRegisterEvent(RegisterEvent e){
@@ -35,6 +37,8 @@ public class AdditionalBlocks {
             registerBlocks(e.getForgeRegistry());
         else if(e.getRegistryKey() == ForgeRegistries.Keys.ITEMS)
             registerItems(e.getForgeRegistry());
+        else if(e.getRegistryKey() == Registries.CREATIVE_MODE_TAB)
+            registerCreativeModeTab(e.getVanillaRegistry());
     }
 
     private static void registerBlocks(IForgeRegistry<Block> registry){
@@ -61,10 +65,12 @@ public class AdditionalBlocks {
         e.getGenerator().addProvider(e.includeServer(), new VerticalLootTableProvider(e.getGenerator()));
     }
 
-    private static void onCreativeModeTabRegistration(CreativeModeTabEvent.Register e){
-        e.registerCreativeModeTab(new ResourceLocation("abverticaledition", "main"), builder -> builder.icon(() -> stone_brick_vertical_slab.asItem().getDefaultInstance()).displayItems((parameters, output) -> {
-            VerticalBlockType.ALL_ORDERED.stream().map(VerticalBlockType::getStair).map(Block::asItem).map(Item::getDefaultInstance).forEach(output::accept);
-            VerticalBlockType.ALL_ORDERED.stream().map(VerticalBlockType::getSlab).map(Block::asItem).map(Item::getDefaultInstance).forEach(output::accept);
-        }).title(Component.translatable("itemGroup.abverticaledition")));
+    private static void registerCreativeModeTab(Registry<CreativeModeTab> registry){
+        Registry.register(registry, new ResourceLocation("abverticaledition", "main"),
+            CreativeModeTab.builder().icon(() -> stone_brick_vertical_slab.asItem().getDefaultInstance()).displayItems((parameters, output) -> {
+                VerticalBlockType.ALL_ORDERED.stream().map(VerticalBlockType::getStair).map(Block::asItem).map(Item::getDefaultInstance).forEach(output::accept);
+                VerticalBlockType.ALL_ORDERED.stream().map(VerticalBlockType::getSlab).map(Block::asItem).map(Item::getDefaultInstance).forEach(output::accept);
+            }).title(Component.translatable("itemGroup.abverticaledition")).build()
+        );
     }
 }
