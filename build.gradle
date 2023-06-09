@@ -35,7 +35,7 @@ dependencies {
 
     // Additional Blocks: Stone Edition
 //    modRuntimeOnly "curse.maven:additional-blocks-stone-edition-436715:${project.stone_edition_file}"
-    modRuntimeOnly "com.cifru:abstoneedition:2.1.0a-fabric-mc1.20"
+    modRuntimeOnly "com.cifru:abstoneedition:2.1.0b-fabric-mc1.20"
     // Core library
     modRuntimeOnly "curse.maven:supermartijn642s-core-lib-454372:${project.core_library_file}"
     // Config library
