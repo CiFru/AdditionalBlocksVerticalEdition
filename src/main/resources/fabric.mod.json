@@ -30,7 +30,9 @@
     "fabricloader": "${fabric_loader_dependency}",
     "fabric": "${fabric_api_dependency}",
     "minecraft": "${minecraft_dependency}",
-    "java": "${java_dependency}",
+    "java": "${java_dependency}"
+  },
+  "suggests": {
     "abstoneedition": "${stone_edition_dependency}"
   }
 }
