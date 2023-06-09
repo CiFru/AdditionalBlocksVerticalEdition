@@ -1,4 +1,4 @@
-// 1.20	2023-06-08T01:00:58.976833	Additional Blocks: Vertical Edition/Tags for minecraft:block
-c2c7f43443b243233e774aaaddcdf48cc62b4c42 data\minecraft\tags\blocks\mineable\pickaxe.json
-d3e5adfa57bdf982d740a757ea15a858249ca2fd data\minecraft\tags\blocks\mineable\axe.json
-07bd43d6d391e8158d932a80e1061c28d1bfb2c4 data\minecraft\tags\blocks\needs_stone_tool.json
+// 1.20	2023-06-09T16:31:30.6912825	Additional Blocks: Vertical Edition/Tags for minecraft:block
+8609037e87ea1a24156f0bd87ed21f6c1bc93f67 data\minecraft\tags\blocks\mineable\pickaxe.json
+fa8e2af00f868a8f5f8cf7cb17cf342361a4d8ed data\minecraft\tags\blocks\mineable\axe.json
+beb74a6b5eedc1bc78f039e97e7495aecad799fd data\minecraft\tags\blocks\needs_stone_tool.json
