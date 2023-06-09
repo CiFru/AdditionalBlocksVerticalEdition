@@ -3,19 +3,19 @@
   "values": [
     "abverticaledition:weathered_cut_copper_vertical_slab",
     "abverticaledition:weathered_cut_copper_vertical_stair",
-    "abverticaledition:waxed_exposed_cut_copper_vertical_slab",
-    "abverticaledition:waxed_exposed_cut_copper_vertical_stair",
-    "abverticaledition:oxidized_cut_copper_vertical_slab",
-    "abverticaledition:oxidized_cut_copper_vertical_stair",
     "abverticaledition:exposed_cut_copper_vertical_slab",
     "abverticaledition:exposed_cut_copper_vertical_stair",
-    "abverticaledition:waxed_cut_copper_vertical_slab",
-    "abverticaledition:waxed_cut_copper_vertical_stair",
     "abverticaledition:cut_copper_vertical_slab",
     "abverticaledition:cut_copper_vertical_stair",
     "abverticaledition:waxed_weathered_cut_copper_vertical_slab",
     "abverticaledition:waxed_weathered_cut_copper_vertical_stair",
     "abverticaledition:waxed_oxidized_cut_copper_vertical_slab",
-    "abverticaledition:waxed_oxidized_cut_copper_vertical_stair"
+    "abverticaledition:waxed_oxidized_cut_copper_vertical_stair",
+    "abverticaledition:waxed_exposed_cut_copper_vertical_slab",
+    "abverticaledition:waxed_exposed_cut_copper_vertical_stair",
+    "abverticaledition:oxidized_cut_copper_vertical_slab",
+    "abverticaledition:oxidized_cut_copper_vertical_stair",
+    "abverticaledition:waxed_cut_copper_vertical_slab",
+    "abverticaledition:waxed_cut_copper_vertical_stair"
   ]
 }
