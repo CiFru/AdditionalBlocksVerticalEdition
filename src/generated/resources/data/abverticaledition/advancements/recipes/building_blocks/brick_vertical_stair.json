@@ -30,5 +30,6 @@
     "recipes": [
       "abverticaledition:brick_vertical_stair"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

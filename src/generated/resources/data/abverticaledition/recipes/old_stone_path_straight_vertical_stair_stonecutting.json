@@ -1,0 +1,21 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "abstoneedition"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:stonecutting",
+        "count": 1,
+        "ingredient": {
+          "item": "abstoneedition:old_stone_path_straight"
+        },
+        "result": "abverticaledition:old_stone_path_straight_vertical_stair"
+      }
+    }
+  ]
+}

@@ -30,5 +30,6 @@
     "recipes": [
       "abverticaledition:cobblestone_vertical_slab_stonecutting"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

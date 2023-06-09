@@ -30,5 +30,6 @@
     "recipes": [
       "abverticaledition:nether_brick_vertical_slab"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

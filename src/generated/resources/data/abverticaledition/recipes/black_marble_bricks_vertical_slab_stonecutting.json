@@ -1,0 +1,21 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "abstoneedition"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:stonecutting",
+        "count": 2,
+        "ingredient": {
+          "item": "abstoneedition:black_marble_bricks"
+        },
+        "result": "abverticaledition:black_marble_bricks_vertical_slab"
+      }
+    }
+  ]
+}

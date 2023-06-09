@@ -14,5 +14,6 @@
   "result": {
     "count": 6,
     "item": "abverticaledition:dark_oak_vertical_slab"
-  }
+  },
+  "show_notification": true
 }

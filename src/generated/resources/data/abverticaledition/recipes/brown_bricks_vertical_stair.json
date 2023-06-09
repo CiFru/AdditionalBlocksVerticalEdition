@@ -1,0 +1,32 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "abstoneedition"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "category": "building",
+        "key": {
+          "X": {
+            "item": "abstoneedition:brown_bricks"
+          }
+        },
+        "pattern": [
+          "XXX",
+          " XX",
+          "  X"
+        ],
+        "result": {
+          "count": 4,
+          "item": "abverticaledition:brown_bricks_vertical_stair"
+        },
+        "show_notification": true
+      }
+    }
+  ]
+}
