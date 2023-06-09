@@ -1,0 +1,6 @@
+{
+  "parent": "abverticaledition:block/vertical_slab_post",
+  "textures": {
+    "all": "abstoneedition:brown_stone_pattern"
+  }
+}

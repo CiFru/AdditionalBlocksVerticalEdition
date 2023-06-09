@@ -14,5 +14,6 @@
   "result": {
     "count": 6,
     "item": "abverticaledition:waxed_exposed_cut_copper_vertical_slab"
-  }
+  },
+  "show_notification": true
 }

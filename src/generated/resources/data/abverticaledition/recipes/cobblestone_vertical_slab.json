@@ -14,5 +14,6 @@
   "result": {
     "count": 6,
     "item": "abverticaledition:cobblestone_vertical_slab"
-  }
+  },
+  "show_notification": true
 }

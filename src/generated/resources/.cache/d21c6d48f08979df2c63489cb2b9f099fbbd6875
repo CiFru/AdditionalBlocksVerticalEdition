@@ -1,4 +1,6 @@
-// 1.19.3	2023-03-02T22:03:03.0065578	Tags for minecraft:block mod id abverticaledition
-35c5dcb55b3423d88dfa4df4d06a94e2a1fc3719 data/minecraft/tags/blocks/mineable/axe.json
-04d9c1320e4595dc9c12f3f2447271c72c54fc6a data/minecraft/tags/blocks/mineable/pickaxe.json
-6b5dc8a895fc61131164e21ed5712ef8f2cae905 data/minecraft/tags/blocks/needs_stone_tool.json
+// 1.19.4	2023-06-09T16:15:23.9806705	Tags for minecraft:block mod id abverticaledition
+66a7d35240f5245efa48fdbe2968c463e53bc27e data/minecraft/tags/blocks/mineable/axe.json
+7f42e80e0306704185e20558218895475dc946b8 data/minecraft/tags/blocks/mineable/pickaxe.json
+8e3901248e6893a327ce061e6bf9fecc82e72044 data/minecraft/tags/blocks/needs_diamond_tool.json
+fdceefa816cbf1cef1ad2ec6aa373178df362676 data/minecraft/tags/blocks/needs_iron_tool.json
+b4a3866571ff29742b7d7d1c6bfcaceb2f4d82a9 data/minecraft/tags/blocks/needs_stone_tool.json

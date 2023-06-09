@@ -1,0 +1,6 @@
+{
+  "parent": "abverticaledition:block/vertical_slab",
+  "textures": {
+    "all": "abstoneedition:andesite_bricks"
+  }
+}
