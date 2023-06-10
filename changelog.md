@@ -1,3 +1,7 @@
+### Additional Blocks: Vertical Edition 1.0.3
+1.20 update
+Fabric 1.18, 1.19 and 1.20 update
+
 ### Additional Blocks: Vertical Edition 1.0.2
 Obsidian update
 vanilla obsidian and obsidian bricks

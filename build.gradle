@@ -39,7 +39,7 @@ dependencies {
 
     // Additional Blocks: Stone Edition
 //    runtimeOnly fg.deobf("curse.maven:additional-blocks-stone-edition-436715:${project.stone_edition_file}")
-    runtimeOnly fg.deobf("com.cifru:abstoneedition:2.1.0a-forge-mc1.20")
+    runtimeOnly fg.deobf("com.cifru:abstoneedition:2.1.0b-forge-mc1.20")
     // Core library
     runtimeOnly fg.deobf("curse.maven:supermartijn642s-core-lib-454372:${project.core_library_file}")
     // Config library
