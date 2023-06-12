@@ -141,7 +141,7 @@ public class VerticalBlockType {
     public static final VerticalBlockType STONE_PATTERN = createBlockTypeForOtherMod("abstoneedition", "stone_pattern", "Stone Pattern", "stone_pattern_slab", "stone_pattern_stairs", "stone_pattern", true, new ResourceLocation("abstoneedition", "stone_pattern"));
     public static final VerticalBlockType STONE_TILES = createBlockTypeForOtherMod("abstoneedition", "stone_tiles", "Stone Tile", "stone_tiles_slab", "stone_tiles_stairs", "stone_tiles", true, new ResourceLocation("abstoneedition", "stone_tiles"));
 
-    // 1.19+
+    // 1.19
     public static final VerticalBlockType REINFORCED_DEEPSLATE = createBlockTypeForOtherMod("abstoneedition", "reinforced_deepslate", "Reinforced Deepslate", "reinforced_deepslate_slab", "reinforced_deepslate_stairs", "minecraft:reinforced_deepslate", true, new ResourceLocation("minecraft", "block/reinforced_deepslate_side"));
     public static final VerticalBlockType OCHRE_FROGLIGHT = createBlockTypeForOtherMod("abstoneedition", "ochre_froglight", "Ochre Froglight", "ochre_froglight_slab", "ochre_froglight_stairs", "minecraft:ochre_froglight", false, new ResourceLocation("minecraft", "block/ochre_froglight_side"));
     public static final VerticalBlockType PEARLESCENT_FROGLIGHT = createBlockTypeForOtherMod("abstoneedition", "pearlescent_froglight", "Pearlescent Froglight", "pearlescent_froglight_slab", "pearlescent_froglight_stairs", "minecraft:pearlescent_froglight", false, new ResourceLocation("minecraft", "block/pearlescent_froglight_side"));
