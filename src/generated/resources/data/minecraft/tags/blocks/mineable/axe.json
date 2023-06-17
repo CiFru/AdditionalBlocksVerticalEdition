@@ -1,5 +1,9 @@
 {
   "values": [
+    "abverticaledition:bamboo_vertical_slab",
+    "abverticaledition:bamboo_vertical_stair",
+    "abverticaledition:bamboo_mosaic_vertical_slab",
+    "abverticaledition:bamboo_mosaic_vertical_stair",
     "abverticaledition:birch_vertical_slab",
     "abverticaledition:birch_vertical_stair",
     "abverticaledition:jungle_vertical_slab",
@@ -14,6 +18,8 @@
     "abverticaledition:acacia_vertical_stair",
     "abverticaledition:warped_vertical_slab",
     "abverticaledition:warped_vertical_stair",
+    "abverticaledition:cherry_vertical_slab",
+    "abverticaledition:cherry_vertical_stair",
     "abverticaledition:oak_vertical_slab",
     "abverticaledition:oak_vertical_stair",
     "abverticaledition:dark_oak_vertical_slab",

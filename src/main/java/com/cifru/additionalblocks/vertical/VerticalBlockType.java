@@ -150,6 +150,11 @@ public class VerticalBlockType {
     public static final VerticalBlockType PACKED_MUD = createBlockTypeForOtherMod("abstoneedition", "packed_mud", "Packed Mud", "packed_mud_slab", "packed_mud_stairs", "minecraft:packed_mud", false, new ResourceLocation("minecraft", "block/packed_mud"));
     public static final VerticalBlockType SCULK = createBlockTypeForOtherMod("abstoneedition", "sculk", "Sculk", "sculk_slab", "sculk_stairs", "minecraft:sculk", false, new ResourceLocation("minecraft", "block/sculk"));
 
+    // 1.20
+    public static final VerticalBlockType BAMBOO_MOSAIC = createBlockType("bamboo_mosaic", "Mosaic Bamboo", () -> Blocks.BAMBOO_MOSAIC_SLAB, () -> Blocks.BAMBOO_MOSAIC_STAIRS, () -> Blocks.BAMBOO_MOSAIC, false, new ResourceLocation("minecraft", "block/bamboo_mosaic"));
+    public static final VerticalBlockType BAMBOO = createBlockType("bamboo", "Bamboo", () -> Blocks.BAMBOO_SLAB, () -> Blocks.BAMBOO_STAIRS, () -> Blocks.BAMBOO_PLANKS, false, new ResourceLocation("minecraft", "block/bamboo_planks"));
+    public static final VerticalBlockType CHERRY = createBlockType("cherry", "Cherry", () -> Blocks.CHERRY_SLAB, () -> Blocks.CHERRY_STAIRS, () -> Blocks.CHERRY_PLANKS, false, new ResourceLocation("minecraft", "block/cherry_planks"));
+
     private static VerticalBlockType createBlockType(String registryName, String translation, Supplier<Block> parentSlabBlock, Supplier<Block> parentStairBlock, Supplier<Block> recipeBlock, boolean hasStoneCutterRecipe, ResourceLocation texture, String... dependentMods){
         ResourceLocation resourceLocation = new ResourceLocation("abverticaledition", registryName);
         if(ALL.containsKey(resourceLocation))

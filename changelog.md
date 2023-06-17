@@ -1,3 +1,6 @@
+### Additional Blocks: Vertical Edition 1.0.3a
+Added bamboo mozaic, bamboo wood and cherry wood slabs
+
 ### Additional Blocks: Vertical Edition 1.0.3
 1.20 update
 Fabric 1.18, 1.19 and 1.20 update
