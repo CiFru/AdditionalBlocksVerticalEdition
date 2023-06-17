@@ -1,4 +1,4 @@
-### Additional Blocks: Vertical Edition 1.0.3a
+### Additional Blocks: Vertical Edition 1.0.3b
 Added bamboo mozaic, bamboo wood and cherry wood slabs
 
 ### Additional Blocks: Vertical Edition 1.0.3
