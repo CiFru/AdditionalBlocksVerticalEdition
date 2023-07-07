@@ -28,6 +28,70 @@
       "required": false
     },
     {
+      "id": "abverticaledition:old_stone_tiles_vertical_slab",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:old_stone_tiles_vertical_stair",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:glowstone_vertical_slab",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:glowstone_vertical_stair",
+      "required": false
+    },
+    "abverticaledition:exposed_cut_copper_vertical_slab",
+    "abverticaledition:exposed_cut_copper_vertical_stair",
+    {
+      "id": "abverticaledition:brown_bricks_vertical_slab",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:brown_bricks_vertical_stair",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:stone_brick_block_vertical_slab",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:stone_brick_block_vertical_stair",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:old_stone_pattern_vertical_slab",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:old_stone_pattern_vertical_stair",
+      "required": false
+    },
+    "abverticaledition:cut_copper_vertical_slab",
+    "abverticaledition:cut_copper_vertical_stair",
+    "abverticaledition:waxed_weathered_cut_copper_vertical_slab",
+    "abverticaledition:waxed_weathered_cut_copper_vertical_stair",
+    "abverticaledition:waxed_oxidized_cut_copper_vertical_slab",
+    "abverticaledition:waxed_oxidized_cut_copper_vertical_stair",
+    {
+      "id": "abverticaledition:brown_stone_pattern_vertical_slab",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:brown_stone_pattern_vertical_stair",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:stone_tiles_vertical_slab",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:stone_tiles_vertical_stair",
+      "required": false
+    },
+    {
       "id": "abverticaledition:old_stone_path_straight_vertical_slab",
       "required": false
     },
@@ -48,22 +112,6 @@
     "abverticaledition:oxidized_cut_copper_vertical_slab",
     "abverticaledition:oxidized_cut_copper_vertical_stair",
     {
-      "id": "abverticaledition:old_stone_tiles_vertical_slab",
-      "required": false
-    },
-    {
-      "id": "abverticaledition:old_stone_tiles_vertical_stair",
-      "required": false
-    },
-    {
-      "id": "abverticaledition:glowstone_vertical_slab",
-      "required": false
-    },
-    {
-      "id": "abverticaledition:glowstone_vertical_stair",
-      "required": false
-    },
-    {
       "id": "abverticaledition:brown_stone_path_curved_vertical_slab",
       "required": false
     },
@@ -71,8 +119,6 @@
       "id": "abverticaledition:brown_stone_path_curved_vertical_stair",
       "required": false
     },
-    "abverticaledition:exposed_cut_copper_vertical_slab",
-    "abverticaledition:exposed_cut_copper_vertical_stair",
     {
       "id": "abverticaledition:glowstone_bricks_vertical_slab",
       "required": false
@@ -98,14 +144,6 @@
       "required": false
     },
     {
-      "id": "abverticaledition:brown_bricks_vertical_slab",
-      "required": false
-    },
-    {
-      "id": "abverticaledition:brown_bricks_vertical_stair",
-      "required": false
-    },
-    {
       "id": "abverticaledition:old_stone_path_curved_vertical_slab",
       "required": false
     },
@@ -114,27 +152,11 @@
       "required": false
     },
     {
-      "id": "abverticaledition:stone_brick_block_vertical_slab",
-      "required": false
-    },
-    {
-      "id": "abverticaledition:stone_brick_block_vertical_stair",
-      "required": false
-    },
-    {
       "id": "abverticaledition:brown_stone_path_straight_vertical_slab",
       "required": false
     },
     {
       "id": "abverticaledition:brown_stone_path_straight_vertical_stair",
-      "required": false
-    },
-    {
-      "id": "abverticaledition:old_stone_pattern_vertical_slab",
-      "required": false
-    },
-    {
-      "id": "abverticaledition:old_stone_pattern_vertical_stair",
       "required": false
     },
     "abverticaledition:waxed_cut_copper_vertical_slab",
@@ -147,10 +169,6 @@
       "id": "abverticaledition:volcanic_stone_vertical_stair",
       "required": false
     },
-    "abverticaledition:cut_copper_vertical_slab",
-    "abverticaledition:cut_copper_vertical_stair",
-    "abverticaledition:waxed_weathered_cut_copper_vertical_slab",
-    "abverticaledition:waxed_weathered_cut_copper_vertical_stair",
     {
       "id": "abverticaledition:smooth_stone_bricks_vertical_slab",
       "required": false
@@ -165,24 +183,6 @@
     },
     {
       "id": "abverticaledition:stone_path_curved_vertical_stair",
-      "required": false
-    },
-    "abverticaledition:waxed_oxidized_cut_copper_vertical_slab",
-    "abverticaledition:waxed_oxidized_cut_copper_vertical_stair",
-    {
-      "id": "abverticaledition:brown_stone_pattern_vertical_slab",
-      "required": false
-    },
-    {
-      "id": "abverticaledition:brown_stone_pattern_vertical_stair",
-      "required": false
-    },
-    {
-      "id": "abverticaledition:stone_tiles_vertical_slab",
-      "required": false
-    },
-    {
-      "id": "abverticaledition:stone_tiles_vertical_stair",
       "required": false
     }
   ]

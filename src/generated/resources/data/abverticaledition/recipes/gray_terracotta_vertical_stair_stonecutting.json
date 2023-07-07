@@ -1,0 +1,21 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "modid": "abstoneedition",
+          "type": "forge:mod_loaded"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:stonecutting",
+        "ingredient": {
+          "item": "minecraft:gray_terracotta"
+        },
+        "result": "abverticaledition:gray_terracotta_vertical_stair",
+        "count": 1
+      }
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "abverticaledition:block/vertical_stair",
+  "textures": {
+    "all": "minecraft:block/black_terracotta"
+  }
+}

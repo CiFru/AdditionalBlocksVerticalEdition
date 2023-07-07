@@ -1,0 +1,21 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "modid": "abstoneedition",
+          "type": "forge:mod_loaded"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:stonecutting",
+        "ingredient": {
+          "item": "minecraft:blue_terracotta"
+        },
+        "result": "abverticaledition:blue_terracotta_vertical_slab",
+        "count": 2
+      }
+    }
+  ]
+}

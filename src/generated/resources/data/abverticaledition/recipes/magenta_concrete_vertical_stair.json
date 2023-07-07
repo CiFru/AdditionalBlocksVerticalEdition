@@ -1,0 +1,30 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "modid": "abstoneedition",
+          "type": "forge:mod_loaded"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "pattern": [
+          "XXX",
+          " XX",
+          "  X"
+        ],
+        "key": {
+          "X": {
+            "item": "minecraft:magenta_concrete"
+          }
+        },
+        "result": {
+          "item": "abverticaledition:magenta_concrete_vertical_stair",
+          "count": 4
+        }
+      }
+    }
+  ]
+}

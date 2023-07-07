@@ -1,0 +1,30 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "modid": "abstoneedition",
+          "type": "forge:mod_loaded"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "pattern": [
+          "X",
+          "X",
+          "X"
+        ],
+        "key": {
+          "X": {
+            "item": "minecraft:light_gray_terracotta"
+          }
+        },
+        "result": {
+          "item": "abverticaledition:light_gray_terracotta_vertical_slab",
+          "count": 6
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "modid": "abstoneedition",
+          "type": "forge:mod_loaded"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "pattern": [
+          "XXX",
+          " XX",
+          "  X"
+        ],
+        "key": {
+          "X": {
+            "item": "minecraft:light_blue_terracotta"
+          }
+        },
+        "result": {
+          "item": "abverticaledition:light_blue_terracotta_vertical_stair",
+          "count": 4
+        }
+      }
+    }
+  ]
+}

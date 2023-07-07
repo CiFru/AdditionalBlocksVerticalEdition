@@ -1,6 +1,320 @@
 {
   "replace": false,
   "values": [
+    "abverticaledition:quartz_vertical_slab",
+    "abverticaledition:quartz_vertical_stair",
+    "abverticaledition:sandstone_vertical_slab",
+    "abverticaledition:sandstone_vertical_stair",
+    {
+      "id": "abverticaledition:stone_pattern_vertical_slab",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:stone_pattern_vertical_stair",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:purple_concrete_vertical_slab",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:purple_concrete_vertical_stair",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:smooth_glowstone_vertical_slab",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:smooth_glowstone_vertical_stair",
+      "required": false
+    },
+    "abverticaledition:weathered_cut_copper_vertical_slab",
+    "abverticaledition:weathered_cut_copper_vertical_stair",
+    {
+      "id": "abverticaledition:white_terracotta_vertical_slab",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:white_terracotta_vertical_stair",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:brown_stone_tiles_vertical_slab",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:brown_stone_tiles_vertical_stair",
+      "required": false
+    },
+    "abverticaledition:mossy_stone_brick_vertical_slab",
+    "abverticaledition:mossy_stone_brick_vertical_stair",
+    {
+      "id": "abverticaledition:purple_terracotta_vertical_slab",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:purple_terracotta_vertical_stair",
+      "required": false
+    },
+    "abverticaledition:andesite_vertical_slab",
+    "abverticaledition:andesite_vertical_stair",
+    {
+      "id": "abverticaledition:bloodstone_vertical_slab",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:bloodstone_vertical_stair",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:old_stone_tiles_vertical_slab",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:old_stone_tiles_vertical_stair",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:glowstone_vertical_slab",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:glowstone_vertical_stair",
+      "required": false
+    },
+    "abverticaledition:exposed_cut_copper_vertical_slab",
+    "abverticaledition:exposed_cut_copper_vertical_stair",
+    "abverticaledition:smooth_sandstone_vertical_slab",
+    "abverticaledition:smooth_sandstone_vertical_stair",
+    "abverticaledition:diorite_vertical_slab",
+    "abverticaledition:diorite_vertical_stair",
+    {
+      "id": "abverticaledition:smooth_marble_vertical_slab",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:smooth_marble_vertical_stair",
+      "required": false
+    },
+    "abverticaledition:red_sandstone_vertical_slab",
+    "abverticaledition:red_sandstone_vertical_stair",
+    {
+      "id": "abverticaledition:brown_bricks_vertical_slab",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:brown_bricks_vertical_stair",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:green_concrete_vertical_slab",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:green_concrete_vertical_stair",
+      "required": false
+    },
+    "abverticaledition:smoooth_stone_vertical_slab",
+    "abverticaledition:smoooth_stone_vertical_stair",
+    "abverticaledition:smooth_quartz_vertical_slab",
+    "abverticaledition:smooth_quartz_vertical_stair",
+    {
+      "id": "abverticaledition:stone_brick_block_vertical_slab",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:stone_brick_block_vertical_stair",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:orange_concrete_vertical_slab",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:orange_concrete_vertical_stair",
+      "required": false
+    },
+    "abverticaledition:stone_brick_vertical_slab",
+    "abverticaledition:stone_brick_vertical_stair",
+    {
+      "id": "abverticaledition:old_stone_pattern_vertical_slab",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:old_stone_pattern_vertical_stair",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:diorite_bricks_vertical_slab",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:diorite_bricks_vertical_stair",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:obsidian_vertical_slab",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:obsidian_vertical_stair",
+      "required": false
+    },
+    "abverticaledition:polished_diorite_vertical_slab",
+    "abverticaledition:polished_diorite_vertical_stair",
+    {
+      "id": "abverticaledition:limestone_bricks_vertical_slab",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:limestone_bricks_vertical_stair",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:white_concrete_vertical_slab",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:white_concrete_vertical_stair",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:black_concrete_vertical_slab",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:black_concrete_vertical_stair",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:magenta_terracotta_vertical_slab",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:magenta_terracotta_vertical_stair",
+      "required": false
+    },
+    "abverticaledition:nether_brick_vertical_slab",
+    "abverticaledition:nether_brick_vertical_stair",
+    {
+      "id": "abverticaledition:pink_concrete_vertical_slab",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:pink_concrete_vertical_stair",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:red_terracotta_vertical_slab",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:red_terracotta_vertical_stair",
+      "required": false
+    },
+    "abverticaledition:smooth_red_sandstone_vertical_slab",
+    "abverticaledition:smooth_red_sandstone_vertical_stair",
+    {
+      "id": "abverticaledition:gray_terracotta_vertical_slab",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:gray_terracotta_vertical_stair",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:smooth_black_marble_vertical_slab",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:smooth_black_marble_vertical_stair",
+      "required": false
+    },
+    "abverticaledition:blackstone_vertical_slab",
+    "abverticaledition:blackstone_vertical_stair",
+    "abverticaledition:cut_copper_vertical_slab",
+    "abverticaledition:cut_copper_vertical_stair",
+    {
+      "id": "abverticaledition:lime_terracotta_vertical_slab",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:lime_terracotta_vertical_stair",
+      "required": false
+    },
+    "abverticaledition:waxed_weathered_cut_copper_vertical_slab",
+    "abverticaledition:waxed_weathered_cut_copper_vertical_stair",
+    "abverticaledition:red_nether_brick_vertical_slab",
+    "abverticaledition:red_nether_brick_vertical_stair",
+    {
+      "id": "abverticaledition:light_blue_terracotta_vertical_slab",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:light_blue_terracotta_vertical_stair",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:yellow_terracotta_vertical_slab",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:yellow_terracotta_vertical_stair",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:blue_concrete_vertical_slab",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:blue_concrete_vertical_stair",
+      "required": false
+    },
+    "abverticaledition:polished_blackstone_brick_vertical_slab",
+    "abverticaledition:polished_blackstone_brick_vertical_stair",
+    {
+      "id": "abverticaledition:smooth_limestone_vertical_slab",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:smooth_limestone_vertical_stair",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:red_concrete_vertical_slab",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:red_concrete_vertical_stair",
+      "required": false
+    },
+    "abverticaledition:waxed_oxidized_cut_copper_vertical_slab",
+    "abverticaledition:waxed_oxidized_cut_copper_vertical_stair",
+    {
+      "id": "abverticaledition:brown_stone_pattern_vertical_slab",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:brown_stone_pattern_vertical_stair",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:smooth_smooth_stone_vertical_slab",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:smooth_smooth_stone_vertical_stair",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:stone_tiles_vertical_slab",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:stone_tiles_vertical_stair",
+      "required": false
+    },
     "abverticaledition:cobblestone_vertical_slab",
     "abverticaledition:cobblestone_vertical_stair",
     {
@@ -12,6 +326,14 @@
       "required": false
     },
     {
+      "id": "abverticaledition:pink_terracotta_vertical_slab",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:pink_terracotta_vertical_stair",
+      "required": false
+    },
+    {
       "id": "abverticaledition:granite_bricks_vertical_slab",
       "required": false
     },
@@ -19,8 +341,6 @@
       "id": "abverticaledition:granite_bricks_vertical_stair",
       "required": false
     },
-    "abverticaledition:quartz_vertical_slab",
-    "abverticaledition:quartz_vertical_stair",
     "abverticaledition:brick_vertical_slab",
     "abverticaledition:brick_vertical_stair",
     {
@@ -47,38 +367,40 @@
       "id": "abverticaledition:bloodstone_bricks_vertical_stair",
       "required": false
     },
-    "abverticaledition:sandstone_vertical_slab",
-    "abverticaledition:sandstone_vertical_stair",
-    {
-      "id": "abverticaledition:stone_pattern_vertical_slab",
-      "required": false
-    },
-    {
-      "id": "abverticaledition:stone_pattern_vertical_stair",
-      "required": false
-    },
     "abverticaledition:deepslate_tile_vertical_slab",
     "abverticaledition:deepslate_tile_vertical_stair",
     {
-      "id": "abverticaledition:smooth_glowstone_vertical_slab",
+      "id": "abverticaledition:magenta_concrete_vertical_slab",
       "required": false
     },
     {
-      "id": "abverticaledition:smooth_glowstone_vertical_stair",
-      "required": false
-    },
-    "abverticaledition:weathered_cut_copper_vertical_slab",
-    "abverticaledition:weathered_cut_copper_vertical_stair",
-    {
-      "id": "abverticaledition:brown_stone_tiles_vertical_slab",
+      "id": "abverticaledition:magenta_concrete_vertical_stair",
       "required": false
     },
     {
-      "id": "abverticaledition:brown_stone_tiles_vertical_stair",
+      "id": "abverticaledition:orange_terracotta_vertical_slab",
       "required": false
     },
-    "abverticaledition:mossy_stone_brick_vertical_slab",
-    "abverticaledition:mossy_stone_brick_vertical_stair",
+    {
+      "id": "abverticaledition:orange_terracotta_vertical_stair",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:brown_concrete_vertical_slab",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:brown_concrete_vertical_stair",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:cyan_terracotta_vertical_slab",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:cyan_terracotta_vertical_stair",
+      "required": false
+    },
     "abverticaledition:dark_prismarine_vertical_slab",
     "abverticaledition:dark_prismarine_vertical_stair",
     {
@@ -97,18 +419,16 @@
       "id": "abverticaledition:volcanic_stone_bricks_vertical_stair",
       "required": false
     },
-    "abverticaledition:andesite_vertical_slab",
-    "abverticaledition:andesite_vertical_stair",
     "abverticaledition:waxed_exposed_cut_copper_vertical_slab",
     "abverticaledition:waxed_exposed_cut_copper_vertical_stair",
     "abverticaledition:granite_vertical_slab",
     "abverticaledition:granite_vertical_stair",
     {
-      "id": "abverticaledition:bloodstone_vertical_slab",
+      "id": "abverticaledition:yellow_concrete_vertical_slab",
       "required": false
     },
     {
-      "id": "abverticaledition:bloodstone_vertical_stair",
+      "id": "abverticaledition:yellow_concrete_vertical_stair",
       "required": false
     },
     "abverticaledition:oxidized_cut_copper_vertical_slab",
@@ -121,26 +441,18 @@
       "id": "abverticaledition:limestone_vertical_stair",
       "required": false
     },
+    {
+      "id": "abverticaledition:lime_concrete_vertical_slab",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:lime_concrete_vertical_stair",
+      "required": false
+    },
     "abverticaledition:end_stone_brick_vertical_slab",
     "abverticaledition:end_stone_brick_vertical_stair",
-    {
-      "id": "abverticaledition:old_stone_tiles_vertical_slab",
-      "required": false
-    },
-    {
-      "id": "abverticaledition:old_stone_tiles_vertical_stair",
-      "required": false
-    },
     "abverticaledition:polished_blackstone_vertical_slab",
     "abverticaledition:polished_blackstone_vertical_stair",
-    {
-      "id": "abverticaledition:glowstone_vertical_slab",
-      "required": false
-    },
-    {
-      "id": "abverticaledition:glowstone_vertical_stair",
-      "required": false
-    },
     {
       "id": "abverticaledition:brown_stone_path_curved_vertical_slab",
       "required": false
@@ -149,8 +461,6 @@
       "id": "abverticaledition:brown_stone_path_curved_vertical_stair",
       "required": false
     },
-    "abverticaledition:exposed_cut_copper_vertical_slab",
-    "abverticaledition:exposed_cut_copper_vertical_stair",
     {
       "id": "abverticaledition:glowstone_bricks_vertical_slab",
       "required": false
@@ -159,8 +469,6 @@
       "id": "abverticaledition:glowstone_bricks_vertical_stair",
       "required": false
     },
-    "abverticaledition:smooth_sandstone_vertical_slab",
-    "abverticaledition:smooth_sandstone_vertical_stair",
     {
       "id": "abverticaledition:black_marble_vertical_slab",
       "required": false
@@ -183,18 +491,6 @@
       "id": "abverticaledition:stone_path_straight_vertical_stair",
       "required": false
     },
-    "abverticaledition:diorite_vertical_slab",
-    "abverticaledition:diorite_vertical_stair",
-    {
-      "id": "abverticaledition:smooth_marble_vertical_slab",
-      "required": false
-    },
-    {
-      "id": "abverticaledition:smooth_marble_vertical_stair",
-      "required": false
-    },
-    "abverticaledition:red_sandstone_vertical_slab",
-    "abverticaledition:red_sandstone_vertical_stair",
     "abverticaledition:polished_granite_vertical_slab",
     "abverticaledition:polished_granite_vertical_stair",
     {
@@ -206,11 +502,11 @@
       "required": false
     },
     {
-      "id": "abverticaledition:brown_bricks_vertical_slab",
+      "id": "abverticaledition:light_gray_concrete_vertical_slab",
       "required": false
     },
     {
-      "id": "abverticaledition:brown_bricks_vertical_stair",
+      "id": "abverticaledition:light_gray_concrete_vertical_stair",
       "required": false
     },
     {
@@ -221,10 +517,6 @@
       "id": "abverticaledition:old_stone_path_curved_vertical_stair",
       "required": false
     },
-    "abverticaledition:smoooth_stone_vertical_slab",
-    "abverticaledition:smoooth_stone_vertical_stair",
-    "abverticaledition:smooth_quartz_vertical_slab",
-    "abverticaledition:smooth_quartz_vertical_stair",
     {
       "id": "abverticaledition:asphalt_vertical_slab",
       "required": false
@@ -234,16 +526,6 @@
       "required": false
     },
     {
-      "id": "abverticaledition:stone_brick_block_vertical_slab",
-      "required": false
-    },
-    {
-      "id": "abverticaledition:stone_brick_block_vertical_stair",
-      "required": false
-    },
-    "abverticaledition:stone_brick_vertical_slab",
-    "abverticaledition:stone_brick_vertical_stair",
-    {
       "id": "abverticaledition:brown_stone_path_straight_vertical_slab",
       "required": false
     },
@@ -251,24 +533,8 @@
       "id": "abverticaledition:brown_stone_path_straight_vertical_stair",
       "required": false
     },
-    {
-      "id": "abverticaledition:old_stone_pattern_vertical_slab",
-      "required": false
-    },
-    {
-      "id": "abverticaledition:old_stone_pattern_vertical_stair",
-      "required": false
-    },
     "abverticaledition:waxed_cut_copper_vertical_slab",
     "abverticaledition:waxed_cut_copper_vertical_stair",
-    {
-      "id": "abverticaledition:diorite_bricks_vertical_slab",
-      "required": false
-    },
-    {
-      "id": "abverticaledition:diorite_bricks_vertical_stair",
-      "required": false
-    },
     {
       "id": "abverticaledition:charred_vertical_slab",
       "required": false
@@ -278,26 +544,6 @@
       "required": false
     },
     {
-      "id": "abverticaledition:obsidian_vertical_slab",
-      "required": false
-    },
-    {
-      "id": "abverticaledition:obsidian_vertical_stair",
-      "required": false
-    },
-    "abverticaledition:polished_diorite_vertical_slab",
-    "abverticaledition:polished_diorite_vertical_stair",
-    {
-      "id": "abverticaledition:limestone_bricks_vertical_slab",
-      "required": false
-    },
-    {
-      "id": "abverticaledition:limestone_bricks_vertical_stair",
-      "required": false
-    },
-    "abverticaledition:nether_brick_vertical_slab",
-    "abverticaledition:nether_brick_vertical_stair",
-    {
       "id": "abverticaledition:volcanic_stone_vertical_slab",
       "required": false
     },
@@ -305,8 +551,6 @@
       "id": "abverticaledition:volcanic_stone_vertical_stair",
       "required": false
     },
-    "abverticaledition:smooth_red_sandstone_vertical_slab",
-    "abverticaledition:smooth_red_sandstone_vertical_stair",
     {
       "id": "abverticaledition:black_marble_bricks_vertical_slab",
       "required": false
@@ -318,23 +562,15 @@
     "abverticaledition:deepslate_brick_vertical_slab",
     "abverticaledition:deepslate_brick_vertical_stair",
     {
-      "id": "abverticaledition:smooth_black_marble_vertical_slab",
+      "id": "abverticaledition:gray_concrete_vertical_slab",
       "required": false
     },
     {
-      "id": "abverticaledition:smooth_black_marble_vertical_stair",
+      "id": "abverticaledition:gray_concrete_vertical_stair",
       "required": false
     },
-    "abverticaledition:blackstone_vertical_slab",
-    "abverticaledition:blackstone_vertical_stair",
     "abverticaledition:polished_andesite_vertical_slab",
     "abverticaledition:polished_andesite_vertical_stair",
-    "abverticaledition:cut_copper_vertical_slab",
-    "abverticaledition:cut_copper_vertical_stair",
-    "abverticaledition:waxed_weathered_cut_copper_vertical_slab",
-    "abverticaledition:waxed_weathered_cut_copper_vertical_stair",
-    "abverticaledition:red_nether_brick_vertical_slab",
-    "abverticaledition:red_nether_brick_vertical_stair",
     {
       "id": "abverticaledition:andesite_bricks_vertical_slab",
       "required": false
@@ -356,11 +592,51 @@
     "abverticaledition:polished_deepslate_vertical_slab",
     "abverticaledition:polished_deepslate_vertical_stair",
     {
+      "id": "abverticaledition:green_terracotta_vertical_slab",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:green_terracotta_vertical_stair",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:light_blue_concrete_vertical_slab",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:light_blue_concrete_vertical_stair",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:light_gray_terracotta_vertical_slab",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:light_gray_terracotta_vertical_stair",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:blue_terracotta_vertical_slab",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:blue_terracotta_vertical_stair",
+      "required": false
+    },
+    {
       "id": "abverticaledition:stone_path_curved_vertical_slab",
       "required": false
     },
     {
       "id": "abverticaledition:stone_path_curved_vertical_stair",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:brown_terracotta_vertical_slab",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:brown_terracotta_vertical_stair",
       "required": false
     },
     {
@@ -371,44 +647,24 @@
       "id": "abverticaledition:smooth_bloodstone_vertical_stair",
       "required": false
     },
+    {
+      "id": "abverticaledition:cyan_concrete_vertical_slab",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:cyan_concrete_vertical_stair",
+      "required": false
+    },
     "abverticaledition:purpur_vertical_slab",
     "abverticaledition:purpur_vertical_stair",
-    "abverticaledition:polished_blackstone_brick_vertical_slab",
-    "abverticaledition:polished_blackstone_brick_vertical_stair",
-    {
-      "id": "abverticaledition:smooth_limestone_vertical_slab",
-      "required": false
-    },
-    {
-      "id": "abverticaledition:smooth_limestone_vertical_stair",
-      "required": false
-    },
     "abverticaledition:cobbled_deepslate_vertical_slab",
     "abverticaledition:cobbled_deepslate_vertical_stair",
-    "abverticaledition:waxed_oxidized_cut_copper_vertical_slab",
-    "abverticaledition:waxed_oxidized_cut_copper_vertical_stair",
     {
-      "id": "abverticaledition:brown_stone_pattern_vertical_slab",
+      "id": "abverticaledition:black_terracotta_vertical_slab",
       "required": false
     },
     {
-      "id": "abverticaledition:brown_stone_pattern_vertical_stair",
-      "required": false
-    },
-    {
-      "id": "abverticaledition:smooth_smooth_stone_vertical_slab",
-      "required": false
-    },
-    {
-      "id": "abverticaledition:smooth_smooth_stone_vertical_stair",
-      "required": false
-    },
-    {
-      "id": "abverticaledition:stone_tiles_vertical_slab",
-      "required": false
-    },
-    {
-      "id": "abverticaledition:stone_tiles_vertical_stair",
+      "id": "abverticaledition:black_terracotta_vertical_stair",
       "required": false
     }
   ]

@@ -1,0 +1,30 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "modid": "abstoneedition",
+          "type": "forge:mod_loaded"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "pattern": [
+          "X",
+          "X",
+          "X"
+        ],
+        "key": {
+          "X": {
+            "item": "minecraft:green_concrete"
+          }
+        },
+        "result": {
+          "item": "abverticaledition:green_concrete_vertical_slab",
+          "count": 6
+        }
+      }
+    }
+  ]
+}

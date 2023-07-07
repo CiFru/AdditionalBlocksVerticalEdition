@@ -1,0 +1,23 @@
+{
+  "variants": {
+    "state=north": {
+      "model": "abverticaledition:block/gray_terracotta_vertical_stair",
+      "uvlock": true
+    },
+    "state=south": {
+      "model": "abverticaledition:block/gray_terracotta_vertical_stair",
+      "y": -180,
+      "uvlock": true
+    },
+    "state=west": {
+      "model": "abverticaledition:block/gray_terracotta_vertical_stair",
+      "y": -90,
+      "uvlock": true
+    },
+    "state=east": {
+      "model": "abverticaledition:block/gray_terracotta_vertical_stair",
+      "y": 90,
+      "uvlock": true
+    }
+  }
+}

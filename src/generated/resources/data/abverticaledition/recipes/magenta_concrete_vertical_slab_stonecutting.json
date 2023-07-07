@@ -1,0 +1,21 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "modid": "abstoneedition",
+          "type": "forge:mod_loaded"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:stonecutting",
+        "ingredient": {
+          "item": "minecraft:magenta_concrete"
+        },
+        "result": "abverticaledition:magenta_concrete_vertical_slab",
+        "count": 2
+      }
+    }
+  ]
+}

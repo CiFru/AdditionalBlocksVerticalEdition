@@ -1,0 +1,70 @@
+{
+  "variants": {
+    "connection=left,state=north": {
+      "model": "abverticaledition:block/brown_terracotta_vertical_slab_post",
+      "uvlock": true
+    },
+    "connection=right,state=north": {
+      "model": "abverticaledition:block/brown_terracotta_vertical_slab_post",
+      "y": 90,
+      "uvlock": true
+    },
+    "connection=none,state=north": {
+      "model": "abverticaledition:block/brown_terracotta_vertical_slab",
+      "uvlock": true
+    },
+    "connection=left,state=east": {
+      "model": "abverticaledition:block/brown_terracotta_vertical_slab_post",
+      "y": 90,
+      "uvlock": true
+    },
+    "connection=right,state=east": {
+      "model": "abverticaledition:block/brown_terracotta_vertical_slab_post",
+      "y": -180,
+      "uvlock": true
+    },
+    "connection=none,state=east": {
+      "model": "abverticaledition:block/brown_terracotta_vertical_slab",
+      "y": 90,
+      "uvlock": true
+    },
+    "connection=left,state=south": {
+      "model": "abverticaledition:block/brown_terracotta_vertical_slab_post",
+      "y": -180,
+      "uvlock": true
+    },
+    "connection=right,state=south": {
+      "model": "abverticaledition:block/brown_terracotta_vertical_slab_post",
+      "y": -90,
+      "uvlock": true
+    },
+    "connection=none,state=south": {
+      "model": "abverticaledition:block/brown_terracotta_vertical_slab",
+      "y": -180,
+      "uvlock": true
+    },
+    "connection=left,state=west": {
+      "model": "abverticaledition:block/brown_terracotta_vertical_slab_post",
+      "y": -90,
+      "uvlock": true
+    },
+    "connection=right,state=west": {
+      "model": "abverticaledition:block/brown_terracotta_vertical_slab_post",
+      "uvlock": true
+    },
+    "connection=none,state=west": {
+      "model": "abverticaledition:block/brown_terracotta_vertical_slab",
+      "y": -90,
+      "uvlock": true
+    },
+    "connection=left,state=full": {
+      "model": "abverticaledition:block/brown_terracotta_vertical_slab_full"
+    },
+    "connection=right,state=full": {
+      "model": "abverticaledition:block/brown_terracotta_vertical_slab_full"
+    },
+    "connection=none,state=full": {
+      "model": "abverticaledition:block/brown_terracotta_vertical_slab_full"
+    }
+  }
+}

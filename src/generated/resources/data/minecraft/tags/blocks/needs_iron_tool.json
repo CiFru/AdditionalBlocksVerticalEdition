@@ -2,11 +2,27 @@
   "replace": false,
   "values": [
     {
-      "id": "abverticaledition:bloodstone_bricks_vertical_slab",
+      "id": "abverticaledition:purple_concrete_vertical_slab",
       "required": false
     },
     {
-      "id": "abverticaledition:bloodstone_bricks_vertical_stair",
+      "id": "abverticaledition:purple_concrete_vertical_stair",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:white_terracotta_vertical_slab",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:white_terracotta_vertical_stair",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:purple_terracotta_vertical_slab",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:purple_terracotta_vertical_stair",
       "required": false
     },
     {
@@ -18,6 +34,182 @@
       "required": false
     },
     {
+      "id": "abverticaledition:green_concrete_vertical_slab",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:green_concrete_vertical_stair",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:orange_concrete_vertical_slab",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:orange_concrete_vertical_stair",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:white_concrete_vertical_slab",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:white_concrete_vertical_stair",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:black_concrete_vertical_slab",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:black_concrete_vertical_stair",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:magenta_terracotta_vertical_slab",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:magenta_terracotta_vertical_stair",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:pink_concrete_vertical_slab",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:pink_concrete_vertical_stair",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:red_terracotta_vertical_slab",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:red_terracotta_vertical_stair",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:gray_terracotta_vertical_slab",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:gray_terracotta_vertical_stair",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:lime_terracotta_vertical_slab",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:lime_terracotta_vertical_stair",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:light_blue_terracotta_vertical_slab",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:light_blue_terracotta_vertical_stair",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:yellow_terracotta_vertical_slab",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:yellow_terracotta_vertical_stair",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:blue_concrete_vertical_slab",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:blue_concrete_vertical_stair",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:red_concrete_vertical_slab",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:red_concrete_vertical_stair",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:pink_terracotta_vertical_slab",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:pink_terracotta_vertical_stair",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:bloodstone_bricks_vertical_slab",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:bloodstone_bricks_vertical_stair",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:magenta_concrete_vertical_slab",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:magenta_concrete_vertical_stair",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:orange_terracotta_vertical_slab",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:orange_terracotta_vertical_stair",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:brown_concrete_vertical_slab",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:brown_concrete_vertical_stair",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:cyan_terracotta_vertical_slab",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:cyan_terracotta_vertical_stair",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:yellow_concrete_vertical_slab",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:yellow_concrete_vertical_stair",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:lime_concrete_vertical_slab",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:lime_concrete_vertical_stair",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:light_gray_concrete_vertical_slab",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:light_gray_concrete_vertical_stair",
+      "required": false
+    },
+    {
       "id": "abverticaledition:asphalt_vertical_slab",
       "required": false
     },
@@ -26,11 +218,75 @@
       "required": false
     },
     {
+      "id": "abverticaledition:gray_concrete_vertical_slab",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:gray_concrete_vertical_stair",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:green_terracotta_vertical_slab",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:green_terracotta_vertical_stair",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:light_blue_concrete_vertical_slab",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:light_blue_concrete_vertical_stair",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:light_gray_terracotta_vertical_slab",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:light_gray_terracotta_vertical_stair",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:blue_terracotta_vertical_slab",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:blue_terracotta_vertical_stair",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:brown_terracotta_vertical_slab",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:brown_terracotta_vertical_stair",
+      "required": false
+    },
+    {
       "id": "abverticaledition:smooth_bloodstone_vertical_slab",
       "required": false
     },
     {
       "id": "abverticaledition:smooth_bloodstone_vertical_stair",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:cyan_concrete_vertical_slab",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:cyan_concrete_vertical_stair",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:black_terracotta_vertical_slab",
+      "required": false
+    },
+    {
+      "id": "abverticaledition:black_terracotta_vertical_stair",
       "required": false
     }
   ]
