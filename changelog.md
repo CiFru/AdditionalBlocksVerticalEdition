@@ -1,3 +1,6 @@
+### Additional Blocks: Vertical Edition 1.0.4
+Terracotta / Concrete Update
+
 ### Additional Blocks: Vertical Edition 1.0.2
 Obsidian update
 vanilla obsidian and obsidian bricks
